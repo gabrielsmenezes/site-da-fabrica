@@ -1,1 +1,1 @@
-www
+Git para o projeto do portal da fábrica de software
