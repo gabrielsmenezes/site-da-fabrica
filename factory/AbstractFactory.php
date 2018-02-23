@@ -12,13 +12,7 @@
             $t->execute();
             return $t->fetchAll(PDO::FETCH_CLASS, ucfirst($this->table));
         }
-        /*
-        public function deleteByName($nome){
-            $sql = "DELETE FROM ".$this->table." WHERE nome like '".$nome."';";
-            $t = DB::prepare($sql);
-            $t->execute();
-        }
-        */
+        
         public function deleteById($id){
             $sql = "DELETE FROM ".$this->table." WHERE id = '".$id."';";
             $t = DB::prepare($sql);

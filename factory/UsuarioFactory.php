@@ -5,6 +5,10 @@
         protected $table = "usuario";
         static $instance;
         
+        private function __contructor(){
+            
+        }
+
         public function inserir($usuario){
             try{
                 $sql = "SELECT * FROM ".$this->table." WHERE nome like '".$usuario->getNome()."';";
