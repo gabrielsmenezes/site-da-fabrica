@@ -1,1 +1,1 @@
-Git para o projeto do portal da fábrica de software
+Git para o projeto do portal da fï¿½brica de software
