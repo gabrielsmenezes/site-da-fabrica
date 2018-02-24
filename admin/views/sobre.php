@@ -16,7 +16,7 @@
 
 	<body>
 		<br>
-		<form method="post" action ="/?pagina=updateSobre">
+		<form method="post" action ="/admin/?pagina=updateSobre">
 
 
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.6.7/tinymce.min.js"></script>

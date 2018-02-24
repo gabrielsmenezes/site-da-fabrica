@@ -38,14 +38,14 @@
 
                 if( !isset($_SESSION['user'] ) ){
                     $_SESSION['erroLogin'] = 'Usuário ou senha incorretos';
-                    $newURL = '/?pagina=index';
+                    $newURL = '/admin/?pagina=index';
                     header('Location: '.$newURL);
                     //echo "credenciais invalidas";
                 }
                 else{
                     //echo "Login funfou";
                     $_SESSION['erroLogin'] = '';
-                    $newURL = '/?pagina=menu';
+                    $newURL = '/admin/?pagina=menu';
                     header('Location: '.$newURL);
                 }
             }
@@ -54,7 +54,7 @@
         
         static public function sair(){
             unset($_SESSION['user']);
-            $newURL = '/?pagina=index';
+            $newURL = '/admin/?pagina=index';
             header('Location: '.$newURL);            
         }
     }

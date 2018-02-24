@@ -11,6 +11,9 @@
 
         public function inserir($usuario){
             try{
+                /////////////////////
+                // SQL injection
+                // nice
                 $sql = "SELECT * FROM ".$this->table." WHERE nome like '".$usuario->getNome()."';";
                 $t = DB::prepare($sql);
                 $t->execute();

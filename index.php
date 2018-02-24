@@ -11,27 +11,34 @@
     
     include 'factory/PostFactory.php';
     */
-    include 'controller/IndexController.php';
-    include 'controller/MenuController.php';    
-    include 'controller/LoginController.php';     
-    include 'controller/SobreController.php';    
-    include 'controller/EquipeController.php';
-    include 'controller/ProjetosController.php';
+    //include 'controller/IndexController.php';
+    //include 'controller/MenuController.php';    
+    //include 'controller/LoginController.php';     
+    //include 'controller/SobreController.php';    
+    //include 'controller/EquipeController.php';
+    //include 'controller/ProjetosController.php';
 
 
-    include 'entity/Aluno.php';
-    include 'entity/Usuario.php';
-    include 'entity/Sobre.php';
-    include 'entity/Projeto.php';
+    include 'admin/entity/Aluno.php';
+    include 'admin/entity/Usuario.php';
+    include 'admin/entity/Sobre.php';
+    include 'admin/entity/Projeto.php';
 
-    include 'factory/AlunoFactory.php';
-    include 'factory/UsuarioFactory.php';
-    include 'factory/SobreFactory.php';
-    include 'factory/ProjetoFactory.php';
+    include 'admin/factory/AlunoFactory.php';
+    include 'admin/factory/UsuarioFactory.php';
+    include 'admin/factory/SobreFactory.php';
+    include 'admin/factory/ProjetoFactory.php';
+
+    include 'render_user.php';
 
     session_start();
     $path = session_save_path() . '/sess_' . session_id();
     chmod($path, 0640);
+
+    //$_SESSION['pasta'] = "/admin";
+
+    //echo $_SERVER['PHP_SELF'];
+    
 
     if( !isset($_GET['pagina']) ){
         $pagina = 'index';
@@ -39,113 +46,54 @@
     else{
         $pagina = $_GET['pagina'];
     }
-    $admin = false;
-    
-    if(isset($_SESSION['user'])){
-        $admin = true;
-    }
 
 
+    echo $pagina;
 
+    //echo "aaaaaaaaaaaaaaa";
 
 
 
     if(($pagina == 'index' || !$pagina)){
-        IndexController::get();
+        $pf = ProjetoFactory::get();
+        $listProjetos = null;
+        $listProjetos = $pf->lista("3");
+
+        //echo count($listProjetos);
+        //echo "<br><br><br><br><br><br><br><br>";
+
+        $sf = SobreFactory::get();
+        $content = $sf->lista()[0]->getDescricao();
+
+        $af = AlunoFactory::get();
+        $listAlunos = null;
+        $listAlunos = $af->lista("3");
+
+
+        //echo count($listAlunos);
+        //echo "<br><br><br><br><br><br><br><br>";
+
+        $arr = array($content, $listProjetos, $listAlunos);
+
+        RenderUser::render_php("/views/index.php", $arr);
     }
-    else if( $pagina == 'login' ){
-        if($_SERVER['REQUEST_METHOD'] == 'GET'){
-            $newURL = '/?pagina=index';
-            header('Location: '.$newURL);
-        }
-        else{
-            LoginController::login();
-        }
+    else if( $pagina == 'equipe' ){
+        $af = AlunoFactory::get();
+        $listAlunos = null;
+        $listAlunos = $af->lista();
+        
+
+        $arr = $listAlunos;
+        RenderUser::render_php("/views/equipe.php", $arr);
     }
-    else if( $pagina == 'menu' ){
-        if( $admin ){
-            MenuController::get();
-        }
-        else{
-            $_SESSION['erroLogin'] = "Não autorizado, logue";
-            IndexController::get();
-        }
-    }
-    else if( $pagina == 'sobre'){
-        if( $admin ){
-            SobreController::get();
-        }
-        else{
-            $_SESSION['erroLogin'] = "Não autorizado, logue";
-            IndexController::get();
-        }
-    }
-    else if( $pagina == 'equipe'){
-        if( $admin ){
-            EquipeController::get();
-        }
-        else{
-            $_SESSION['erroLogin'] = "Não autorizado, logue";
-            IndexController::get();
-        }
+    else if( $pagina == 'projetos' ){
+        $pf = ProjetoFactory::get();
+        $listProjetos = null;
+        $listProjetos = $pf->lista();
+       
+
+        $arr = $listProjetos;
+        RenderUser::render_php("/views/projetos.php", $arr); 
     }
 
-    else if( $pagina == 'projetos'){
-        if( $admin ){
-            ProjetosController::get();
-        }
-        else{
-            $_SESSION['erroLogin'] = "Não autorizado, logue";
-            IndexController::get();
-        }
-    }
-    else if( $pagina == 'sair' ){
-        LoginController::sair();
-    }
-    /*
-    *
-    * Detalhando o que tem em /?pagina=equipe
-    *
-    */
-    else if( $pagina == 'inserirAluno'){
-        if( $admin ){
-            EquipeController::inserirAluno();
-        }
-        else{
-            $_SESSION['erroLogin'] = "Não autorizado, logue";
-            IndexController::get();
-        }  
-    }
-    /*
-    *
-    *  Detalhando o que tem em /?pagina=sobre
-    *
-    */
-    else if( $pagina == 'updateSobre' ){
-        if( $admin ){
-            SobreController::update();
-        }
-        else{
-            $_SESSION['erroLogin'] = "Não autorizado, logue";
-            IndexController::get();
-        }
-    }
-    /*
-    *
-    * Detalhando o que tem em /?pagina=projetos
-    *
-    */
-    else if( $pagina == 'inserirProjeto' ){
-        if( $admin ){
-            ProjetosController::inserirProjeto();
-        }
-        else{
-            $_SESSION['erroLogin'] = "Não autorizado, logue";
-            IndexController::get();
-        }    
-    }
-    else{
-        $_SESSION['erroLogin'] = "Pagina não existe";
-        IndexController::get();
-    }
 ?>

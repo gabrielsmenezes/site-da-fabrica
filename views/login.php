@@ -1,8 +1,3 @@
-<?php
-	$alunos = $args;
-?>
-
-
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -11,7 +6,7 @@
 	<title>Fábrica de Software - UFMS</title>
 	
 	<link rel="shortcut icon" href="Imagens/favicon.png">
-	<link rel="stylesheet" media="screen" href="/views/style.css">
+	<link rel="stylesheet" media="screen" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Jura|Orbitron" rel="stylesheet">
 
@@ -79,37 +74,48 @@
 </header>
 
 <div id="sticky-anchor"></div>
-<nav>
-	<a href="index.html"> Volte ao Início </a>
+
+<!--
+
+	<nav>
+	<a href="#inicio"> Início </a>
+	<a href="#sobre"> Sobre o Site</a>
+	<a href="#projetos"> Projetos </a>
+	<a href="#equipe"> Equipe </a>
+	<a href="#contato"> Busca </a>
 </nav>
 
+-->
 
 <div class="caixas">
-	
-	<div id="caixa" class="projetos">
-		<h1>Equipe</h1>
-			
-			
-		<?php
-			foreach ($alunos as $aluno) {
-				echo "<div class=\"membro\">";
-		        $img=base64_encode($aluno->getImagem());
-				echo "<img src = \" data:image/JPG;charset=utf8;base64,";
-		        echo $img;
-		        echo "\" class=\"eq\" alt=\"imagem do projeto\" />";
-				
-				echo "<h3>" . $aluno->getNome() . "</h3>";
-			
-				echo "<p>". $aluno->getDescricao() ."</p>";
-				echo "<br>";
-				echo "</div>";
-			}
-		?>
-		
 
+	<div class="infobg">
+		<div id="sobre" class="informacoes">
+		<h1>Faça seu login</h1>
+			
+	
+		<!-- formulário de login -->
+		<form action="?op=login_usuario" method="post">
+			<label for="email">Digite seu email:</label> 
+			<input type="email" id="email" name="email" placeholder="name@name.com.br" required />
+			
+			<br><br>
+			
+			<label for="senha">Digite sua senha:</label> 
+			<input type="password" id="senha" name="senha" placeholder="password" required />
+			
+			<br><br>
+
+			<div class="centerLoginButton">
+				<button type="submit" name="submit" value="Entrar" href="perfil.html">Entrar</button>
+			</div>
+		  
+		</form>
 		
 	</div>
-
+	</div>
+	
+	
 	
 	
 	<footer>

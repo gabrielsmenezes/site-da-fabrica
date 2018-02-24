@@ -41,14 +41,14 @@
 	            else{
 	                //echo "inserido com sucesso";
 	                $_SESSION['msgProjetos'] = "inserido com sucesso";
-	                $newURL = '/?pagina=projetos';
+	                $newURL = '/admin/?pagina=projetos';
                     header('Location: '.$newURL);
 	            }
 	        }
 	        else{
 	            //echo "Formulário preenchido incorretamente";
 	            $_SESSION['msgProjetos'] = "Formulário preenchido incorretamente";
-	            $newURL = '/?pagina=projetos';
+	            $newURL = '/admin/?pagina=projetos';
                 header('Location: '.$newURL);
 	        }
         }

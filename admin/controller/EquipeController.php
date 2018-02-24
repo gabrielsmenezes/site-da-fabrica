@@ -48,14 +48,14 @@
 	            else{
 	                //echo "inserido com sucesso";
 	                $_SESSION['msgEquipe'] = "inserido com sucesso";
-	                $newURL = '/?pagina=equipe';
+	                $newURL = '/admin/?pagina=equipe';
                     header('Location: '.$newURL);
 	            }
 	        }
 	        else{
 	            //echo "Formulário preenchido incorretamente";
 	            $_SESSION['msgEquipe'] = "Formulário preenchido incorretamente";
-	            $newURL = '/?pagina=equipe';
+	            $newURL = '/admin/?pagina=equipe';
                 header('Location: '.$newURL);
 	        }
         }

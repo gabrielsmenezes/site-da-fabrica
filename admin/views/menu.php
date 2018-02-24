@@ -15,11 +15,11 @@
 		<?php  echo $args;  ?>
 
 		<div class="center">
-			<a href = "/?pagina=sobre">    <button> Sobre    </button> </a> <br>
-			<a href = "/?pagina=equipe">   <button> Equipe   </button> </a> <br>
-			<a href = "/?pagina=projetos"> <button> Projetos </button> </a> <br>
+			<a href = "/admin/?pagina=sobre">    <button> Sobre    </button> </a> <br>
+			<a href = "/admin/?pagina=equipe">   <button> Equipe   </button> </a> <br>
+			<a href = "/admin/?pagina=projetos"> <button> Projetos </button> </a> <br>
 			<br><br><br><br>
-			<a href = "/?pagina=sair"> <button> Sair </button> </a> <br>
+			<a href = "/admin/?pagina=sair"> <button> Sair </button> </a> <br>
 		</div>
 
 

@@ -18,7 +18,8 @@
             echo "<br>sobre:".$_POST['sobre'].":<br>";
         	$sf = SobreFactory::get();
         	$sf->update($sobreObj);
-            $newURL = '/?pagina=sobre';
+
+            $newURL = '/admin/?pagina=sobre';
             header('Location: '.$newURL);
             //Render::render_php( $dirView , $content);
         }
