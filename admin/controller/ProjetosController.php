@@ -52,5 +52,23 @@
                 header('Location: '.$newURL);
 	        }
         }
+        static function removerProjeto(){
+        	$id = $_POST['removeId'];
+
+            if( is_numeric($id) ){
+	            $pf = ProjetoFactory::get();
+	            $pf->deleteById($id);
+
+	            $_SESSION['msgProjetos'] = "removido com sucesso";
+		        $newURL = '/admin/?pagina=projetos';
+	            header('Location: '.$newURL);
+        	}
+        	else{
+        		//echo "Formulário preenchido incorretamente";
+	            $_SESSION['msgProjetos'] = "";
+	            $newURL = '/admin/?pagina=projetos';
+                header('Location: '.$newURL);
+        	}
+        }
     }
 ?>

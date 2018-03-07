@@ -155,6 +155,16 @@
             IndexController::get();
         }    
     }
+    else if( $pagina == 'postRemove'){ 
+        if( $admin ){
+            //echo $_POST['removeId'];
+            ProjetosController::removerProjeto();
+        }
+        else{
+            $_SESSION['erroLogin'] = "Não autorizado, logue";
+            IndexController::get();
+        }   
+    }
     else{
         $_SESSION['erroLogin'] = "Pagina não existe";
         IndexController::get();

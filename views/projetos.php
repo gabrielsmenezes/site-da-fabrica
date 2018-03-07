@@ -97,8 +97,10 @@
 		            echo $img;
 		            echo "\" class=\"proj\" alt=\"imagem do projeto\" />";
 				
-					echo "<h3><a href=\"/?pagina=projetoIndividual\">". $projeto->getNome() ."</a></h3> </br>";
+					echo "<h3><a href=\"/?pagina=projetoIndividual&number=". $projeto->getId() ."\">". $projeto->getNome() ."</a></h3> </br>";
 			
+					
+
 					echo "<p>". $projeto->getDescricao() ."</p>";
 					echo "<br>";
 					echo "</div>";

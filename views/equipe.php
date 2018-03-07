@@ -80,7 +80,7 @@
 
 <div id="sticky-anchor"></div>
 <nav>
-	<a href="index.html"> Volte ao Início </a>
+	<a href="/?pagina=index"> Volte ao Início </a>
 </nav>
 
 

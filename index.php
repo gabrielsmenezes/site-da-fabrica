@@ -48,7 +48,7 @@
     }
 
 
-    echo $pagina;
+    //echo $pagina;
 
     //echo "aaaaaaaaaaaaaaa";
 
@@ -94,6 +94,27 @@
 
         $arr = $listProjetos;
         RenderUser::render_php("/views/projetos.php", $arr); 
+    }
+    else if( $pagina == "projetoIndividual" ){
+        $id = $_GET['number'];
+
+
+        if( is_numeric($id) ){
+            $pf   = ProjetoFactory::get();
+            $proj = $pf->getById( $id );
+            if( count($proj) != 1 ){
+                $newURL = '?pagina=index';
+                header('Location: ' . $newURL);
+            }
+            else{
+                RenderUser::render_php("/views/projeto.php", $proj[0]);
+            }
+        }
+        else{
+            $newURL = '?pagina=index';
+            header('Location: ' . $newURL);
+        }
+
     }
 
 ?>

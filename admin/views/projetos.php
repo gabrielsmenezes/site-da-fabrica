@@ -18,6 +18,10 @@
 			echo "<img src = \" data:image/JPG;charset=utf8;base64,";
             echo $img;
             echo "\"  />";
+            echo "<form action='/admin/?pagina=postRemove' method='post'>
+           				<input type=\"hidden\" name=\"removeId\" value=". $projeto->getId() .">
+                        <button type='submit'>Deletar</button>
+                  </form>";
             echo "<br>" . $projeto->getDescricao() . "<br><br>";
 		}
 		
@@ -41,3 +45,4 @@
 	</body>
 
 </html>
+	

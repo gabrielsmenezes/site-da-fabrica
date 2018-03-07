@@ -19,9 +19,19 @@
             $t->execute();
             return $t->fetchAll(PDO::FETCH_CLASS, ucfirst($this->table));
         }
+
+        public function getById($id){
+            $sql = "SELECT * FROM ".$this->table." WHERE id = ".$id.";";
+
+            //echo $sql;
+
+            $t = DB::prepare($sql);
+            $t->execute();            
+            return $t->fetchAll(PDO::FETCH_CLASS, ucfirst($this->table));
+        }
         
         public function deleteById($id){
-            $sql = "DELETE FROM ".$this->table." WHERE id = '".$id."';";
+            $sql = "DELETE FROM ".$this->table." WHERE id = ".$id.";";
             $t = DB::prepare($sql);
             $t->execute();
         }

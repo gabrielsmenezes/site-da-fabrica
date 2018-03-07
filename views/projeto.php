@@ -1,3 +1,9 @@
+<?php
+	$projeto = $args;
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -6,7 +12,7 @@
 	<title>Fábrica de Software - UFMS</title>
 	
 	<link rel="shortcut icon" href="Imagens/favicon.png">
-	<link rel="stylesheet" media="screen" href="style.css">
+	<link rel="stylesheet" media="screen" href="/views/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Jura|Orbitron" rel="stylesheet">
 
@@ -75,24 +81,37 @@
 
 <div id="sticky-anchor"></div>
 <nav>
-	<a href="index.html"> Volte ao Início </a>
+	<a href="/?pagina=index"> Volte ao Início </a>
 </nav>
 
 
 <div class="caixas">
 	
 	<div id="caixa" class="proj">
+			<!--
 			<h1>Título do Projeto</h1>
-			
+			-->
 
-			<img src="Imagens/imagem.jpg" alt="t5" /><img src="Imagens/imagem.jpg" alt="t5" /><img src="Imagens/imagem.jpg" alt="t5" />
+			<?php
+
+				echo "<h1>".$projeto->getNome()."</h1>";
+            //echo $projeto->getNome() . "<br>";
+				$img=base64_encode($projeto->getImagem());
+				echo "<img src = \" data:image/JPG;charset=utf8;base64,";
+	            echo $img;
+	            echo "\"  />";
+	            echo "<p>" . $projeto->getDescricao() . "</p>";
+
+			?>
+			<!--
+			<img src="Imagens/imagem.jpg" alt="t5" />
 
 			
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  t2 Suspendisse cursus, neque sit amet feugiat viverra, eros arcu luctus enim, non luctus dolor tortor eget nibh. Aenean facilisis dolor dui, at finibus metus rutrum vel. Donec vitae nulla porta, ornare diam a, vulputate nisl. Sed ullamcorper massa fermentum elit efficitur malesuada. Cras ut nulla euismod, imperdiet leo id, tempor metus. Suspendisse in placerat leo, non accumsan neque. Vestibulum vel ultricies velit. Curabitur viverra ipsum quis orci accumsan cursus. Vivamus pharetra lobortis lectus non fermentum. Nunc vel metus scelerisque, pharetra sapien sit amet, ultrices lacus. Cras tincidunt semper molestie. Nullam aliquam finibus mauris quis tristique. Suspendisse vel nulla id ex consequat condimentum. Integer at rutrum purus, vitae malesuada ex. Aenean semper lacus pharetra eros tincidunt bibendum eget eget sapien. Vestibulum justo erat, auctor vitae gravida non, pharetra ac sem. 
 			
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit.  t2 Suspendisse cursus, neque sit amet feugiat viverra, eros arcu luctus enim, non luctus dolor tortor eget nibh. Aenean facilisis dolor dui, at finibus metus rutrum vel. Donec vitae nulla porta, ornare diam a, vulputate nisl. Sed ullamcorper massa fermentum elit efficitur malesuada. Cras ut nulla euismod, imperdiet leo id, tempor metus. Suspendisse in placerat leo, non accumsan neque. Vestibulum vel ultricies velit. Curabitur viverra ipsum quis orci accumsan cursus. Vivamus pharetra lobortis lectus non fermentum. Nunc vel metus scelerisque, pharetra sapien sit amet, ultrices lacus. Cras tincidunt semper molestie. Nullam aliquam finibus mauris quis tristique. Suspendisse vel nulla id ex consequat condimentum. Integer at rutrum purus, vitae malesuada ex. Aenean semper lacus pharetra eros tincidunt bibendum eget eget sapien. Vestibulum justo erat, auctor vitae gravida non, pharetra ac sem. 
 			</p>
-		
+			-->
 		
 		
 	</div>
