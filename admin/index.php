@@ -53,7 +53,7 @@
         $admin = true;
     }
 
-    echo $pagina;
+    //echo $pagina;
 
     //echo "aaaaaaaaaaaaaaa";
 
@@ -155,10 +155,20 @@
             IndexController::get();
         }    
     }
-    else if( $pagina == 'postRemove'){ 
+    else if( $pagina == 'projetoRemove'){ 
         if( $admin ){
             //echo $_POST['removeId'];
             ProjetosController::removerProjeto();
+        }
+        else{
+            $_SESSION['erroLogin'] = "Não autorizado, logue";
+            IndexController::get();
+        }   
+    }
+    else if( $pagina == 'alunoRemove'){ 
+        if( $admin ){
+            //echo $_POST['removeId'];
+            EquipeController::removerAluno();
         }
         else{
             $_SESSION['erroLogin'] = "Não autorizado, logue";

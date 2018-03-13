@@ -59,5 +59,23 @@
                 header('Location: '.$newURL);
 	        }
         }
+        static function removerAluno(){
+        	$id = $_POST['removeId'];
+
+            if( is_numeric($id) ){
+	            $pf = AlunoFactory::get();
+	            $pf->deleteById($id);
+
+	            $_SESSION['msgEquipe'] = "removido com sucesso";
+		        $newURL = '/admin/?pagina=equipe';
+	            header('Location: '.$newURL);
+        	}
+        	else{
+        		//echo "Formulário preenchido incorretamente";
+	            $_SESSION['msgEquipe'] = "";
+	            $newURL = '/admin/?pagina=equipe';
+                header('Location: '.$newURL);
+        	}
+        }
     }
 ?>

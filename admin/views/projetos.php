@@ -18,7 +18,7 @@
 			echo "<img src = \" data:image/JPG;charset=utf8;base64,";
             echo $img;
             echo "\"  />";
-            echo "<form action='/admin/?pagina=postRemove' method='post'>
+            echo "<form action='/admin/?pagina=projetoRemove' method='post'>
            				<input type=\"hidden\" name=\"removeId\" value=". $projeto->getId() .">
                         <button type='submit'>Deletar</button>
                   </form>";
