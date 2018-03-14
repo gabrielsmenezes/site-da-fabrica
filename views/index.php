@@ -87,7 +87,7 @@
 	<a href="#sobre"> Sobre o Site</a>
 	<a href="#projetos"> Projetos </a>
 	<a href="#equipe"> Equipe </a>
-	<a href="#contato"> Busca </a>
+	<!--<a href="#contato"> Busca </a>-->
 </nav>
 
 <div class="caixas">

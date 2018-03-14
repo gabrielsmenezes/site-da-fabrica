@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="views/CSS/login.css">
 		<meta charset="utf-8">
-		<title>Login Fábrica de Software - UFMS</title>
+		<title>Administração Fábrica de Software - UFMS</title>
 		
 		<link rel="shortcut icon" href="Imagens/favicon.png">
 		<link rel="stylesheet" media="screen" href="/views/style.css">
@@ -80,7 +80,7 @@
 		<div class="caixas">
 	
 			<div id="caixa" class="projetos">
-				<h2>Lista de alunos</h2>
+				<h1>Lista de alunos</h1>
 
 				<?php  	
 
@@ -104,14 +104,36 @@
 				}
 				
 				?>
-
+				
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.6.7/tinymce.min.js"></script>
+	            <script src="/public/js/pt_BR.js"></script>
+	            <script>tinymce.init({ selector:'textarea' , plugins: [
+	    							'advlist autolink charmap preview',
+	    							'searchreplace visualblocks code',
+								    'paste code help'
+								  	],
+								  	height : "200",
+								  	width  : "40%"});
+	                var teste = function(){
+	                    var p = tinyMCE.activeEditor.getContent();
+	                    var e = document.getElementById('descricaoAluno');
+	                    e.value = '';
+	                    e.value = p;
+	                }
+	            </script>
+				
 				<h2>Cadastro de aluno</h2>
-				<form action="/admin/?pagina=inserirAluno" method="POST" enctype="multipart/form-data">
+				<form class = "justified" action="/admin/?pagina=inserirAluno" method="POST" enctype="multipart/form-data">
 				    
-				    <input type="text" placeholder="Nome completo" name="nomeAluno"> <br>
-				    <input type="text" placeholder="Descrição" name="descricaoAluno"> <br>
-				    <label>File: </label>   <input type="file" name="imagemAluno"  /><br> 
-				    <input type="submit" value = "salvar" name="cadastroAluno" />
+					<div align='center'>
+
+				    	<input class = "heighttext" type="text" placeholder="Nome completo"  style="text-align: center"  name="nomeAluno" size="42" > <br> <br>
+				    	<textarea class = "justified" placeholder="Descrição" name="descricaoAluno" id = "descricaoAluno">
+				    		<br><p style="text-align: center;">Descri&ccedil;&atilde;o do Aluno</p>
+				    	</textarea><br>
+				    </div>
+				    <label>File: </label>   <input  type="file" name="imagemAluno"  /><br> <br>
+				    <button type="submit" name="cadastroAluno" />Cadastrar</button>
 				</form>
 				<?php
 					if( isset($_SESSION['msgEquipe']) ){	
