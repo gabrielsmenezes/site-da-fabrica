@@ -56,7 +56,7 @@ h3 {
 /* BOTOES */
 
 button {
-	width:70px;
+	width:88px;
 	text-align:center;
 	background-color:#0089B7;
 	-moz-border-radius:42px;
@@ -75,6 +75,25 @@ button {
 	transition:0.5s ease-in; 
 	-moz-transition:0.5s ease-in; 
 	-webkit-transition:0.3s ease-in; 
+}
+/*
+.escondido{
+	display: none;
+}
+*/
+button.edit{
+	background-color:#FF5722;
+}
+button.showButton{
+	background-color:#262626;
+
+}
+button.testButton{
+	background-color:#d760aa;
+}
+
+button.inicial{
+	width:140px;
 }
 	button:hover {
 		opacity:.5;
@@ -222,7 +241,16 @@ nav {
 .infobg {
 	width:100%;
 	background:#f1f1f1;
+}
 
+.infobg input{
+	margin-bottom: 2px;
+}
+
+.infobg label{
+	width: 120px;
+	text-align: center;
+	display: inline-block;
 }
 
 .informacoes {
@@ -268,27 +296,29 @@ nav {
 }
 
 .project {
-	width:20%;
+	width:25%;
 	margin:30px;
 	display:inline-block;
 
 }
 
 .project  img.proj {
-	width:150px;
-	height:150px;
+	width:200px;
+	height:200px;
 	margin:5px;
-	border-radius:100%;
+	/*border-radius:100%;*/
 }
 
 .project p{
+	/*
 	height:70px;
-	overflow:auto;
+	overflow:scroll;
 	padding:5px;
-	border-bottom: 1px #f1f1f1 solid;
+	border-bottom: 20px #f1f1f1 solid;
 	text-align:justify;
 	margin:auto;
 	margin-top:-15px;
+	*/
 }
 
 .proj img{
@@ -297,7 +327,7 @@ nav {
 	margin-bottom:15px;
 }
 .proj p {
-	width:68%;
+	width:33%;
 	margin:auto;
 	text-align:justify;
 }
@@ -319,19 +349,23 @@ nav {
 
 
 .membro {
-	width:20%;
-	margin:30px;
+	width:25%;
+	margin-top:40px;
 	display:inline-block;
 
 }
 
 .membro img.eq {
 	width:150px;
-	height:150px;
+	height:200px;
 	margin:5px;
+	border-radius:10px;
 }
 
+
+
 .membro p{
+	/*
 	height:70px;
 	overflow:auto;
 	padding:5px;
@@ -339,6 +373,7 @@ nav {
 	text-align:justify;
 	margin:auto;
 	margin-top:-15px;
+	*/
 }
 
 
@@ -419,12 +454,8 @@ footer h2 {
 
 ::selection {
 	color:#ffffff; 
-	background:#0089B7
-}; 
-
-
-
-
+	background:#0089B7;
+}
 
 
 /**
@@ -434,46 +465,112 @@ footer h2 {
 */
 
 
-.centerLoginButton{
-	margin: auto;
-    width: 50%;
-    border: 3px solid green;
-    padding: 10px;
-};
+input.projs{
+    
+	padding: 5px 0px 5px 0px;
+	text-align: center;
+}
 
-.justified {
-        display: block;
-        justify-content: center;
-        text-align:center;
- 		justify-content: center 
-};
-.inputCenter{
-	text-align: center
-};
-.heighttext{
-	float:right;
-	height:80px;
-	width:70px
-};
-
-.labelClass {
-	width:70px;
-	text-align:center;
-	background-color:#0089B7;
-	-moz-border-radius:42px;
-	-webkit-border-radius:42px;
-	border-radius:42px;
-	border:none;
-	border-top:1px #d5d5d5 solid;
-	border-bottom:2px #b5b5b5 solid;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
+.descricao{
+	height:90px;
+	overflow:auto;
 	padding:5px;
-	text-decoration:none;
+	border-bottom: 20px solid transparent;
+	text-align:justify;
+	margin:auto;
+	margin-top:0px;
+} 
+.descricaoAluno{
+	height:60px;
+	overflow:auto;
+	padding-top:10px;
+	border-bottom: 20px #f1f1f1 solid;
+	text-align:center;
+	margin:auto;
+	margin-top:0px;
+} 
+
+/*
+.testLi li{
+	display: list-item;
+}
+*/
+
+/*TEste aaaaaaaaaa*/
+.descricaoProj {
+
+	/*width : 80%;*/
+	display: inline;
+	text-align: justify;
+	/*align-items:center;*/
+}
+
+.descricaoProj p {
+	width: 80%;
+    margin-bottom: 10px;
+	text-align:justify;
+}
+
+.descricaoProj ol {
+	margin: auto;
+	display: block;
+}
+
+.descricaoProj ul {
+	margin: auto;	
+	display: block;
+}
+
+.descricaoProj li {
+	margin: auto;
+	width : 80%;
+	writing-mode: sideways-rl;
+	/*background: no-repeat;*/
+	list-style-position: outside;
+	text-align: none;
+}
+.descricaoProj h1 {
+	margin-left: 10%;
+	color:#0089B7;
+	font-family: 'Jura', sans-serif;
+	margin-top:50px;
+	text-align: justify;
+}
+
+.descricaoProj h2 {	
+	margin-left: 10%;
+	color:#696969;
 	font-family: 'Open Sans Condensed', sans-serif;
-	font-size:15px;	
-	transition:0.5s ease-in; 
-	-moz-transition:0.5s ease-in; 
-	-webkit-transition:0.3s ease-in; 
-};
+	font-size:20px;
+	text-align: justify;
+}
+	
+.descricaoProj h3 {
+	margin-left: 10%;
+	color:#0089B7;
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-align: justify;
+}	
+.descricaoProj h4 {
+	margin-left: 10%;
+	/*color:#0089B7;*/
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-align: justify;
+}	
+.descricaoProj li li{
+	width :100%;
+}
+.descricaoProj table{
+	margin-left: 10%;
+}
+
+.novidadeImgDesc{
+    float: left;
+    padding: 5px;
+    /*display:block;*/
+    /*max-width: 186px;*/
+}
+.grupoNovidades{
+	clear: both;
+	display: inline-block;
+}

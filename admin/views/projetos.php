@@ -7,7 +7,7 @@
 		<meta charset="utf-8">
 		<title>Administração Fábrica de Software - UFMS</title>
 		
-		<link rel="shortcut icon" href="Imagens/favicon.png">
+		<link rel="shortcut icon" href="../Imagens/favicon.png">
 		<link rel="stylesheet" media="screen" href="/views/style.css">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Jura|Orbitron" rel="stylesheet">
@@ -87,42 +87,69 @@
 					$img=base64_encode($projeto->getImagem());
 					echo "<img src = \" data:image/JPG;charset=utf8;base64,";
 		            echo $img;
-		            echo "\"  />";
-		            echo "<form action='/admin/?pagina=projetoRemove' method='post'>
-		           				<input type=\"hidden\" name=\"removeId\" value=". $projeto->getId() .">
-		                        <button type='submit'>Deletar</button>
-		                  </form>";
-		            echo "<br> <p style=\"text-align: center;\	\">" . $projeto->getDescricao() . "<p><br><br>";
-
-					echo "</div>";
+		            echo "\" class = \"proj\"  />";
+		            echo "<div class = 'descricao'>";
+		            echo "<p>" . $projeto->getDescricao() . "<p>";
+		            //echo "<br> <div>" . $projeto->getDescricao() . "</div><br><br>";
+		            echo "</div>";
+		            echo "  <form action='/admin/?pagina=projetoRemove' method='post'>
+		           				<input type=\"hidden\" name=\"projectId\" value=". $projeto->getId() .">		   
+		            			<button class='edit'   type='submit' name='editProjeto' formaction='/admin/?pagina=projetoEdit' />Editar</button>
+		                        <button class='delete' type='submit'>Deletar</button>
+		            		</form>";
+					echo "</div>";	
 				}
 				
 				?>
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.6.7/tinymce.min.js"></script>
 	            <script src="/public/js/pt_BR.js"></script>
-	            <script>tinymce.init({ selector:'textarea' , plugins: [
-	    							'advlist autolink charmap preview',
-	    							'searchreplace visualblocks code',
-								    'paste code help'
+	            <script>tinymce.init({ selector:'textarea#descricaoCurtaProjeto' ,
+								    mode : "exact",						
+	            					plugins: [
+	    							'advlist autolink lists link image charmap print preview anchor textcolor',
+	    							'searchreplace visualblocks code fullscreen',
+								    'insertdatetime media table contextmenu paste code help'
 								  	],
 								  	height : "200",
-								  	width  : "40%"});
+								  	width  : "20%"
+								  });
+	           			tinymce.init({ selector:'textarea#descricaoProjeto' ,
+								    mode : "exact",						
+	            					plugins: [
+	    							'advlist autolink lists link image charmap print preview anchor textcolor',
+	    							'searchreplace visualblocks code fullscreen',
+								    'insertdatetime media table contextmenu paste code help'
+								  	],
+								  	height : "200",
+								  	width  : "40%"
+								  });
+	            	/*
 	                var teste = function(){
 	                    var p = tinyMCE.activeEditor.getContent();
 	                    var e = document.getElementById('descricaoProjeto');
-	                    e.value = '';
-	                    e.value = p;
+	                    e.value  = '';
+	                    e.height = "500";
+	                    e.value  = p;
 	                }
+	                */
 	            </script>
 
+
+
+
 				<h1>Cadastro de Projeto</h1>
-				<form class = "justified" action="/admin/?pagina=inserirProjeto" method="POST" enctype="multipart/form-data">
+				<form action="/admin/?pagina=inserirProjeto" method="POST" enctype="multipart/form-data">
 					<div align='center'>
-					    <input class = "heighttext" type="text" placeholder="Nome do projeto" name="nomeProjeto" style="text-align: center"  size="42"> <br><br>
-					    <textarea class = "justified" placeholder="Descrição do projeto" name="descricaoProjeto" id = "descricaoProjeto">
+					    <input class ="projs" type="text" placeholder="Nome do projeto" name="nomeProjeto"  size="42"> <br><br>
+					    <textarea class = "justified" placeholder="Descrição curta do projeto" name="descricaoCurtaProjeto" id = "descricaoCurtaProjeto">
+				    		<br><p style="text-align: center;">Descri&ccedil;&atilde;o curta do projeto</p>
+				    	</textarea><br>
+				    	<textarea class = "justified" width= placeholder="Descrição do projeto" name="descricaoProjeto" id = "descricaoProjeto">
 				    		<br><p style="text-align: center;">Descri&ccedil;&atilde;o do projeto</p>
 				    	</textarea><br>		 
 					    <label>File: </label>   <input type="file" name="imagemProjeto"  /><br> <br>
+
+					    
 					    <button type="submit" name="buttonProjeto" />Cadastrar</button>
 					</div>
 				</form>
@@ -132,7 +159,8 @@
 						unset($_SESSION['msgProjetos']);
 					}
 				?>
-			</div>
+
+				</div>
 		</div>
 
 

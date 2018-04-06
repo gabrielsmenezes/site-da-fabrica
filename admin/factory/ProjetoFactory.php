@@ -11,13 +11,19 @@
         private function __construct(){
 
         }  
+        public function listaOrd(){
+            $sql = "SELECT * FROM ".$this->table." ORDER BY nome;"; 
+            $t = DB::prepare($sql);
+            $t->execute();
+            return $t->fetchAll(PDO::FETCH_CLASS, ucfirst($this->table));
+        }
 
         public function inserir($projeto){
             try{
-                if(!$projeto || !$projeto->getNome() || !$projeto->getImagem() || !$projeto->getDescricao() ){
+                if(!$projeto || !$projeto->getNome() || !$projeto->getImagem() || !$projeto->getDescricao() || !$projeto->getDescricaoCurta() ){
                     return 'Usuário imagem e descrição são obrigatórios!!';
                 }
-                $sql = "INSERT INTO ".$this->table." (nome, imagem, descricao) "." VALUES(:nome, :imagem, :descricao);";
+                $sql = "INSERT INTO ".$this->table." (nome, imagem, descricao, descricaoCurta) "." VALUES(:nome, :imagem, :descricao, :descricaoCurta);";
 
 
                 echo "SQL : ". $sql ."\n\n";
@@ -34,9 +40,10 @@
 
                 $t = DB::prepare($sql);
                 $t->execute(array(
-                    ':nome'      => $projeto->getNome(),
-                    ':imagem'    => $projeto->getImagem(),
-                    ':descricao' => $projeto->getDescricao()
+                    ':nome'           => $projeto->getNome(),
+                    ':imagem'         => $projeto->getImagem(),
+                    ':descricao'      => $projeto->getDescricao(),
+                    ':descricaoCurta' => $projeto->getDescricaoCurta()
                 ));
                 /*
                 foreach ($t->errorinfo() as $value ) {             

@@ -7,7 +7,7 @@
 		<meta charset="utf-8">
 		<title>Administração Fábrica de Software - UFMS</title>
 		
-		<link rel="shortcut icon" href="Imagens/favicon.png">
+		<link rel="shortcut icon" href="../Imagens/favicon.png">
 		<link rel="stylesheet" media="screen" href="/views/style.css">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Jura|Orbitron" rel="stylesheet">
@@ -88,7 +88,9 @@
 	    							'searchreplace visualblocks code fullscreen',
 								    'insertdatetime media table contextmenu paste code help'
 								  	],
-								  	height : "350"});
+								  	height : "350",
+								  	width  : "80%"
+								  	});
 	                var teste = function(){
 	                    var p = tinyMCE.activeEditor.getContent();
 	                    var e = document.getElementById('sobre');
@@ -96,9 +98,10 @@
 	                    e.value = p;
 	                }
 	            </script>
-
-				<textarea class="form-control" id="sobre" name="sobre"><?php  echo $args;  ?></textarea><br>
-				<button type="submit">Enviar</button>
+	            <div align="center">
+					<textarea class="form-control" id="sobre" name="sobre"><?php  echo $args;  ?></textarea><br>
+					<button type="submit">Enviar</button>
+				</div>
 			</form>
 		</div>
 

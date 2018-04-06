@@ -84,9 +84,11 @@
 <div id="sticky-anchor"></div>
 <nav>
 	<a href="#inicio"> Início </a>
-	<a href="#sobre"> Sobre o Site</a>
+	<a href="#sobre"> Institucional</a>
 	<a href="#projetos"> Projetos </a>
 	<a href="#equipe"> Equipe </a>
+	<a href="/?pagina=editais"> Editais </a>
+	<a href="/?pagina=novidades"> novidades </a>
 	<!--<a href="#contato"> Busca </a>-->
 </nav>
 
@@ -153,8 +155,10 @@
 		            echo "\" class=\"proj\" alt=\"imagem do projeto\" />";
 				
 					echo "<h3><a href=\"/?pagina=projetoIndividual&number=". $projeto->getId() ."\">". $projeto->getNome() ."</a></h3> </br>";
-			
-					echo "<p>". $projeto->getDescricao() ."</p>";
+		            echo "<div class = 'descricao'>";
+		            echo "<p>" . $projeto->getDescricaoCurta() . "<p>";
+		            //echo "<br> <div>" . $projeto->getDescricao() . "</div><br><br>";
+		            echo "</div>";
 					echo "<br>";
 					echo "</div>";
 				}
@@ -180,9 +184,9 @@
 		        echo "\" class=\"eq\" alt=\"imagem do projeto\" />";
 				
 				echo "<h3>" . $aluno->getNome() . "</h3>";
-			
-				echo "<p>". $aluno->getDescricao() ."</p>";
-				echo "<br>";
+				echo "<div class = 'descricaoAluno'>";
+				echo "". $aluno->getDescricao() ."";
+				echo "</div>";
 				echo "</div>";
 			}
 		?>

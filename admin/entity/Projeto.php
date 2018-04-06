@@ -4,11 +4,13 @@
       private $nome;
       private $imagem;
       private $descricao;
+      private $descricaoCurta;
       
-      public function addAtributos($nome, $imagem, $descricao){
+      public function addAtributos($nome, $imagem, $descricao, $descricaoCurta){
         $this->nome = $nome;
         $this->imagem = $imagem;
         $this->descricao = $descricao;
+        $this->descricaoCurta = $descricaoCurta;
       }
       public function setNome($nome){
           $this->nome = $nome;
@@ -33,6 +35,12 @@
       }
       public function setId($id){
           $this->id = $id;
+      }
+      public function setDescricaoCurta( $descricaoCurta ){
+        $this->descricaoCurta = $descricaoCurta;
+      }
+      public function getDescricaoCurta(){
+        return $this->descricaoCurta;
       }
     }
 ?>

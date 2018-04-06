@@ -6,15 +6,9 @@
 
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-		<meta charset="UTF-8">
-		<title>Login</title>
-		<link rel="stylesheet" type="text/css" href="views/CSS/login.css">
-		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="views/CSS/login.css">
-		<meta charset="utf-8">
 		<title>Administração Fábrica de Software - UFMS</title>
 		
-		<link rel="shortcut icon" href="Imagens/favicon.png">
+		<link rel="shortcut icon" href="../Imagens/favicon.png">
 		<link rel="stylesheet" media="screen" href="/views/style.css">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Jura|Orbitron" rel="stylesheet">
@@ -90,13 +84,16 @@
 			<?php  echo $args;  ?>
 			-->
 			<br>
-			<a href = "/admin/?pagina=sobre">    <button> Sobre    </button> </a> <br>
-			<a href = "/admin/?pagina=equipe">   <button> Equipe   </button> </a> <br>
-			<a href = "/admin/?pagina=projetos"> <button> Projetos </button> </a> <br>
+			<a href = "/admin/?pagina=sobre">    <button class="inicial"> Sobre    </button> </a> <br>
+			<a href = "/admin/?pagina=equipe">   <button class="inicial"> Equipe   </button> </a> <br>
+			<a href = "/admin/?pagina=projetos"> <button class="inicial"> Projetos </button> </a> <br>			
+			<a href = "/admin/?pagina=editais"> <button class="inicial"> Editais </button> </a> <br>					
+			<a href = "/admin/?pagina=novidades"> <button class="inicial"> Novidades </button> </a> <br>
 			<br>
-			<a href = "/admin/?pagina=sair"> <button> Sair </button> </a> <br>
+			<a href = "/admin/?pagina=sair"> <button class="inicial"> Sair </button> </a> <br>
 
 		</div>
+
 
 
 	</body>

@@ -75,37 +75,48 @@
 		</header>
 		<div id="sticky-anchor"></div>
 		<nav>
-			<a href="/admin	/?pagina=menu"> Volte ao Menu </a>
+			<a href="/admin/?pagina=menu"> Volte ao Menu </a>
 		</nav>
 		<div class="caixas">
 	
 			<div id="caixa" class="projetos">
-				<h1>Lista de alunos</h1>
+				<h1>Novidades</h1>
 
-				<?php  	
-
+				<?php
 				
-				foreach ($args as $aluno) {
-					echo "<div class=\"membro\">";
+				echo "<div >";
+				foreach ($args as $novidade) {
+					echo "<div class=\"grupoNovidades\" >";
+			            echo "<h2>" .$novidade->getTitulo() . "</h2>";
+			            //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+						$img=base64_encode($novidade->getImagem());
 
-		            echo $aluno->getNome() . "<br>";
-					$img=base64_encode($aluno->getImagem());
-					echo "<img src = \" data:image/JPG;charset=utf8;base64,";
-		            echo $img;
-		            echo "\" class=\"eq\" />";
-		            echo "<div class = \"descricaoAluno\">";
-		            echo "" . $aluno->getDescricao() . "";
-		            echo "</div>";
-		            echo "<form action='/admin/?pagina=alunoRemove' method='post'>
-		           				<input type=\"hidden\" name=\"alunoId\" value=". $aluno->getId() .">
-		           				<button class='edit'   type='submit' name='editAluno' formaction='/admin/?pagina=alunoEdit' />Editar</button>
-		                        <button type='submit'>Deletar</button>
-		                  </form>";
+						echo "<div class=\"grupoNovidades\" >";
+
+							echo "<div class=\"novidadeImgDesc\">";
+								echo "<img  src = \" data:image/JPG;charset=utf8;base64,";
+					            echo $img;
+					            echo  " \" width=\"400\" height=\"300\" /> ";
+				                echo "<div class=\"informacoes\">";
+					    		    echo "" . $novidade->getDescricao() . "";
+					    		echo "</div>";
+
+			            echo "</div>";
+
+			            echo "<form action='/admin/?pagina=NovidadeRemove' method='post'>
+			           				<input type=\"hidden\" name=\"novidadeId\" value=". $novidade->getId() .">
+			           				<button class='edit'   type='submit' name='editNovidade' formaction='/admin/?pagina=novidadeEdit' />Editar</button>
+			           				<button type='submit'>Deletar</button>";
+			            
+			            echo "</form>";
+
+			        
 					echo "</div>";
 			
 
 				}
-				
+				echo "</div>";
+
 				?>
 				
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.6.7/tinymce.min.js"></script>
@@ -115,33 +126,27 @@
 	    							'searchreplace visualblocks code',
 								    'paste code help'
 								  	],
-								  	height : "200",
-								  	width  : "40%"});
-	                var teste = function(){
-	                    var p = tinyMCE.activeEditor.getContent();
-	                    var e = document.getElementById('descricaoAluno');
-	                    e.value = '';
-	                    e.value = p;
-	                }
+								  	height : "350",
+								  	width  : "100%"});
 	            </script>
 				
-				<h2>Cadastro de aluno</h2>
-				<form class = "justified" action="/admin/?pagina=inserirAluno" method="POST" enctype="multipart/form-data">
+				<h2>Postar novidade</h2>
+				<form class = "justified" action="/admin/?pagina=inserirNovidade" method="POST" enctype="multipart/form-data">
 				    
 					<div align='center'>
 
-				    	<input class = "heighttext" type="text" placeholder="Nome completo"  style="text-align: center"  name="nomeAluno" size="42" > <br> <br>
-				    	<textarea class = "justified" placeholder="Descrição" name="descricaoAluno" id = "descricaoAluno">
-				    		<br><p style="text-align: center;">Descri&ccedil;&atilde;o do Aluno</p>
+				    	<input class = "heighttext" type="text" placeholder="Título da novidade"  style="text-align: center"  name="tituloNovidade" size="42" > <br> <br>
+				    	<textarea  class = "justified" placeholder="Descrição" name="descricaoNovidade" id = "descricaoNovidade">
+				    		<br><p style="text-align: center;">Novidade</p>
 				    	</textarea><br>
 				    </div>
-				    <label>File: </label>   <input  type="file" name="imagemAluno"  /><br> <br>
-				    <button type="submit" name="cadastroAluno" />Cadastrar</button>
+				    <label>Imagem: </label>   <input  type="file" name="imagemNovidade"  /><br> <br>
+				    <button type="submit" name="postarNovidade" />Cadastrar</button>
 				</form>
 				<?php
-					if( isset($_SESSION['msgEquipe']) ){	
-						echo $_SESSION['msgEquipe'];
-						unset($_SESSION['msgEquipe']);
+					if( isset($_SESSION['msgNovidade']) ){	
+						echo $_SESSION['msgNovidade'];
+						unset($_SESSION['msgNovidade']);
 					}
 				?>
 

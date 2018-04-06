@@ -93,16 +93,26 @@
 			-->
 
 			<?php
-
+				
 				echo "<h1>".$projeto->getNome()."</h1>";
-            //echo $projeto->getNome() . "<br>";
+            	//echo $projeto->getNome() . "<br>";
 				$img=base64_encode($projeto->getImagem());
 				echo "<img src = \" data:image/JPG;charset=utf8;base64,";
 	            echo $img;
 	            echo "\"  />";
-	            echo "<p>" . $projeto->getDescricao() . "</p>";
 
+	            echo "<div align=\"center\" class =\"descricaoProj\" >";
+
+	            echo "" . $projeto->getDescricao() . "";
+
+	            echo "</div>";
+	            echo "<br>";
+	            
 			?>
+
+
+
+
 			<!--
 			<img src="Imagens/imagem.jpg" alt="t5" />
 

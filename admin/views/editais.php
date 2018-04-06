@@ -150,12 +150,6 @@
 								  	],
 								  	height : "200",
 								  	width  : "40%"});
-	                var teste = function(){
-	                    var p = tinyMCE.activeEditor.getContent();
-	                    var e = document.getElementById('descricaoAluno');
-	                    e.value = '';
-	                    e.value = p;
-	                }
 	            </script>
 				
 				<h2>Cadastro de edital</h2>

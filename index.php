@@ -80,7 +80,7 @@
     else if( $pagina == 'equipe' ){
         $af = AlunoFactory::get();
         $listAlunos = null;
-        $listAlunos = $af->lista();
+        $listAlunos = $af->listaOrd();
         
 
         $arr = $listAlunos;
@@ -89,7 +89,7 @@
     else if( $pagina == 'projetos' ){
         $pf = ProjetoFactory::get();
         $listProjetos = null;
-        $listProjetos = $pf->lista();
+        $listProjetos = $pf->listaOrd();
        
 
         $arr = $listProjetos;
@@ -115,6 +115,15 @@
             header('Location: ' . $newURL);
         }
 
+    }
+    else if( $pagina == "editais" ){
+        echo "pagina em criacao";
+    }
+    else if( $pagina == "novidades" ){
+        echo "pagina em criacao";
+    }
+    else{
+        echo "erro 404";
     }
 
 ?>

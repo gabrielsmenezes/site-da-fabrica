@@ -20,17 +20,23 @@
     include 'controller/SobreController.php';    
     include 'controller/EquipeController.php';
     include 'controller/ProjetosController.php';
+    include 'controller/EditaisController.php';
+    include 'controller/NovidadesController.php';
 
 
     include 'entity/Aluno.php';
     include 'entity/Usuario.php';
     include 'entity/Sobre.php';
-    include 'entity/Projeto.php';
+    include 'entity/Projeto.php';    
+    include 'entity/Edital.php';    
+    include 'entity/Novidade.php';
 
     include 'factory/AlunoFactory.php';
     include 'factory/UsuarioFactory.php';
     include 'factory/SobreFactory.php';
     include 'factory/ProjetoFactory.php';
+    include 'factory/EditalFactory.php';    
+    include 'factory/NovidadeFactory.php';
 
     session_start();
     $path = session_save_path() . '/sess_' . session_id();
@@ -109,6 +115,36 @@
             IndexController::get();
         }
     }
+    else if( $pagina == 'editais' ){
+        if( $admin ){
+            EditaisController::get();
+            echo "pass editais<br>";
+        }
+        else{
+            $_SESSION['erroLogin'] = "Não autorizado, logue";
+            IndexController::get();
+        }
+    }
+    else if( $pagina == 'novidades' ){
+        if( $admin ){
+            NovidadesController::get();
+            // echo "pass novidades<br>";
+        }
+        else{
+            $_SESSION['erroLogin'] = "Não autorizado, logue";
+            IndexController::get();
+        }
+    }
+    else if( $pagina == 'inserirNovidade' ){
+        if( $admin ){
+            NovidadesController::inserirNovidade();
+            // echo "pass novidades<br>";
+        }
+        else{
+            $_SESSION['erroLogin'] = "Não autorizado, logue";
+            IndexController::get();
+        }
+    }
     else if( $pagina == 'sair' ){
         LoginController::sair();
     }
@@ -125,6 +161,37 @@
             $_SESSION['erroLogin'] = "Não autorizado, logue";
             IndexController::get();
         }  
+    }
+    else if( $pagina == 'alunoRemove'){ 
+        if( $admin ){
+            //echo $_POST['removeId'];
+            EquipeController::removerAluno();
+        }
+        else{
+            $_SESSION['erroLogin'] = "Não autorizado, logue";
+            IndexController::get();
+        }   
+    }
+    else if( $pagina == 'alunoEdit'){ 
+        if( $admin ){
+            //echo $_POST['projectId'];
+            //echo "clicou em editar";
+            EquipeController::editarAluno();
+        }
+        else{
+            $_SESSION['erroLogin'] = "Não autorizado, logue";
+            IndexController::get();
+        }   
+    }
+    else if( $pagina == 'atualizarAluno'){ 
+        if( $admin ){
+            //echo $_POST['projectId'];
+            EquipeController::updateAluno();
+        }
+        else{
+            $_SESSION['erroLogin'] = "Não autorizado, logue";
+            IndexController::get();
+        }   
     }
     /*
     *
@@ -165,15 +232,71 @@
             IndexController::get();
         }   
     }
-    else if( $pagina == 'alunoRemove'){ 
+    else if( $pagina == 'projetoEdit'){ 
         if( $admin ){
-            //echo $_POST['removeId'];
-            EquipeController::removerAluno();
+            //echo $_POST['projectId'];
+            ProjetosController::editarProjeto();
         }
         else{
             $_SESSION['erroLogin'] = "Não autorizado, logue";
             IndexController::get();
         }   
+    }
+    else if( $pagina == 'atualizarProjeto'){ 
+        if( $admin ){
+            //echo $_POST['projectId'];
+            ProjetosController::updateProjeto();
+        }
+        else{
+            $_SESSION['erroLogin'] = "Não autorizado, logue";
+            IndexController::get();
+        }   
+    }
+    /*
+    *
+    * Detalhando /?pagina=editais
+    *
+    */
+    else if( $pagina == 'inserirEdital' ){
+        if( $admin ){
+            EditaisController::inserirEdital();
+        }
+        else{
+            $_SESSION['erroLogin'] = "Não autorizado, logue";
+            EditaisController::get();
+        }   
+    }
+    else if( $pagina == 'editalRemove'){ 
+        if( $admin ){
+            //echo $_POST['removeId'];
+            EditaisController::removerEdital();
+        }
+        else{
+            $_SESSION['erroLogin'] = "Não autorizado, logue";
+            IndexController::get();
+        }   
+    }
+    else if( $pagina == 'editalEdit'){ 
+        if( $admin ){
+            //echo $_POST['projectId'];
+            EditaisController::editarEdital();
+        }
+        else{
+            $_SESSION['erroLogin'] = "Não autorizado, logue";
+            IndexController::get();
+        }   
+    }
+    else if( $pagina == 'atualizarEdital'){ 
+        if( $admin ){
+            EditaisController::updateEdital();
+        }
+        else{
+            $_SESSION['erroLogin'] = "Não autorizado, logue";
+            IndexController::get();
+        }   
+    }
+    else if( $pagina == "pdfViewer"){
+        EditaisController::showEditalById();
     }
     else{
         $_SESSION['erroLogin'] = "Pagina não existe";

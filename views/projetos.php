@@ -100,8 +100,9 @@
 					echo "<h3><a href=\"/?pagina=projetoIndividual&number=". $projeto->getId() ."\">". $projeto->getNome() ."</a></h3> </br>";
 			
 					
-
-					echo "<p>". $projeto->getDescricao() ."</p>";
+					echo "<div class = 'descricao'>";
+					echo "<p>". $projeto->getDescricaoCurta() ."</p>";
+					echo "</div>";
 					echo "<br>";
 					echo "</div>";
 				}

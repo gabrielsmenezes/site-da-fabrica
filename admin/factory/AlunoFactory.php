@@ -10,6 +10,13 @@
 
         private function __construct(){
 
+        }
+        
+        public function listaOrd(){
+            $sql = "SELECT * FROM ".$this->table." ORDER BY nome;"; 
+            $t = DB::prepare($sql);
+            $t->execute();
+            return $t->fetchAll(PDO::FETCH_CLASS, ucfirst($this->table));
         }  
 
         public function inserir($aluno){
