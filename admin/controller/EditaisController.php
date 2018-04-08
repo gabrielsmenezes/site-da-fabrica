@@ -24,9 +24,7 @@
         static public function updateEdital(){
          	if( isset($_POST['tituloEdital']) && isset($_POST['descricaoEdital']) && 
 	            $_POST['tituloEdital'] != "" && $_POST['descricaoEdital'] != "" ){
-	            //echo "<br><br>init<br>";
 
-	            //echo "<br>:".$_FILES['imagemProjeto']['tmp_name'].":<br>";
          		$id = $_POST['editalId'];
 	            $tituloEdital = $_POST['tituloEdital'];
 	            $descricaoEdital = $_POST['descricaoEdital'];	 
@@ -35,29 +33,14 @@
 		            	$arquivoEdital = file_get_contents($_FILES['arquivoEdital']['tmp_name']);
 		            }	
 	            }
-	            /*
-	            echo $id;
-	            echo "<br>";
-	            echo $nomeAluno;
-	            echo "<br>";
-	            echo $descricaoAluno;
-	            echo "<br>";
-				*/
-
-	            //echo "factory<br>";
+	            
 	            $factoryEdital = EditalFactory::get();
 
-	            //echo "adicionar<br>";
-	            /*
-	            $factoryProjeto->update("nome", $nomeProjeto, $id);
-	            $factoryProjeto->update("descricao", $descricaoProjeto, $id);
-	            $factoryProjeto->update("descricaoCurta", $descricaoCurtaProjeto, $id);
-	            */
+
 	            $arrCol = ["titulo", "descricao"];
 	            $arrVal = [$tituloEdital, $descricaoEdital];
 
 	            if( isset($arquivoEdital) ){
-	            	//$factoryProjeto->update("imagem", $imagemProjeto, $id);
 	            	array_push($arrCol, "arquivo");
 	            	array_push($arrVal, $arquivoEdital);
 	            }

@@ -68,8 +68,8 @@
 
         public function getById($id){
             $sql = "SELECT * FROM ".$this->table." WHERE id = ".$id.";";
-
-            //echo $sql;
+            echo "sql:";
+            echo $sql;
 
             $t = DB::prepare($sql);
             $t->execute();            

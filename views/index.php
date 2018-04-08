@@ -1,8 +1,10 @@
 
 <?php
-	$sobre    = $args[0];
-	$projetos = $args[1];
-	$alunos   = $args[2];
+	$sobre     = $args[0];
+	$projetos  = $args[1];
+	$alunos    = $args[2];
+	$novidades = $args[3];
+	$editais   = $args[4];
 ?>
 
 
@@ -74,7 +76,7 @@
 
 <body>
 
-<span id="inicio"> </span>
+<span id=""> </span>
 
 <header>
 	<div class="bordaheader"></div>
@@ -84,19 +86,86 @@
 <div id="sticky-anchor"></div>
 <nav>
 	<a href="#inicio"> Início </a>
+
+	<a href="#editais"> Editais </a>
 	<a href="#sobre"> Institucional</a>
 	<a href="#projetos"> Projetos </a>
 	<a href="#equipe"> Equipe </a>
-	<a href="/?pagina=editais"> Editais </a>
-	<a href="/?pagina=novidades"> novidades </a>
+	<a href="#editais"> Editais </a>
+	
 	<!--<a href="#contato"> Busca </a>-->
 </nav>
 
 <div class="caixas">
+	<div id="inicio" class="">
+			<h1>Ultimas Notícias</h1>
+
+
+
+			
+			<?php
+				// criar ancora
+				echo "<div class=\"allNews\">";
+				foreach ($novidades as $novidade) {
+					echo "<div class=\"news\">";
+			            echo "<div class=\"newsTitle\" > <h2>" .$novidade->getTitulo() . "<h2></div>";
+			            //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+						$img=base64_encode($novidade->getImagem());
+
+						echo "<div class=\"newsSquare\" >";
+
+							echo "<div class=\"newsImg\">";
+								echo "<img class =\"indexImgTest\"  src = \" data:image/JPG;charset=utf8;base64,";
+					            echo $img;
+					            // echo  " \" width=\"400\" height=\"300\" /> ";
+					            echo  " \"  /> ";
+				                echo "<div class=\"newsTxt\">";
+					    		    echo "" . $novidade->getDescricao() . "";
+					    		echo "</div>";
+					    	echo "</div>";
+
+			            echo "</div>";
+
+
+			        
+					echo "</div>";
+			
+
+				}
+				echo "</div>";
+			?>
+			
+			
+			<br>
+			 
+			<button><a href="/?pagina=novidades">Ver Mais</a></button>
+	</div>
+
+
+	<div class="infobg">
+		<div id="editais" class="informacoes">
+		<h1>Editais</h1>
+		<?php
+			foreach ($editais as $edital) {
+					echo "<div>";
+					// criar ancora
+		            echo "<h2>" .$edital->getTitulo() . "</h2>";
+					echo "</div>";
+				}
+		?>
+		<button><a href="/?pagina=editais">Ver Mais</a></button>
+		</div>
+	</div>
+
+
+
+
+
+
 
 	<div class="infobg">
 		<div id="sobre" class="informacoes">
-		<h1>Bem vindo à Fábrica de Software da UFMS</h1>
+		<h1>Fábrica de Software da UFMS</h1>
 		<p> 
 		<img src="Imagens/tech03.png" alt="t2" class="i1"/>
 		<?php

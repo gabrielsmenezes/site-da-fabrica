@@ -22,12 +22,16 @@
     include 'admin/entity/Aluno.php';
     include 'admin/entity/Usuario.php';
     include 'admin/entity/Sobre.php';
-    include 'admin/entity/Projeto.php';
+    include 'admin/entity/Projeto.php';    
+    include 'admin/entity/Novidade.php';
+    include 'admin/entity/Edital.php';
 
     include 'admin/factory/AlunoFactory.php';
     include 'admin/factory/UsuarioFactory.php';
     include 'admin/factory/SobreFactory.php';
     include 'admin/factory/ProjetoFactory.php';
+    include 'admin/factory/NovidadeFactory.php';    
+    include 'admin/factory/EditalFactory.php';
 
     include 'render_user.php';
 
@@ -70,10 +74,17 @@
         $listAlunos = $af->lista("3");
 
 
+        $nf = NovidadeFactory::get();
+        $listNovidades = null;
+        $listNovidades = $nf->lista("3");
+
+        $ef = EditalFactory::get();
+        $listEditais = null;
+        $listEditais = $ef->lista("3");
         //echo count($listAlunos);
         //echo "<br><br><br><br><br><br><br><br>";
 
-        $arr = array($content, $listProjetos, $listAlunos);
+        $arr = array($content, $listProjetos, $listAlunos, $listNovidades, $listEditais);
 
         RenderUser::render_php("/views/index.php", $arr);
     }
@@ -117,6 +128,7 @@
 
     }
     else if( $pagina == "editais" ){
+        // colocar editais para aparecer o conteudo apenas quando clicar
         echo "pagina em criacao";
     }
     else if( $pagina == "novidades" ){

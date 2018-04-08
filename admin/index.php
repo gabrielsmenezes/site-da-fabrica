@@ -145,6 +145,36 @@
             IndexController::get();
         }
     }
+    else if( $pagina == 'novidadeEdit' ){
+        if( $admin ){
+            NovidadesController::editarNovidade();
+            // echo "pass novidade Edit<br>";
+        }
+        else{
+            $_SESSION['erroLogin'] = "Não autorizado, logue";
+            IndexController::get();
+        }
+    }
+    else if( $pagina == 'atualizarNovidade' ){
+        if( $admin ){
+            NovidadesController::updateNovidade();
+            // echo "pass novidade Edit<br>";
+        }
+        else{
+            $_SESSION['erroLogin'] = "Não autorizado, logue";
+            IndexController::get();
+        }
+    }
+    else if( $pagina == 'novidadeRemove' ){
+        if( $admin ){
+            NovidadesController::removerNovidade();
+            // echo "pass novidade Remove<br>";
+        }
+        else{
+            $_SESSION['erroLogin'] = "Não autorizado, logue";
+            IndexController::get();
+        }
+    }
     else if( $pagina == 'sair' ){
         LoginController::sair();
     }

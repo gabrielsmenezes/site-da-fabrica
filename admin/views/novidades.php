@@ -84,34 +84,38 @@
 
 				<?php
 				
-				echo "<div >";
+				echo "<div>";
 				foreach ($args as $novidade) {
-					echo "<div class=\"grupoNovidades\" >";
-			            echo "<h2>" .$novidade->getTitulo() . "</h2>";
+					echo "<div class=\"news\">";
+			            echo "<div class=\"newsTitle\" > <h2>" .$novidade->getTitulo() . "<h2></div>";
 			            //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 						$img=base64_encode($novidade->getImagem());
 
-						echo "<div class=\"grupoNovidades\" >";
+						echo "<div class=\"newsSquare\" >";
 
-							echo "<div class=\"novidadeImgDesc\">";
+							echo "<div class=\"newsImg\">";
 								echo "<img  src = \" data:image/JPG;charset=utf8;base64,";
 					            echo $img;
-					            echo  " \" width=\"400\" height=\"300\" /> ";
-				                echo "<div class=\"informacoes\">";
+					            // echo  " \" width=\"400\" height=\"300\" /> ";
+					            echo  " \"  /> ";
+				                echo "<div class=\"newsTxt\">";
 					    		    echo "" . $novidade->getDescricao() . "";
 					    		echo "</div>";
+					    	echo "</div>";
 
 			            echo "</div>";
 
-			            echo "<form action='/admin/?pagina=NovidadeRemove' method='post'>
+
+			        
+					echo "</div>";
+					echo "<div class\"testeDiv\">";
+			            echo "<form action='/admin/?pagina=novidadeRemove' method='post'>
 			           				<input type=\"hidden\" name=\"novidadeId\" value=". $novidade->getId() .">
 			           				<button class='edit'   type='submit' name='editNovidade' formaction='/admin/?pagina=novidadeEdit' />Editar</button>
 			           				<button type='submit'>Deletar</button>";
 			            
 			            echo "</form>";
-
-			        
-					echo "</div>";
+			        echo "</div>";
 			
 
 				}
