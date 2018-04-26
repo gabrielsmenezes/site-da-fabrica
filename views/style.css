@@ -1,8 +1,13 @@
 /**
-	Autoria: Isabela Andrade
+	Autoria: Isabela Andrade, Jane Sandim Eleutério
 	Folha de Estilo
-	Cor base: #0089B7, #0089B7
+	Cor base: #0089B7, #0089B7, #e8e8e8
 **/
+
+
+
+
+
 
 strong {
 	color:#0089B7;
@@ -38,7 +43,7 @@ a:hover{opacity:0.5}
 h1 {
 	color:#0089B7;
 	font-family: 'Jura', sans-serif;
-	margin-top:50px;
+	margin-top:25px;
 	text-align:center;
 }
 
@@ -72,15 +77,14 @@ button {
 	text-decoration:none;
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size:15px;	
+	color:white;
 	transition:0.5s ease-in; 
 	-moz-transition:0.5s ease-in; 
 	-webkit-transition:0.3s ease-in; 
 }
-/*
-.escondido{
-	display: none;
-}
-*/
+
+
+
 button.edit{
 	background-color:#FF5722;
 }
@@ -108,7 +112,6 @@ button.inicial{
 	
 
 /* HEADER */
-
 header {
 	width:100%;
 	height:215px;
@@ -116,44 +119,11 @@ header {
 	padding:5px;
 	left:0;
 	top:0;
-	background:#fff;
-	background-image: url('../Imagens/logo.png');
-	background-position: center center;
-	background-repeat:no-repeat;
+	background: url('../Imagens/logo.png') center center no-repeat,
+	url('../Imagens/frameL.png') top left no-repeat,
+	url('../Imagens/frameR.png') top right no-repeat;
 	background-size:auto 215px;	
 }
-
-.bordaheader {
-	width:550px;
-	height:200px;
-	position:absolute;
-	padding:5px;
-	left:0;
-	top:0;
-	background:#fff;
-	background-image: url('../Imagens/borda.png');
-	background-position: top left;
-	background-repeat:no-repeat;
-	background-size:auto auto;
-}
-
-.bordaheader2 {
-	width:550px;
-	height:200px;
-	position:absolute;
-	padding:5px;
-	right:0;
-	top:0;
-	background:#fff;
-	background-image: url('../Imagens/borda.png');
-	background-position: top right;
-	background-repeat:no-repeat;
-	background-size:auto auto;
-	transform: rotate(180deg);
-	
-	
-}
-
 
 
 /* MENU */
@@ -196,184 +166,182 @@ nav {
 
 /* CAIXAS */
 
-.caixas {
+.mainbox {
 	position:absolute;
 	top:238px;
 	left:0;
 	width:100%;
 }
 
-#caixa {
+.box{	
 	width:100%;
-	height:auto;
 	position:relative;
-	padding:15px;
-	margin:5px;
+	padding:5px 5px 20px 5px;
+	margin:0px 0px 0px 0px;
 	left:0;
-	background:#f1f1f1;
 	text-align:center;
-	margin:auto;
+	background:#f1f1f1;
 }
-
-#caixa a {
-	color:#0089B7;
-}
-
-#caixa a:hover {
-	color:#696969;
-}
-
-#caixawhite {
+.boxwhite {	
 	width:100%;
-	height:auto;
 	position:relative;
-	padding:15px;
-	margin:5px;
+	padding:5px 5px 20px 5px;
+	margin:0px 0px 0px 0px;
 	left:0;
+	text-align:center;
 	background:#ffffff;
+
+}
+
+
+
+/** NOVIDADES **/
+
+
+.news {
+	width:70%;
+	position:relative;
+	padding:0px;
+	text-align:justify;
+	margin:auto;
+}
+
+.new {
+	width:100%;
+	height:auto;
+	position: relative;
+	display: inline-block;
+}
+
+.new h2{
+	margin-bottom:0px;
+	margin-top:30px;
+}
+.new img {
+    float:left;
+    max-height: 150px;
+	max-width: 200px;
+    margin:0px 10px 0px 0px;
+ }
+.new p {
+    text-align:justify;
+    margin:0px;
+  }
+.new div{
+	margin:0px;
+}
+  
+/** EDITAIS **/
+
+
+.notices {
+	width:70%;
+	position:relative;
+	padding:0px;
 	text-align:center;
 	margin:auto;
-
 }
 
-/** INFOS **/
-
-.infobg {
+.notice {
 	width:100%;
-	background:#f1f1f1;
+	height:auto;
+	text-align:justify;
 }
 
-.infobg input{
+
+/** SOBRE **/
+
+
+.about {
+	width:70%;
+	position:relative;
+	padding:0px;
+	margin:auto;
+	background:light-blue;	
+	text-align:justify;
+}
+
+.about input{
 	margin-bottom: 2px;
 }
 
-.infobg label{
+.about label{
 	width: 120px;
 	text-align: center;
 	display: inline-block;
 }
 
-.informacoes {
-	width:50%;
-	position:relative;
-	padding:5px 5px 50px 5px;
-	left:0;
-	background:#f1f1f1;
-	text-align:justify;
-	margin:auto;
-}
 
-.informacoes form {
+.about form {
 	margin:auto;
-	width:50%
-}
+	width:50%}
 	
-.informacoes img.i1 {
+.about img.i1 {
 	width:50px;
 	height:50px;
 	margin:5px;
 	float:left;
 }
 
-.informacoes img.i2 {
+.about img.i2 {
 	width:50px;
 	height:50px;
 	margin:5px;
 	float:right;
 }
 
+
 /* PROJETOS */
 
-.projetos {
-	width:100%;
+.projects {
+	width:70%;
 	position:relative;
-	padding:5px 5px 50px 5px;
-	background:#fff;
+	padding:0px;
 	text-align:center;
 	margin:auto;
-
-
 }
 
 .project {
-	width:25%;
-	margin:30px;
-	display:inline-block;
-
+	width: 250px;
+   margin: 30px 20px 0px 20px ;
+   display: inline-block;   
+   vertical-align: top;
 }
 
-.project  img.proj {
-	width:200px;
+
+.project  img {
 	height:200px;
-	margin:5px;
-	/*border-radius:100%;*/
-}
-
-.project p{
-	/*
-	height:70px;
-	overflow:scroll;
-	padding:5px;
-	border-bottom: 20px #f1f1f1 solid;
-	text-align:justify;
-	margin:auto;
-	margin-top:-15px;
-	*/
-}
-
-.proj img{
-	width:300px;
-	margin:5px;
-	margin-bottom:15px;
-}
-.proj p {
-	width:33%;
-	margin:auto;
-	text-align:justify;
-}
-
-/* EQUIPE */
-
-.equipe {
-	width:100%;
-	height:auto;
-	position:relative;
-	padding:15px;
-	margin:5px;
-	left:0;
-	background:#f1f1f1;
-	text-align:center;
-	margin:auto;
-
-}
-
-
-.membro {
-	width:25%;
-	margin-top:40px;
-	display:inline-block;
-
-}
-
-.membro img.eq {
-	width:150px;
-	height:200px;
+	max-width:200px;
 	margin:5px;
 	border-radius:10px;
 }
-
-
-
-.membro p{
-	/*
-	height:70px;
-	overflow:auto;
-	padding:5px;
-	border-bottom: 1px #f1f1f1 solid;
-	text-align:justify;
+.project p {
+	width:90%;
 	margin:auto;
-	margin-top:-15px;
-	*/
+	text-align:justify;
+}
+
+
+/* EQUIPE */
+
+.membros {
+	width:70%;
+	position:relative;
+	padding:0px;
+	text-align:center;
+	margin:auto;
+}
+.membro {
+   width: 250px;
+   margin: 30px 20px 0px 20px;
+   padding: 0px;
+   display: inline-block;
+   vertical-align: top;
+}
+.membro img {
+	height:200px;
+	margin:5px;
+	border-radius:10px;
 }
 
 
@@ -465,11 +433,6 @@ footer h2 {
 */
 
 
-input.projs{
-    
-	padding: 5px 0px 5px 0px;
-	text-align: center;
-}
 
 .descricao{
 	height:90px;
@@ -480,148 +443,17 @@ input.projs{
 	margin:auto;
 	margin-top:0px;
 } 
-.descricaoAluno{
-	height:60px;
-	overflow:auto;
-	padding-top:10px;
-	border-bottom: 20px #f1f1f1 solid;
-	text-align:center;
-	margin:auto;
-	margin-top:0px;
-} 
-
-/*
-.testLi li{
-	display: list-item;
-}
-*/
-
-/*TEste aaaaaaaaaa*/
-.descricaoProj {
-
-	/*width : 80%;*/
-	display: inline;
-	text-align: justify;
-	/*align-items:center;*/
-}
-
-.descricaoProj p {
-	width: 80%;
-    margin-bottom: 10px;
-	text-align:justify;
-}
 
 
-.descricaoProj h1 {
-	margin-left: 10%;
-	color:#0089B7;
-	font-family: 'Jura', sans-serif;
-	margin-top:50px;
-	text-align: justify;
-}
-
-.descricaoProj h2 {	
-	margin-left: 10%;
-	color:#696969;
-	font-family: 'Open Sans Condensed', sans-serif;
-	font-size:20px;
-	text-align: justify;
-}
-	
-.descricaoProj h3 {
-	margin-left: 10%;
-	color:#0089B7;
-	font-family: 'Open Sans Condensed', sans-serif;
-	text-align: justify;
-}	
-.descricaoProj h4 {
-	margin-left: 10%;
-	/*color:#0089B7;*/
-	font-family: 'Open Sans Condensed', sans-serif;
-	text-align: justify;
-}	
-
-/*NOVIDADES*/
-
-.descricaoProj table{
-	margin-left: 10%;
-}
-
-.novidadeImgDesc{
-    float: left;
-    padding: 5px;
-    /*display:block;*/
-    /*max-width: 186px;*/
-}
-
-.descricaoProj li li{
-	width :100%;
-}
-
-.descricaoProj ol {
-	margin: auto;
-	display: block;
-}
-
-.descricaoProj ul {
-	margin: auto;	
-	display: block;
-}
-
-.descricaoProj li {
-	margin: auto;
-	width : 80%;
-	writing-mode: sideways-rl;
-	/*background: no-repeat;*/
-	list-style-position: outside;
-	text-align: none;
-}
-
-.grupoNovidades{
-	clear: both;
-	display: inline-block;
-}
 
 
-.news {
-	/*background: red;*/
-	width:85%;
-	height:auto;
-	position: relative;
-	display: inline-block;
-}
 
-.newsTitle{
-	/*background: yellow;*/
-	height:auto;
 
-}
-.newsSquare{
-	/*background: blue;*/
-	height:auto;
-}
 
-  .newsSquare img {
-    float:left;
-    height: 150px;
-    
-    /*width : 300px;*/
-	width : auto;
+  
 
-    margin:0px 20px 10px 0px;
-  }
- .newsSquare p {
-    text-align:left;
-    /*height: 300px;*/
-  }
-.testeDiv{
-	vertical-align: left;
-}
- 
-.novidadeEdit img {
-    /*float:left;*/
-    height: 300px;
-    width : 300px;
+  
+  
+  
+  
 
-    /*margin:0px 20px 10px 0px;*/
-}

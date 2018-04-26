@@ -74,8 +74,6 @@
 <span id="inicio"> </span>
 
 <header>
-	<div class="bordaheader"></div>
-	<div class="bordaheader2"></div>
 </header>
 
 <div id="sticky-anchor"></div>
@@ -84,9 +82,9 @@
 </nav>
 
 
-<div class="caixas">
+<div class="mainbox">
 	
-	<div id="caixa" class="projetos">
+	<div  class="membros">
 		<h1>Equipe</h1>
 			
 			
@@ -112,58 +110,7 @@
 
 	
 	
-	<footer>
-			
-			<div class="me">
-			
-			<div class="bloco">
-			<h2>Links Úteis</h2>
-			<ul>
-				<li><a href="http://www.sbc.org.br">SBC &#8211; Sociedade Brasileira de Computação</a></li>
-				<li><a href="http://fundect.ledes.net">LEDES &#8211; UFMS</a></li>
-				<li><a href="http://biblioteca.ufms.br">Biblioteca &#8211; UFMS</a></li>
-			</ul>
-			</div>
-			
-			<div class="bloco">
-			<h2>Graduação</h2>
-			<ul>
-				<li><a href="https://www.facom.ufms.br/analise-de-sistemas/">Sistemas de Informação</a></li>
-				<li><a href="https://www.facom.ufms.br/ciencia-da-computacao/">Ciência da Computação</a></li>
-				<li><a href="https://www.facom.ufms.br/engenharia-de-computacao/">Engenharia de Computação</a></li>
-				<li><a href="https://www.facom.ufms.br/engenharia-de-software/">Engenharia de Software</a></li>
-				<li><a href="https://www.facom.ufms.br/tecnologia-em-analise-e-desenvolvimento-de-sistemas/">Téc. em Análise e Desenvolvimento de Sistemas</a></li>
-			</ul>
-			</div>
-			
-			<div class="bloco">
-			<h2>Pós Graduação</h2>
-			<ul>
-				<li><a href="https://www.facom.ufms.br/mestradoprofissional/">Mestrado Prof. Computação Aplicada</a></li>
-				<li><a href="https://www.facom.ufms.br/mestrado-acad-ciencia-da-computacao/">Mestrado Acad. Ciência da Computação</a></li>
-				<li><a href="https://www.facom.ufms.br/doutorado-ciencia-da-computacao/">Doutorado Ciência da Computação</a></li>
-			</ul>
-			</div>
-			 
-			 <div class="bloco">
-			<h2>Oportunidades</h2>
-			<ul>
-				<li><a href="https://www.facom.ufms.br/vaga-para-programador-before-tecnologia-da-informacao/" title="Vaga para Programador &#8211; Before Tecnologia da Informação">Vaga para Programador &#8211; Before Tecnologia da Informação</a></li>
-				<li><a href="https://www.facom.ufms.br/oportunidade-de-estagio-energisa/" title="Oportunidade de estágio &#8211; Energisa">Oportunidade de estágio &#8211; Energisa</a> 
-				<li><a href="https://www.facom.ufms.br/resultado-selecao-de-professor-substituto/" title="Resultado Seleção de Professor Substituto">Resultado Seleção de Professor Substituto</a></li>
-				<li><a href="https://www.facom.ufms.br/selecao-de-professor-substituto/" title="Seleção de Professor Substituto">Seleção de Professor Substituto</a></li>
-				<li><a href="https://www.facom.ufms.br/abre-oferece-estagio-para-redes-de-computadores/" title="Abre oferece estágio para Redes de Computadores">Abre oferece estágio para Redes de Computadores</a></li>
-			</ul>
-			</div>
-			
-			</div>
-	
-		<div class="disclaimer">
-			Layout inteiramente desenvolvido por Isabela Andrade Souza. Todos os direitos reservados. <br>
-		Plágio é crime de acordo com a Lei Federal dos direitos autorais n°9610.
-		</div>
-		
-	</footer>
+	<?php include_once "footer.php";?>
 </div>
 
 </body>

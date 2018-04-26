@@ -79,16 +79,14 @@
 <span id=""> </span>
 
 <header>
-	<div class="bordaheader"></div>
-	<div class="bordaheader2"></div>
+	
 </header>
 
 <div id="sticky-anchor"></div>
 <nav>
 	<a href="#inicio"> Início </a>
-
-	<a href="#editais"> Editais </a>
 	<a href="#sobre"> Institucional</a>
+	<a href="#editais"> Editais </a>
 	<a href="#projetos"> Projetos </a>
 	<a href="#equipe"> Equipe </a>
 	<a href="#editais"> Editais </a>
@@ -96,66 +94,47 @@
 	<!--<a href="#contato"> Busca </a>-->
 </nav>
 
-<div class="caixas">
-	<div id="inicio" class="">
-			<h1>Ultimas Notícias</h1>
+<div class="mainbox">
+	<div id="inicio" class="boxwhite">
+		
 
-
-
+		<div class="news">
+		<h1>Ultimas Notícias</h1>
 			
 			<?php
 				// criar ancora
-				echo "<div class=\"allNews\">";
+				echo "";
 				foreach ($novidades as $novidade) {
-					echo "<div class=\"news\">";
-			            echo "<div class=\"newsTitle\" > <h2>" .$novidade->getTitulo() . "<h2></div>";
-			            //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-						$img=base64_encode($novidade->getImagem());
-
-						echo "<div class=\"newsSquare\" >";
-
-							echo "<div class=\"newsImg\">";
-								echo "<img class =\"indexImgTest\"  src = \" data:image/JPG;charset=utf8;base64,";
-					            echo $img;
-					            // echo  " \" width=\"400\" height=\"300\" /> ";
-					            echo  " \"  /> ";
-				                echo "<div class=\"newsTxt\">";
-					    		    echo "" . $novidade->getDescricao() . "";
-					    		echo "</div>";
-					    	echo "</div>";
-
-			            echo "</div>";
-
-
-			        
-					echo "</div>";
-			
-
+					$img=base64_encode($novidade->getImagem());
+					
+					
+					?>
+					<div class="new">
+			            <h2> <?php echo $novidade->getTitulo()?></h2>
+						<?php 
+						if($novidade == reset($novidades)){
+							?>
+						
+						<img src="data:image/JPG;charset=utf8;base64,<?php echo $img;?>"/> 
+				        <?php 
+						}
+						echo "" . $novidade->getDescricao();?>
+						
+						
+						
+						
+					</div>
+					<?php
 				}
-				echo "</div>";
 			?>
 			
-			
+		</div>	
 			<br>
 			 
 			<button><a href="/?pagina=novidades">Ver Mais</a></button>
 	</div>
 
 
-	<div class="infobg">
-		<div id="editais" class="informacoes">
-		<h1>Editais</h1>
-		<?php
-			foreach ($editais as $edital) {
-					echo "<div>";
-					// criar ancora
-		            echo "<h2>" .$edital->getTitulo() . "</h2>";
-					echo "</div>";
-				}
-		?>
-		<button><a href="/?pagina=editais">Ver Mais</a></button>
-		</div>
-	</div>
 
 
 
@@ -163,8 +142,8 @@
 
 
 
-	<div class="infobg">
-		<div id="sobre" class="informacoes">
+	<div class="box">
+		<div id="sobre" class="about">
 		<h1>Fábrica de Software da UFMS</h1>
 		<p> 
 		<img src="Imagens/tech03.png" alt="t2" class="i1"/>
@@ -172,43 +151,34 @@
 			echo $sobre;
 		?>
 
-		<!--
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-		<img src="Imagens/tech03.png" alt="t2" class="i1"/>
-		Suspendisse cursus, neque sit amet feugiat viverra, eros arcu luctus enim, non luctus dolor tortor eget nibh. 
-		Aenean facilisis dolor dui, at finibus metus rutrum vel. Donec vitae nulla porta, ornare diam a, vulputate nisl. 
-		Sed ullamcorper massa fermentum elit efficitur malesuada. Cras ut nulla euismod, imperdiet leo id, tempor metus.
-		Suspendisse in placerat leo, non accumsan neque. Vestibulum vel ultricies velit. Curabitur viverra ipsum quis orci accumsan cursus. 
-		Vivamus pharetra lobortis lectus non fermentum. Nunc vel metus scelerisque, pharetra sapien sit amet, ultrices lacus. 
-		Cras tincidunt semper molestie. Nullam aliquam finibus mauris quis tristique. Suspendisse vel nulla id ex consequat condimentum. 
-		Integer at rutrum purus, vitae malesuada ex. Aenean semper lacus pharetra eros tincidunt bibendum eget eget sapien. 
-		Vestibulum justo erat, auctor vitae gravida non, pharetra ac sem.
-		-->
-		<br><br>
-		<!--
-		<img src="Imagens/tech04.png" alt="t4" class="i2"/>
 		
-	
-		<strong>Lorem ipsum dolor sit amet</strong> consectetur adipiscing elit. Suspendisse cursus, neque sit amet feugiat viverra, eros arcu luctus enim, non luctus dolor tortor eget nibh. 
-		Aenean facilisis dolor dui, at finibus metus rutrum vel. Donec vitae nulla porta, ornare diam a, vulputate nisl. 
-		Sed ullamcorper massa fermentum elit efficitur malesuada. Cras ut nulla euismod, imperdiet leo id, tempor metus.
 		
-		Suspendisse in placerat leo, non accumsan neque. 
-		<br><br>
-		
-		<img src="Imagens/tech07.png" alt="t5" class="i1"/>
-		
-		<strong>Lorem ipsum dolor sit amet</strong> Vestibulum vel ultricies velit. Curabitur viverra ipsum quis orci accumsan cursus. 
-		Vivamus pharetra lobortis lectus non fermentum. Nunc vel metus scelerisque, pharetra sapien sit amet, ultrices lacus. 
-		Cras tincidunt semper molestie. Nullam aliquam finibus mauris quis tristique. Suspendisse vel nulla id ex consequat condimentum. 
-		Integer at rutrum purus, vitae malesuada ex. Aenean semper lacus pharetra eros tincidunt bibendum eget eget sapien. 
-		Vestibulum justo erat, auctor vitae gravida non, pharetra ac sem.</p>
-		-->
-		
-	</div>
+		</div>
 	</div>
 	
-	<div id="projetos" class="projetos">
+	
+	<div class="boxwhite">
+		<div id="editais" class="notices">
+		<h1>Editais</h1>
+		<div class="notice">
+			<ul>
+			<?php
+				foreach ($editais as $edital) {						
+						// criar ancora
+						echo "<li>" .$edital->getTitulo() . "</li>";
+						echo "";
+					}
+			?>
+			</ul>
+		</div>
+		<button><a href="/?pagina=editais">Ver Mais</a></button>
+		</div>
+	</div>
+	
+	
+	
+	<div class="box">
+		<div id="projetos" class="projects">
 			<h1>Projetos</h1>
 
 
@@ -217,11 +187,21 @@
 			<?php
 
 				foreach ($projetos as $projeto) {
-					echo "<div class=\"project\">";
+					echo "<div ";
+					
+					//if($projeto == reset($projetos))	
+					//	echo "class=\"first\"";
+					//if($projeto == end($projetos))	
+					//	echo "class=\"last\"";
+					//else
+						echo"class=\"project\"";
+					
+					
+					echo ">";
 		            $img=base64_encode($projeto->getImagem());
 					echo "<img src = \" data:image/JPG;charset=utf8;base64,";
 		            echo $img;
-		            echo "\" class=\"proj\" alt=\"imagem do projeto\" />";
+		            echo "\" alt=\"imagem do projeto\" />";
 				
 					echo "<h3><a href=\"/?pagina=projetoIndividual&number=". $projeto->getId() ."\">". $projeto->getNome() ."</a></h3> </br>";
 		            echo "<div class = 'descricao'>";
@@ -235,90 +215,43 @@
 			
 			
 			<br>
-			 
+		</div>	 
+			
 			<button><a href="/?pagina=projetos">Ver Mais</a></button>
+		
 	</div>
 
 	
-	<div id="equipe" class="equipe">
-		<h1>Equipe</h1>
-		
-		<?php
+	<div class="boxwhite">
+		<div id="equipe" class="membros">
+			<h1>Equipe</h1>
+			
+			<?php
 
-			foreach ($alunos as $aluno) {
-				echo "<div class=\"membro\">";
-		        $img=base64_encode($aluno->getImagem());
-				echo "<img src = \" data:image/JPG;charset=utf8;base64,";
-		        echo $img;
-		        echo "\" class=\"eq\" alt=\"imagem do projeto\" />";
-				
-				echo "<h3>" . $aluno->getNome() . "</h3>";
-				echo "<div class = 'descricaoAluno'>";
-				echo "". $aluno->getDescricao() ."";
-				echo "</div>";
-				echo "</div>";
-			}
-		?>
-		<br>
+				foreach ($alunos as $aluno) {
+					echo "<div class=\"membro\">";
+					$img=base64_encode($aluno->getImagem());
+					echo "<img src = \" data:image/JPG;charset=utf8;base64,";
+					echo $img;
+					echo "\" class=\"eq\" alt=\"imagem do projeto\" />";
+					
+					echo "<h3>" . $aluno->getNome() . "</h3>";
+					echo "<div class = 'descricao'>";
+					echo "". $aluno->getDescricao() ."";
+					echo "</div>";
+					echo "</div>";
+				}
+			?>
+			<br>
+		</div>	
+			<button><a href="/?pagina=equipe">Ver Mais</a></button>
 		
-		<button><a href="/?pagina=equipe">Ver Mais</a></button>
-	
+		
 	</div>
 
 	
 	
-	<footer>
-			
-			<div class="me">
-			
-			<div class="bloco">
-			<h2>Links Úteis</h2>
-			<ul>
-				<li><a href="http://www.sbc.org.br">SBC &#8211; Sociedade Brasileira de Computação</a></li>
-				<li><a href="http://fundect.ledes.net">LEDES &#8211; UFMS</a></li>
-				<li><a href="http://biblioteca.ufms.br">Biblioteca &#8211; UFMS</a></li>
-			</ul>
-			</div>
-			
-			<div class="bloco">
-			<h2>Graduação</h2>
-			<ul>
-				<li><a href="https://www.facom.ufms.br/analise-de-sistemas/">Sistemas de Informação</a></li>
-				<li><a href="https://www.facom.ufms.br/ciencia-da-computacao/">Ciência da Computação</a></li>
-				<li><a href="https://www.facom.ufms.br/engenharia-de-computacao/">Engenharia de Computação</a></li>
-				<li><a href="https://www.facom.ufms.br/engenharia-de-software/">Engenharia de Software</a></li>
-				<li><a href="https://www.facom.ufms.br/tecnologia-em-analise-e-desenvolvimento-de-sistemas/">Téc. em Análise e Desenvolvimento de Sistemas</a></li>
-			</ul>
-			</div>
-			
-			<div class="bloco">
-			<h2>Pós Graduação</h2>
-			<ul>
-				<li><a href="https://www.facom.ufms.br/mestradoprofissional/">Mestrado Prof. Computação Aplicada</a></li>
-				<li><a href="https://www.facom.ufms.br/mestrado-acad-ciencia-da-computacao/">Mestrado Acad. Ciência da Computação</a></li>
-				<li><a href="https://www.facom.ufms.br/doutorado-ciencia-da-computacao/">Doutorado Ciência da Computação</a></li>
-			</ul>
-			</div>
-			 
-			 <div class="bloco">
-			<h2>Oportunidades</h2>
-			<ul>
-				<li><a href="https://www.facom.ufms.br/vaga-para-programador-before-tecnologia-da-informacao/" title="Vaga para Programador &#8211; Before Tecnologia da Informação">Vaga para Programador &#8211; Before Tecnologia da Informação</a></li>
-				<li><a href="https://www.facom.ufms.br/oportunidade-de-estagio-energisa/" title="Oportunidade de estágio &#8211; Energisa">Oportunidade de estágio &#8211; Energisa</a> 
-				<li><a href="https://www.facom.ufms.br/resultado-selecao-de-professor-substituto/" title="Resultado Seleção de Professor Substituto">Resultado Seleção de Professor Substituto</a></li>
-				<li><a href="https://www.facom.ufms.br/selecao-de-professor-substituto/" title="Seleção de Professor Substituto">Seleção de Professor Substituto</a></li>
-				<li><a href="https://www.facom.ufms.br/abre-oferece-estagio-para-redes-de-computadores/" title="Abre oferece estágio para Redes de Computadores">Abre oferece estágio para Redes de Computadores</a></li>
-			</ul>
-			</div>
-			
-			</div>
-	
-		<div class="disclaimer">
-			Layout inteiramente desenvolvido por Isabela Andrade Souza. Todos os direitos reservados. <br>
-		Plágio é crime de acordo com a Lei Federal dos direitos autorais n°9610.
-		</div>
-		
-	</footer>
+	<?php include_once "footer.php";?>
 </div>
 
 </body>
