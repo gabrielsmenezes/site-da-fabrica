@@ -85,8 +85,8 @@
 
 <div class="mainbox">
 	
-	<div  class="proj">
-			
+	<div  class="projects">
+	<div  class="projectDetail">		
 
 			<?php
 				
@@ -109,16 +109,8 @@
 
 
 
-			<!--
-			<img src="Imagens/imagem.jpg" alt="t5" />
-
 			
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  t2 Suspendisse cursus, neque sit amet feugiat viverra, eros arcu luctus enim, non luctus dolor tortor eget nibh. Aenean facilisis dolor dui, at finibus metus rutrum vel. Donec vitae nulla porta, ornare diam a, vulputate nisl. Sed ullamcorper massa fermentum elit efficitur malesuada. Cras ut nulla euismod, imperdiet leo id, tempor metus. Suspendisse in placerat leo, non accumsan neque. Vestibulum vel ultricies velit. Curabitur viverra ipsum quis orci accumsan cursus. Vivamus pharetra lobortis lectus non fermentum. Nunc vel metus scelerisque, pharetra sapien sit amet, ultrices lacus. Cras tincidunt semper molestie. Nullam aliquam finibus mauris quis tristique. Suspendisse vel nulla id ex consequat condimentum. Integer at rutrum purus, vitae malesuada ex. Aenean semper lacus pharetra eros tincidunt bibendum eget eget sapien. Vestibulum justo erat, auctor vitae gravida non, pharetra ac sem. 
-			
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit.  t2 Suspendisse cursus, neque sit amet feugiat viverra, eros arcu luctus enim, non luctus dolor tortor eget nibh. Aenean facilisis dolor dui, at finibus metus rutrum vel. Donec vitae nulla porta, ornare diam a, vulputate nisl. Sed ullamcorper massa fermentum elit efficitur malesuada. Cras ut nulla euismod, imperdiet leo id, tempor metus. Suspendisse in placerat leo, non accumsan neque. Vestibulum vel ultricies velit. Curabitur viverra ipsum quis orci accumsan cursus. Vivamus pharetra lobortis lectus non fermentum. Nunc vel metus scelerisque, pharetra sapien sit amet, ultrices lacus. Cras tincidunt semper molestie. Nullam aliquam finibus mauris quis tristique. Suspendisse vel nulla id ex consequat condimentum. Integer at rutrum purus, vitae malesuada ex. Aenean semper lacus pharetra eros tincidunt bibendum eget eget sapien. Vestibulum justo erat, auctor vitae gravida non, pharetra ac sem. 
-			</p>
-			-->
-		
+	</div>	
 		
 	</div>
 
