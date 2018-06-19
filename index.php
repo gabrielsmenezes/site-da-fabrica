@@ -37,12 +37,7 @@
 
     session_start();
     $path = session_save_path() . '/sess_' . session_id();
-    chmod($path, 0640);
-
-    //$_SESSION['pasta'] = "/admin";
-
-    //echo $_SERVER['PHP_SELF'];
-    
+    chmod($path, 0640);    
 
     if( !isset($_GET['pagina']) ){
         $pagina = 'index';
@@ -52,19 +47,12 @@
     }
 
 
-    //echo $pagina;
-
-    //echo "aaaaaaaaaaaaaaa";
-
 
 
     if(($pagina == 'index' || !$pagina)){
         $pf = ProjetoFactory::get();
         $listProjetos = null;
         $listProjetos = $pf->lista("3");
-
-        //echo count($listProjetos);
-        //echo "<br><br><br><br><br><br><br><br>";
 
         $sf = SobreFactory::get();
         $content = $sf->lista()[0]->getDescricao();
@@ -76,13 +64,11 @@
 
         $nf = NovidadeFactory::get();
         $listNovidades = null;
-        $listNovidades = $nf->lista("3");
+        $listNovidades = $nf->listaOrdId("3");
 
         $ef = EditalFactory::get();
         $listEditais = null;
-        $listEditais = $ef->lista("3");
-        //echo count($listAlunos);
-        //echo "<br><br><br><br><br><br><br><br>";
+        $listEditais = $ef->listaOrdId("3");
 
         $arr = array($content, $listProjetos, $listAlunos, $listNovidades, $listEditais);
 
@@ -129,11 +115,44 @@
     }
     else if( $pagina == "editais" ){
         // colocar editais para aparecer o conteudo apenas quando clicar
-        echo "pagina em criacao";
+        $ef = EditalFactory::get();
+        $listEditais = null;
+        $listEditais = $ef->listaOrdId();
+       
+
+        $arr = $listEditais;
+        RenderUser::render_php("/views/editais.php", $arr); 
     }
     else if( $pagina == "novidades" ){
-        echo "pagina em criacao";
+        $nf = NovidadeFactory::get();
+        $listNovidades = null;
+        $listNovidades = $nf->listaOrdId();
+       
+
+        $arr = $listNovidades;
+        RenderUser::render_php("/views/novidades.php", $arr); 
     }
+    /*else if( $pagina == "noticiaIndividual" ){
+        $id = $_GET['number'];
+
+
+        if( is_numeric($id) ){
+            $nf   = NovidadeFactory::get();
+            $noticia = $nf->getById( $id );
+            if( count($noticia) != 1 ){
+                $newURL = '?pagina=index';
+                header('Location: ' . $newURL);
+            }
+            else{
+                RenderUser::render_php("/views/noticia.php", $noticia[0]);
+            }
+        }
+        else{
+            $newURL = '?pagina=index';
+            header('Location: ' . $newURL);
+        }
+
+    }*/
     else{
         echo "erro 404";
     }

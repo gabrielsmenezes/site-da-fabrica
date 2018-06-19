@@ -67,7 +67,12 @@
 
     if(($pagina == 'index' || !$pagina)){
         //echo "chamando index";
-        IndexController::get();
+        if( $admin ){
+            MenuController::get();
+        }
+        else{
+            IndexController::get();
+        }
     }
     else if( $pagina == 'login' ){
         if($_SERVER['REQUEST_METHOD'] == 'GET'){
@@ -118,7 +123,7 @@
     else if( $pagina == 'editais' ){
         if( $admin ){
             EditaisController::get();
-            echo "pass editais<br>";
+            //echo "pass editais<br>";
         }
         else{
             $_SESSION['erroLogin'] = "Não autorizado, logue";

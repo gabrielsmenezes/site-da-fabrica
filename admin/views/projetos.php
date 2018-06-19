@@ -67,14 +67,16 @@
 
 	<body>
 		<header>
+			<!--
 			<div class="bordaheader"></div>
 			<div class="bordaheader2"></div>
+			-->
 		</header>
 		<div id="sticky-anchor"></div>
 		<nav>
 			<a href="/admin	/?pagina=menu"> Volte ao Menu </a>
 		</nav>
-		<div class="caixas">
+		<div class="mainbox">
 			<div id="caixa" class="projetos">
 				<h1>Projetos</h1>
 				<?php  	

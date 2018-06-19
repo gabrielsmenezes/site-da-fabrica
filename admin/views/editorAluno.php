@@ -69,8 +69,10 @@
 
 	<body>
 		<header>
+			<!--
 			<div class="bordaheader"></div>
 			<div class="bordaheader2"></div>
+			-->
 		</header>
 		<div id="sticky-anchor"></div>
 		<nav>

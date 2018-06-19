@@ -89,7 +89,6 @@
 	<a href="#editais"> Editais </a>
 	<a href="#projetos"> Projetos </a>
 	<a href="#equipe"> Equipe </a>
-	<a href="#editais"> Editais </a>
 	
 	<!--<a href="#contato"> Busca </a>-->
 </nav>
@@ -110,12 +109,21 @@
 					
 					?>
 					<div class="new">
-			            <h2> <?php echo $novidade->getTitulo()?></h2>
+			            <h3>
+			            	<!--
+			            	<a href="/?pagina=noticiaIndividual&number=<?php echo $novidade->getId() ?>">
+			            	-->
+			            		<?php echo $novidade->getTitulo()?>
+			            	<!--
+			            	</a>
+			            	-->	    
+			            </h3>
+
 						<?php 
 						if($novidade == reset($novidades)){
 							?>
 						
-						<img src="data:image/JPG;charset=utf8;base64,<?php echo $img;?>"/> 
+							<img src="data:image/JPG;charset=utf8;base64,<?php echo $img;?>"/> 
 				        <?php 
 						}
 						echo "" . $novidade->getDescricao();?>
@@ -165,8 +173,17 @@
 			<?php
 				foreach ($editais as $edital) {						
 						// criar ancora
-						echo "<li>" .$edital->getTitulo() . "</li>";
-						echo "";
+						?>
+						<li>
+			            	<!--
+			            	<a href="/?pagina=editalIndividual&number=<?php echo $edital->getId() ?>">
+			            	-->
+			            		<?php echo $edital->getTitulo()?>
+			            	<!--
+			            	</a>
+			            	-->	    
+			            </li>
+						<?php
 					}
 			?>
 			</ul>

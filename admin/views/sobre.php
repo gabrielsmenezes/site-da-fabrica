@@ -67,8 +67,10 @@
 
 	<body>
 		<header>
+			<!--
 			<div class="bordaheader"></div>
 			<div class="bordaheader2"></div>
+			-->
 		</header>
 		<div id="sticky-anchor"></div>
 		<nav>
@@ -76,7 +78,7 @@
 		</nav>
 
 		<br><br><br>
-		<div class="caixas">
+		<div class="mainbox">
 			<br><br>
 			<form method="post" action ="/admin/?pagina=updateSobre">
 

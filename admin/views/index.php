@@ -68,12 +68,14 @@
 	<body>
 
 		<header>
+			<!--
 			<div class="bordaheader"></div>
 			<div class="bordaheader2"></div>
+			-->
 		</header>
 		<div id="sticky-anchor"></div>
 
-		<div class="caixas">
+		<div class="mainbox">
 			<div class="infobg" align="center">
 				<br>
 				<h1>Faça seu login</h1>
@@ -92,7 +94,7 @@
 					<form method="post" action="/admin/?pagina=login">
 						<label style="margin-left: -3px">Usuário</label>
 						<input type = "text" name = "login"><br>
-						<label>Senha</label>
+						<label>Senha  </label>
 						<input type = "password" name = "senha"> <br><br>
 						<button type = "submit"> Enviar </button> <br><br><br>
 					</form>

@@ -69,8 +69,10 @@
 	<body>
 
 		<header>
+			<!--
 			<div class="bordaheader"></div>
 			<div class="bordaheader2"></div>
+			-->
 		</header>
 		<div id="sticky-anchor"></div>
 		<!--
@@ -78,7 +80,7 @@
 			<a href="/admin/?pagina=menu"> Volte ao Menu </a>
 		</nav>
 		-->
-		<div class="caixas" align="center">
+		<div class="mainbox" align="center">
 		
 			<!--
 			<?php  echo $args;  ?>

@@ -69,14 +69,16 @@
 
 	<body>
 		<header>
+			<!--
 			<div class="bordaheader"></div>
 			<div class="bordaheader2"></div>
+			-->
 		</header>
 		<div id="sticky-anchor"></div>
 		<nav>
 			<a href="/admin	/?pagina=novidades"> Voltar </a>
 		</nav>
-		<div class="caixas">
+		<div class="mainbox">
 			<div id="caixa" class="membro">
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.6.7/tinymce.min.js"></script>
 	            <script src="/public/js/pt_BR.js"></script>

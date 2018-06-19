@@ -33,7 +33,7 @@
 
         public function update($coluna, $value, $id){
             $sql =  "UPDATE ".$this->table." SET ". $coluna ."=:value WHERE id=:id";
-            echo $sql;            
+            //echo $sql;            
             
             $t = DB::prepare($sql);
             //$t->bindParam(1, $coluna, PDO::PARAM_STR);
@@ -52,6 +52,20 @@
 
         }
 
+        public function listaOrdId($limit=null){
+            if( $limit != null ){
+                //echo "limit:".$limit.":";
+                $sql = "SELECT * FROM ".$this->table." ORDER BY id desc LIMIT ".$limit.";";
+                //echo $sql;
+            }
+            else{
+                $sql = "SELECT * FROM ".$this->table." ORDER BY id desc;"; 
+            }
+            $t = DB::prepare($sql);
+            $t->execute();
+            return $t->fetchAll(PDO::FETCH_CLASS, ucfirst($this->table));
+        }
+
         public function lista($limit=null){
             if( $limit != null ){
                 //echo "limit:".$limit.":";
@@ -68,8 +82,8 @@
 
         public function getById($id){
             $sql = "SELECT * FROM ".$this->table." WHERE id = ".$id.";";
-            echo "sql:";
-            echo $sql;
+            //echo "sql:";
+            //echo $sql;
 
             $t = DB::prepare($sql);
             $t->execute();            
