@@ -2,7 +2,7 @@
     /**************************
     *   Edison G G Borghezan
     ***************************/
-    class AlunoFactory extends AbstractFactory{
+    class AlunoFactory extends AbstractFactory {
         protected $table = "aluno";
         static $instance;
 

@@ -8,7 +8,6 @@
             $pf = ProjetoFactory::get();
         	$listProjetos = null;
         	$listProjetos = $pf->lista();          
-        	Render::render_php( 'views/' . 'projetos.php' , $listProjetos);
         }
         static public function editarProjeto(){
         	if( !isset($_POST['projectId']) ){

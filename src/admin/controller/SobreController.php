@@ -7,10 +7,9 @@
         static public function get(){
             
             $dirView = 'views/' . 'sobre.php';
-            //$content = "<br><br> SobreController.php <br><br>";
             $sf = SobreFactory::get();
             $content = $sf->lista()[0]->getDescricao();
-            Render::render_php( $dirView , $content);
+            
         }
         static public function update(){
         	$sobreObj = new Sobre();

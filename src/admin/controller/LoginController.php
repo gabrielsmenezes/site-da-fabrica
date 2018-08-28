@@ -25,37 +25,22 @@
                     if( $user->getNome() == $nome ){
                         if( $user->getSenha() == $senha ){
                             $_SESSION['user'] = true;
-                            //$dirView = 'views/' . 'menu.php';
-                            //$content = "";
-                            //$content = "<br><br>Logado com sucesso <br><br>";
-                            //Render::render_php( $dirView , $content);
-                            //$newURL = '/?pagina='.$p;
-                            //unset($_SESSION['pagina']);
-                            //header('Location: '.$newURL);
+                            
+                            return true;
                         }
                     }   
                 }
 
-                if( !isset($_SESSION['user'] ) ){
-                    $_SESSION['erroLogin'] = 'Usuário ou senha incorretos';
-                    $newURL = '/admin/?pagina=index';
-                    header('Location: '.$newURL);
-                    //echo "credenciais invalidas";
-                }
-                else{
-                    //echo "Login funfou";
-                    $_SESSION['erroLogin'] = '';
-                    $newURL = '/admin/?pagina=menu';
-                    header('Location: '.$newURL);
-                }
+                return false;
+               
             }
             
         }
         
         static public function sair(){
+            
             unset($_SESSION['user']);
-            $newURL = '/admin/?pagina=index';
-            header('Location: '.$newURL);            
+            
         }
     }
 

@@ -5,8 +5,7 @@
         static public function get(){
             $ef = EditalFactory::get();
         	$listEditais = null;
-        	$listEditais = $ef->lista();
-        	Render::render_php( 'views/' . 'editais.php' , $listEditais);            
+        	$listEditais = $ef->lista();           
         	//echo "pass get EditaisController<br>";
         }
         static public function editarEdital(){

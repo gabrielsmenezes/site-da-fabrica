@@ -3,12 +3,79 @@
  * Tela de login
  *
  * @author Gian Fonseca
- * @version v0.1
- * @since idie-software 2018-1 
+ * @version v2.0
+ * @since Fabrica 2018-2 
  * @link 
  */
-$title = 'Login';?>
+?>
 
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="views/CSS/login.css">
+    <meta charset="utf-8">
+    <title>Administração Fábrica de Software - UFMS</title>
+    
+    <link rel="shortcut icon" href="../Imagens/favicon.png">
+    <link rel="stylesheet" media="screen" href="/views/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jura|Orbitron" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Isabela Andrade">
+    <meta name="robots" content="all">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+  </head>
+
+  <body>
+
+    <header>
+      <!--
+      <div class="bordaheader"></div>
+      <div class="bordaheader2"></div>
+      -->
+    </header>
+    <div id="sticky-anchor"></div>
+
+    <div class="mainbox">
+      <div class="infobg" align="center">
+        <br>
+        <h1>Faça seu login</h1>
+
+        <?php
+
+        if( isset($message) ){
+          echo "<br>".$message."<br>"; 
+        }
+        //echo $args; 
+        ?>
+
+        <br>
+
+        
+          <form method="post" action="login">
+            <label style="margin-left: -3px">Usuário</label>
+            <input type = "text" name = "login"><br>
+            <label>Senha  </label>
+            <input type = "password" name = "senha"> <br><br>
+            <button type = "submit"> Enviar </button> <br><br><br>
+          </form>
+      
+      </div>
+    </div>
+  </body>
+
+</html>
+
+
+
+<?php
+/*
 <!DOCTYPE html>
 <html>
 <head>
@@ -100,4 +167,4 @@ $title = 'Login';?>
 
   
   </body>
-</html>
+</html>*/

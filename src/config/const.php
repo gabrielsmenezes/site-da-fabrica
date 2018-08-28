@@ -7,6 +7,9 @@
 
 require_once "idie/util/Decode.php";
 
+// start da session
+session_start();
+
 $json = Decode::getJson();
 
 foreach ($json->source as $key => $value) {

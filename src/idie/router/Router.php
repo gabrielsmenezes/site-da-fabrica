@@ -12,7 +12,7 @@ class Router {
 	
 
     /**
-     * @return string
+     * @return String
      */
     public function on() {
 		

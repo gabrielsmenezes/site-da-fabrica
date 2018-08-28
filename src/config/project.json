@@ -19,7 +19,7 @@
 
 
 
-
+        "controller": "admin/controller/",
         "factory": "admin/factory/",
         "adminEntity": "admin/entity/",
         "adapter": "idie/adapter/"
@@ -31,24 +31,44 @@
             "page": "index"
         },
         {
-            "name": "geracao-automatica",
-            "presenter": "MainView",
-            "page": "generation"
+            "name": "user-admin",
+            "presenter": "AdminView",
+            "page": "index"
         },
         {
-            "name": "write-data-app",
-            "presenter": "MainView",
-            "page": "writeApp"
+            "name": "sobre",
+            "presenter": "AdminView",
+            "page": "about"
         },
         {
-            "name": "write-data-router",
-            "presenter": "MainView",
-            "page": "writeRouter"
+            "name": "equipe",
+            "presenter": "AdminView",
+            "page": "team"
+        },
+        {
+            "name": "projetos",
+            "presenter": "AdminView",
+            "page": "project"
+        },
+        {
+            "name": "editais",
+            "presenter": "AdminView",
+            "page": "edict"
+        },
+        {
+            "name": "novidades",
+            "presenter": "AdminView",
+            "page": "notice"
+        },
+        {
+            "name": "logout",
+            "presenter": "LoginView",
+            "page": "logout"
         },
         {
             "name": "login",
             "presenter": "LoginView",
-            "page": "index"
+            "page": "credential"
         }
     ]
 }

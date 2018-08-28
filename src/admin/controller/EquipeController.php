@@ -15,7 +15,7 @@
            	$af = AlunoFactory::get();
         	$listAlunos = null;
         	$listAlunos = $af->lista();
-        	Render::render_php( 'views/' . 'equipe.php' , $listAlunos);
+        	
         }
         static public function editarAluno(){
         	if( !isset($_POST['alunoId']) ){
