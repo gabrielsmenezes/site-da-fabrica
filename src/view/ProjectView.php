@@ -7,6 +7,24 @@ class ProjectView extends AdminAbstractView {
 
 	}
 
+	public function insert() { 
+
+		ProjetosController::inserirProjeto();
+
+	}
+
+	public function update() { 
+
+		ProjetosController::updateProjeto();
+
+	}
+
+	public function delete() { 
+
+		ProjetosController::removerProjeto();
+
+	}
+
 	public function edit() { 
 
 		$pf = ProjetoFactory::get();

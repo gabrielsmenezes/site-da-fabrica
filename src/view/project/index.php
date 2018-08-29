@@ -94,7 +94,7 @@
 		            echo "<p>" . $projeto->getDescricao() . "<p>";
 		            //echo "<br> <div>" . $projeto->getDescricao() . "</div><br><br>";
 		            echo "</div>";
-		            echo "  <form action='/admin/?pagina=projetoRemove' method='post'>
+		            echo "  <form action='projetos/remover' method='post'>
 		           				<input type=\"hidden\" name=\"projectId\" value=". $projeto->getId() .">		   
 		            			<button class='edit'   type='submit' name='editProjeto' formaction='projetos/editar' />Editar</button>
 		                        <button class='delete' type='submit'>Deletar</button>
@@ -140,7 +140,7 @@
 
 
 				<h1>Cadastro de Projeto</h1>
-				<form action="/admin/?pagina=inserirProjeto" method="POST" enctype="multipart/form-data">
+				<form action="projetos/cadastrar" method="POST" enctype="multipart/form-data">
 					<div align='center'>
 					    <input class ="projs" type="text" placeholder="Nome do projeto" name="nomeProjeto"  size="42"> <br><br>
 					    <textarea class = "justified" placeholder="Descrição curta do projeto" name="descricaoCurtaProjeto" id = "descricaoCurtaProjeto">

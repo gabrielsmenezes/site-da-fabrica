@@ -61,6 +61,21 @@
             "page": "edit"
         },
         {
+            "name": "projetos/cadastrar",
+            "presenter": "ProjectView",
+            "page": "insert"
+        },
+        {
+            "name": "projetos/atualizar",
+            "presenter": "ProjectView",
+            "page": "update"
+        },
+        {
+            "name": "projetos/remover",
+            "presenter": "ProjectView",
+            "page": "delete"
+        },
+        {
             "name": "equipe",
             "presenter": "TeamView",
             "page": "team"

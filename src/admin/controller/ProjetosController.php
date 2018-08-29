@@ -60,14 +60,14 @@
 	            $factoryProjeto->updateArray($arrCol, $arrVal, $id);
 	            //echo "fim do metodo";
 	            $_SESSION['msgProjetos'] = "Atualizado com sucesso";
-	            $newURL = '/admin/?pagina=projetos';
+	            $newURL = '../projetos';
                 header('Location: '.$newURL);
 
 	        }
 	        else{
 	            //echo "Formulário preenchido incorretamente";
 	            $_SESSION['msgProjetos'] = "Formulário preenchido incorretamente";
-	            $newURL = '/admin/?pagina=projetos';
+	            $newURL = '../projetos';
                 header('Location: '.$newURL);
 	        }
         }
@@ -104,14 +104,14 @@
 	            else{
 	                //echo "inserido com sucesso";
 	                $_SESSION['msgProjetos'] = "inserido com sucesso";
-	                $newURL = '/admin/?pagina=projetos';
+	                $newURL = '../projetos';
                     header('Location: '.$newURL);
 	            }
 	        }
 	        else{
 	            //echo "Formulário preenchido incorretamente";
 	            $_SESSION['msgProjetos'] = "Formulário preenchido incorretamente";
-	            $newURL = '/admin/?pagina=projetos';
+	            $newURL = '../projetos';
                 header('Location: '.$newURL);
 	        }
         }
@@ -123,13 +123,13 @@
 	            $pf->deleteById($id);
 
 	            $_SESSION['msgProjetos'] = "removido com sucesso";
-		        $newURL = '/admin/?pagina=projetos';
+		        $newURL = '../projetos';
 	            header('Location: '.$newURL);
         	}
         	else{
         		//echo "Formulário preenchido incorretamente";
 	            $_SESSION['msgProjetos'] = "";
-	            $newURL = '/admin/?pagina=projetos';
+	            $newURL = '../projetos';
                 header('Location: '.$newURL);
         	}
         }
