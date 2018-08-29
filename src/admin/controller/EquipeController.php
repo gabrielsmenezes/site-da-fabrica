@@ -72,14 +72,14 @@
 	            $factoryAluno->updateArray($arrCol, $arrVal, $id);
 	            //echo "fim do metodo";
 	            $_SESSION['msgEquipe'] = "Atualizado com sucesso";
-	            $newURL = '/admin/?pagina=equipe';
+	            $newURL = '../equipe';
                 header('Location: '.$newURL);
 
 	        }
 	        else{
 	            //echo "Formulário preenchido incorretamente";
 	            $_SESSION['msgEquipe'] = "Formulário preenchido incorretamente";
-	            $newURL = '/admin/?pagina=equipe';
+	            $newURL = '../equipe';
                 header('Location: '.$newURL);
 	        }
         }
@@ -114,14 +114,14 @@
 	            else{
 	                //echo "inserido com sucesso";
 	                $_SESSION['msgEquipe'] = "inserido com sucesso";
-	                $newURL = '/admin/?pagina=equipe';
+	                $newURL = '../equipe';
                     header('Location: '.$newURL);
 	            }
 	        }
 	        else{
 	            //echo "Formulário preenchido incorretamente";
 	            $_SESSION['msgEquipe'] = "Formulário preenchido incorretamente";
-	            $newURL = '/admin/?pagina=equipe';
+	            $newURL = '../equipe';
                 header('Location: '.$newURL);
 	        }
         }
@@ -135,7 +135,7 @@
 	            $pf->deleteById($id);
 
 	            $_SESSION['msgEquipe'] = "removido com sucesso";
-		        $newURL = '/admin/?pagina=equipe';
+		        $newURL = '../equipe';
 	            header('Location: '.$newURL);
         	}
         	else{

@@ -66,9 +66,24 @@
             "page": "team"
         },
         {
+            "name": "equipe/cadastrar",
+            "presenter": "TeamView",
+            "page": "insert"
+        },
+        {
             "name": "equipe/editar",
             "presenter": "TeamView",
             "page": "edit"
+        },
+        {
+            "name": "equipe/atualizar",
+            "presenter": "TeamView",
+            "page": "update"
+        },
+        {
+            "name": "equipe/remover",
+            "presenter": "TeamView",
+            "page": "delete"
         },
         {
             "name": "editais",

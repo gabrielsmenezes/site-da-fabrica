@@ -103,7 +103,7 @@
 
 
 				<h1>Editor de aluno</h1>
-				<form action="/admin/?pagina=atualizarAluno" method="POST" enctype="multipart/form-data">
+				<form action="atualizar" method="POST" enctype="multipart/form-data">
 					<div align='center'>
 					    	
 					    <?php

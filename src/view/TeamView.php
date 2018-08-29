@@ -7,6 +7,25 @@ class TeamView extends AdminAbstractView {
 
 	}
 
+	public function insert() { 
+
+		EquipeController::inserirAluno();
+
+	}
+
+
+	public function update() { 
+
+		EquipeController::updateAluno();
+
+	}
+
+	public function delete() { 
+
+		EquipeController::removerAluno();
+
+	}
+
 	public function edit() { 
 
 		$af = AlunoFactory::get();
@@ -17,7 +36,6 @@ class TeamView extends AdminAbstractView {
     	require_once __VIEW__.'team/edit.php'; 
 
 	}
-
 
 	public function team() {
 

@@ -99,7 +99,7 @@
 		            echo "<div class = \"descricaoAluno\">";
 		            echo "" . $aluno->getDescricao() . "";
 		            echo "</div>";
-		            echo "<form action='/admin/?pagina=alunoRemove' method='post'>
+		            echo "<form action='equipe/remover' method='post'>
 		           				<input type=\"hidden\" name=\"alunoId\" value=". $aluno->getId() .">
 		           				<button class='edit'   type='submit' name='editAluno' formaction='equipe/editar' />Editar</button>
 		                        <button type='submit'>Deletar</button>
@@ -129,7 +129,7 @@
 	            </script>
 				
 				<h2>Cadastro de aluno</h2>
-				<form class = "justified" action="/admin/?pagina=inserirAluno" method="POST" enctype="multipart/form-data">
+				<form class = "justified" action="equipe/cadastrar" method="POST" enctype="multipart/form-data">
 				    
 					<div align='center'>
 
