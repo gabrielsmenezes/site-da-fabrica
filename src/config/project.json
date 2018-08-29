@@ -41,24 +41,44 @@
             "page": "about"
         },
         {
-            "name": "equipe",
-            "presenter": "AdminView",
-            "page": "team"
+            "name": "novidades",
+            "presenter": "NoticeView",
+            "page": "notice"
+        },
+        {
+            "name": "novidades/editar",
+            "presenter": "NoticeView",
+            "page": "edit"
         },
         {
             "name": "projetos",
-            "presenter": "AdminView",
+            "presenter": "ProjectView",
             "page": "project"
         },
         {
+            "name": "projetos/editar",
+            "presenter": "ProjectView",
+            "page": "edit"
+        },
+        {
+            "name": "equipe",
+            "presenter": "TeamView",
+            "page": "team"
+        },
+        {
+            "name": "equipe/editar",
+            "presenter": "TeamView",
+            "page": "edit"
+        },
+        {
             "name": "editais",
-            "presenter": "AdminView",
+            "presenter": "EdictView",
             "page": "edict"
         },
         {
-            "name": "novidades",
-            "presenter": "AdminView",
-            "page": "notice"
+            "name": "editais/editar",
+            "presenter": "EdictView",
+            "page": "edit"
         },
         {
             "name": "logout",

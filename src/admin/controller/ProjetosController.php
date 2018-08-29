@@ -9,6 +9,7 @@
         	$listProjetos = null;
         	$listProjetos = $pf->lista();          
         }
+        /*
         static public function editarProjeto(){
         	if( !isset($_POST['projectId']) ){
         		$newURL = '/admin/?pagina=projetos';
@@ -20,7 +21,7 @@
 	        	$project = $pf->getById($_POST['projectId']);          
 	        	Render::render_php( '/views/' . 'editorProjeto.php' , $project);
         	}
-        }
+        }*/
         static public function updateProjeto(){
          	if( isset($_POST['nomeProjeto']) && isset($_POST['descricaoProjeto']) && 
         		isset($_POST['descricaoCurtaProjeto']) && $_POST['descricaoCurtaProjeto'] != "" &&
