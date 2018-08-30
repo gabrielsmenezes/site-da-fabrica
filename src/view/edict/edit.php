@@ -103,7 +103,7 @@
 
 
 				<h1>Editor de editais</h1>
-				<form action="/admin/?pagina=atualizarEdital" method="POST" enctype="multipart/form-data">
+				<form action="atualizar" method="POST" enctype="multipart/form-data">
 					<div align='center'>
 					    <script>
 							function alterna(id) {

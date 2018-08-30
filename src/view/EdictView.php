@@ -7,6 +7,24 @@ class EdictView extends AdminAbstractView {
 
 	}
 
+	public function insert() { 
+
+		EditaisController::inserirEdital();
+
+	}
+
+	public function update() { 
+
+		EditaisController::updateEdital();
+
+	}
+
+	public function delete() { 
+
+		EditaisController::removerEdital();
+
+	}
+
 	public function edit() { 
 
     	$ef = EditalFactory::get();

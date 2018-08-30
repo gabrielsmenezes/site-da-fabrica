@@ -111,6 +111,21 @@
             "page": "edit"
         },
         {
+            "name": "editais/cadastrar",
+            "presenter": "EdictView",
+            "page": "insert"
+        },
+        {
+            "name": "editais/atualizar",
+            "presenter": "EdictView",
+            "page": "update"
+        },
+        {
+            "name": "editais/remover",
+            "presenter": "EdictView",
+            "page": "delete"
+        },
+        {
             "name": "logout",
             "presenter": "LoginView",
             "page": "logout"

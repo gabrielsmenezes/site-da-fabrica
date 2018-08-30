@@ -46,14 +46,14 @@
 	            $factoryEdital->updateArray($arrCol, $arrVal, $id);
 	            //echo "fim do metodo";
 	            $_SESSION['msgEditais'] = "Atualizado com sucesso";
-	            $newURL = '/admin/?pagina=editais';
+	            $newURL = '../editais';
                 header('Location: '.$newURL);
 
 	        }
 	        else{
 	            //echo "Formulário preenchido incorretamente";
 	            $_SESSION['msgEditais'] = "Formulário preenchido incorretamente";
-	            $newURL = '/admin/?pagina=editais';
+	            $newURL = '../editais';
                 header('Location: '.$newURL);
 	        }
         }
@@ -79,6 +79,10 @@
 
 	            //echo "adicionar<br>";
 	            $iError = $factoryEdital->inserir($edital);
+
+
+	            $newURL = '../editais';
+
 	            if( $iError != null ){
 	                /////////////////
 	                //debug
@@ -88,36 +92,37 @@
 	            else{
 	                //echo "inserido com sucesso";
 	                $_SESSION['msgEdital'] = "inserido com sucesso";
-	                $newURL = '/admin/?pagina=editais';
+	                
                     header('Location: '.$newURL);
 	            }
 	        }
 	        else{
 	            //echo "Formulário preenchido incorretamente";
 	            $_SESSION['msgEdital'] = "Formulário preenchido incorretamente";
-	            $newURL = '/admin/?pagina=editais';
+	        
                 header('Location: '.$newURL);
 	        }
         }
         static function removerEdital(){
         	$id = $_POST['editalId'];
 
+        	$newURL = '../editais';
+
             if( is_numeric($id) ){
 	            $pf = EditalFactory::get();
 	            $pf->deleteById($id);
 
 	            $_SESSION['msgEdital'] = "removido com sucesso";
-		        $newURL = '/admin/?pagina=editais';
 	            header('Location: '.$newURL);
         	}
         	else{
 	            $_SESSION['msgEdital'] = "";
-	            $newURL = '/admin/?pagina=editais';
                 header('Location: '.$newURL);
         	}
         }
         static function showEditalById(){
         	$id = $_POST['editalId'];
+
 
             if( is_numeric($id) ){
 	            $ef = EditalFactory::get();
@@ -126,7 +131,7 @@
         	}
         	else{
 	            $_SESSION['msgEdital'] = "";
-	            $newURL = '/admin/?pagina=editais';
+	            $newURL = '../editais';
                 header('Location: '.$newURL);
         	}
         }

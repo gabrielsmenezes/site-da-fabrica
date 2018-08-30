@@ -114,7 +114,7 @@
 	                echo "<div class=\"informacoes\">";
 		            echo "" . $edital->getDescricao() . "";
 		            echo "</div>";
-		            echo "<form action='/admin/?pagina=editalRemove' method='post'>
+		            echo "<form action='editais/remover' method='post'>
 		           				<input type=\"hidden\" name=\"editalId\" value=". $edital->getId() .">
 		           				<button class='edit'   type='submit' name='editEdital' formaction='editais/editar' />Editar</button>
 		           				<button class = \"showButton\" type=\"button\" id=\"pdfButton_".$edital->getId()."\"
@@ -155,7 +155,7 @@
 	            </script>
 				
 				<h2>Cadastro de edital</h2>
-				<form class = "justified" action="/admin/?pagina=inserirEdital" method="POST" enctype="multipart/form-data">
+				<form class = "justified" action="editais/cadastrar" method="POST" enctype="multipart/form-data">
 				    
 					<div align='center'>
 
