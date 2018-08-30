@@ -9,13 +9,17 @@ class AdminView extends AdminAbstractView {
 
 	public function about() {
 
-		SobreController::get();
+		$sf = SobreFactory::get();
+        $args = $sf->lista()[0]->getDescricao();
 
-		ob_start();
         require_once __VIEW__.'admin/about.php';
-        $var = ob_get_contents();
-        ob_end_clean();
-        echo $var;
+       
+
+	}
+
+	public function updateAbout() {
+
+		SobreController::update();
 
 	}
 

@@ -18,7 +18,7 @@
         	$sf = SobreFactory::get();
         	$sf->update($sobreObj);
 
-            $newURL = '/admin/?pagina=sobre';
+            $newURL = '../sobre';
             header('Location: '.$newURL);
             //Render::render_php( $dirView , $content);
         }

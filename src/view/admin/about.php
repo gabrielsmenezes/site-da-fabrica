@@ -80,7 +80,7 @@
 		<br><br><br>
 		<div class="mainbox">
 			<br><br>
-			<form method="post" action ="/admin/?pagina=updateSobre">
+			<form method="post" action ="sobre/atualizar">
 
 
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.6.7/tinymce.min.js"></script>
@@ -101,8 +101,7 @@
 	                }
 	            </script>
 	            <div align="center">
-	            	<textarea class="form-control" id="sobre" name="sobre"></textarea><br>
-					<!-- <textarea class="form-control" id="sobre" name="sobre"><?php  echo $args;  ?></textarea><br> -->
+					<textarea class="form-control" id="sobre" name="sobre"><?php  echo $args;  ?></textarea><br> 
 					<button type="submit">Enviar</button>
 				</div>
 			</form>

@@ -35,7 +35,7 @@
                 //$sql = "UPDATE " . $this->table . " SET 'descricao'=" . $sobreObj->getDescricao() ."   WHERE 'sobre'.'id' = 1";
                 $sql = "UPDATE ". $this->table ." SET descricao = '". $sobreObj->getDescricao()  . "' WHERE sobre.id = 1 ;";
                 //echo "<br>string sql<br>";
-                echo "<br>Sql:" . $sql .":<br>";
+                //echo "<br>Sql:" . $sql .":<br>";
                 $t = DB::prepare($sql);
                 /*$t->execute(array(
                     ':descricao' => $sobreObj->getDescricao()

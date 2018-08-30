@@ -41,6 +41,11 @@
             "page": "about"
         },
         {
+            "name": "sobre/atualizar",
+            "presenter": "AdminView",
+            "page": "updateAbout"
+        },
+        {
             "name": "novidades",
             "presenter": "NoticeView",
             "page": "notice"
