@@ -188,7 +188,7 @@
 			?>
 			</ul>
 		</div>
-		<button><a href="/?pagina=editais">Ver Mais</a></button>
+		<button><a href="editais/index">Ver Mais</a></button>
 		</div>
 	</div>
 	
@@ -234,7 +234,7 @@
 			<br>
 		</div>	 
 			
-			<button><a href="/?pagina=projetos">Ver Mais</a></button>
+			<button><a href="projetos/index">Ver Mais</a></button>
 		
 	</div>
 

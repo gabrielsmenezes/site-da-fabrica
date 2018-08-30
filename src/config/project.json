@@ -56,6 +56,16 @@
             "page": "edit"
         },
         {
+            "name": "projetos/index",
+            "presenter": "ProjectView",
+            "page": "view"
+        },
+        {
+            "name": "projetos/index/element",
+            "presenter": "ProjectView",
+            "page": "view"
+        },
+        {
             "name": "projetos",
             "presenter": "ProjectView",
             "page": "project"
@@ -104,6 +114,11 @@
             "name": "equipe/remover",
             "presenter": "TeamView",
             "page": "delete"
+        },
+        {
+            "name": "editais/index",
+            "presenter": "EdictView",
+            "page": "view"
         },
         {
             "name": "editais",

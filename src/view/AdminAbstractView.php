@@ -3,10 +3,11 @@ abstract class AdminAbstractView {
 
 	function __construct($page) {
 		
-	    $path = session_save_path() . '/sess_' . session_id();
-	    chmod($path, 0640);
+	    if( $page === 'view' ) {
 
-	    if( isset($_SESSION['user']) ) {
+	    	$this->view();
+
+	    } else if( isset($_SESSION['user']) ) {
 
 	    	$this->$page();
 	    
@@ -23,11 +24,33 @@ abstract class AdminAbstractView {
 
 	}
 
+	public function view() { }
+
 	public function index() { }
 
 	public function edit() { }
 
 	public function delete() { }
+
+	public function element() {
+
+		$this->view();
+
+	}
+
+	public function router() {
+
+		$router = $_SERVER['REQUEST_URI'];
+
+		if ( is_numeric( substr($router, -1) ) ) {
+
+			return true;
+
+		}
+
+		return false;
+
+	}
 
 
 	public function test() {

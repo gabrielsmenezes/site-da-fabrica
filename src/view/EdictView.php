@@ -7,6 +7,17 @@ class EdictView extends AdminAbstractView {
 
 	}
 
+	public function view() {
+
+		$ef = EditalFactory::get();
+
+        $editais = $ef->listaOrdId();
+       
+		require_once __VIEW__.'edict/view.php';
+		require_once __STATIC__.'footer.php';
+
+	}
+
 	public function insert() { 
 
 		EditaisController::inserirEdital();
@@ -44,6 +55,7 @@ class EdictView extends AdminAbstractView {
         $this->index( $af->lista("3") );
 
 	}
+
 
 	
 
