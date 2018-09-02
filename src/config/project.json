@@ -91,6 +91,11 @@
             "page": "delete"
         },
         {
+            "name": "equipe/index",
+            "presenter": "TeamView",
+            "page": "view"
+        },
+        {
             "name": "equipe",
             "presenter": "TeamView",
             "page": "team"

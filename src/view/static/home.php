@@ -261,7 +261,7 @@
 			?>
 			<br>
 		</div>	
-			<button><a href="/?pagina=equipe">Ver Mais</a></button>
+			<button><a href="equipe/index">Ver Mais</a></button>
 		
 		
 	</div>
