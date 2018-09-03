@@ -16,7 +16,7 @@
             $sql = "SELECT * FROM ".$this->table." ORDER BY nome;"; 
             $t = DB::prepare($sql);
             $t->execute();
-            
+
             return $t->fetchAll( PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, ucfirst($this->table), array('nome', "imagem", "descricao") );
 
 
@@ -36,6 +36,17 @@
 
             $t = DB::prepare($sql);
             $t->execute();
+
+            return $t->fetchAll( PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, ucfirst($this->table), array('nome', "imagem", "descricao") );
+
+        }
+
+        public function getById( $id ) {
+
+            $sql = "SELECT * FROM ".$this->table." WHERE id = ".$id.";";
+        
+            $t = DB::prepare($sql);
+            $t->execute();        
 
             return $t->fetchAll( PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, ucfirst($this->table), array('nome', "imagem", "descricao") );
 

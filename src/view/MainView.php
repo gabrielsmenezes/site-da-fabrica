@@ -22,9 +22,8 @@ class MainView {
                 $sf = SobreFactory::get();
                 $content = $sf->lista()[0]->getDescricao();
 
-                $af = AlunoFactory::get();
-                $listAlunos = null;
-                $listAlunos = $af->lista("3");
+
+                $listAlunos = TeamPresenter::listRandom( 3 );
 
 
                 $nf = NovidadeFactory::get();

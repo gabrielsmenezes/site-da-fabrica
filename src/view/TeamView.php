@@ -25,34 +25,28 @@ class TeamView extends AdminAbstractView {
 
 	public function update() { 
 
-		EquipeController::updateAluno();
+		TeamPresenter::update();
 
 	}
 
 	public function delete() { 
 
-		EquipeController::removerAluno();
+		TeamPresenter::delete();
 
 	}
 
 	public function edit() { 
 
-		$af = AlunoFactory::get();
-    	$aluno = null;
-
-    	$aluno = $af->getById($_POST['alunoId'])[0]; 
+		
+		$aluno = TeamPresenter::edit();
 
     	require_once __VIEW__.'team/edit.php'; 
 
 	}
 
 	public function team() {
-
-		EquipeController::get();
-
-		$af = AlunoFactory::get();
         
-        $this->index( $af->lista("3") );
+        $this->index( TeamPresenter::listRandom( 3 ) );
 
 	}
 

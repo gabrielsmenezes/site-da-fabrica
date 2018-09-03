@@ -18,6 +18,18 @@
 
 
     	/**
+    	 * Buscas, devolve um array de alunos randomicamente
+    	 * @param Recebe um limite de alunos que devem ser retornandos
+    	 * @return Array de Alunos
+    	 */
+    	static public function listRandom( $limit ) {
+
+        	return AlunoFactory::get()->lista( $limit );
+
+    	}
+
+
+    	/**
     	 * Inseri um novo aluno
     	 */
     	static public function insert() {
@@ -66,117 +78,109 @@
 
         }
 
+
+        /**
+    	 * Retorna os dados de um aluno selecionado.
+    	 * @return Aluno, o aluno selecionado pelo id.
+    	 */
+        static public function edit() {
+
+        	if( !isset($_POST['alunoId']) ) {
+
+                self::redirect("não foi possível editar o aluno", false);
+
+                return null;
+
+        	} 
+	        
+	        return AlunoFactory::get()->getById($_POST['alunoId'])[0]; 
+
+        }
+
+
+
         /**
     	 * Redireciona para a página de equipes com uma messagem de sucesso ou erro.
     	 * @param messaga String, uma mesagem de sucesso ou erro.
     	 * @param sucess boolean, o status de sucesso (true) ou erro (false).
     	 */
-        private function redirect( $message, $success = true ) {
+        private function redirect( $message, $success = true, $route = "../equipe" ) {
 
         	if( $success ) {
 
         		$_SESSION['msgEquipe'] = $message;
-            	$newURL = '../equipe';
-            	header('Location: '.$newURL);
+            	header('Location: '. $route);
 
         	} else {
 
         		$_SESSION['msgEquipe'] = $message;
-            	$newURL = '../equipe';
-            	header('Location: '.$newURL);
+            	header('Location: ' . $route);
 
         	}
         	
 
         }
 
+        /**
+    	 * Controla a atualização dos dados de um aluno especifico.
+    	 */
+        static public function update() {
 
-        static public function editarAluno(){
-        	if( !isset($_POST['alunoId']) ){
-        		$newURL = '/admin/?pagina=equipe';
-                header('Location: '.$newURL);
-        	}
-        	else{        		
-	            $af = AlunoFactory::get();
-	        	$aluno = null;
-	        	$aluno = $af->getById($_POST['alunoId']);          
-	        	Render::render_php( '/views/' . 'editorAluno.php' , $aluno);
-        	}
-        }
-        static public function updateAluno(){
          	if( isset($_POST['nomeAluno']) && isset($_POST['descricaoAluno']) && 
-	            $_POST['nomeAluno'] != "" && $_POST['descricaoAluno'] != "" ){
-	            //echo "<br><br>init<br>";
+	            $_POST['nomeAluno'] != "" && $_POST['descricaoAluno'] != "" ) {
 
-	            //echo "<br>:".$_FILES['imagemProjeto']['tmp_name'].":<br>";
          		$id = $_POST['alunoId'];
 	            $nomeAluno = $_POST['nomeAluno'];
 	            $descricaoAluno = $_POST['descricaoAluno'];	 
-	            if( isset($_FILES['imagemAluno']) ){
-	            	if( $_FILES['imagemAluno']['tmp_name'] != ""){
+
+	            if( isset($_FILES['imagemAluno']) ) {
+
+	            	if( $_FILES['imagemAluno']['tmp_name'] != "") {
+
 		            	$imagemAluno = file_get_contents($_FILES['imagemAluno']['tmp_name']);
-		            }	
+
+		            }
 	            }
-	            /*
-	            echo $id;
-	            echo "<br>";
-	            echo $nomeAluno;
-	            echo "<br>";
-	            echo $descricaoAluno;
-	            echo "<br>";
-				*/
 
-	            //echo "factory<br>";
-	            $factoryAluno = AlunoFactory::get();
-
-	            //echo "adicionar<br>";
-	            /*
-	            $factoryProjeto->update("nome", $nomeProjeto, $id);
-	            $factoryProjeto->update("descricao", $descricaoProjeto, $id);
-	            $factoryProjeto->update("descricaoCurta", $descricaoCurtaProjeto, $id);
-	            */
 	            $arrCol = ["nome", "descricao"];
 	            $arrVal = [$nomeAluno, $descricaoAluno];
 
-	            if( isset($imagemAluno) ){
-	            	//$factoryProjeto->update("imagem", $imagemProjeto, $id);
+	            if( isset($imagemAluno) ) {
+
 	            	array_push($arrCol, "imagem");
 	            	array_push($arrVal, $imagemAluno);
+
 	            }
-	            $factoryAluno->updateArray($arrCol, $arrVal, $id);
-	            //echo "fim do metodo";
-	            $_SESSION['msgEquipe'] = "Atualizado com sucesso";
-	            $newURL = '../equipe';
-                header('Location: '.$newURL);
+
+	            AlunoFactory::get()->updateArray($arrCol, $arrVal, $id);
+                self::redirect("Atualizado com sucesso");
+
+	        } else {
+
+                self::redirect("Formulário preenchido incorretamente", false);
 
 	        }
-	        else{
-	            //echo "Formulário preenchido incorretamente";
-	            $_SESSION['msgEquipe'] = "Formulário preenchido incorretamente";
-	            $newURL = '../equipe';
-                header('Location: '.$newURL);
-	        }
         }
-        
-        static function removerAluno(){
+
+        /**
+    	 * Deleta a um aluno especifico identinficado pelo seu id.
+    	 */
+        static function delete() {
+
         	$id = $_POST['alunoId'];
 
-        	echo $id;
+            if( is_numeric($id) ) {
 
-            if( is_numeric($id) ){
-	            $pf = AlunoFactory::get();
-	            $pf->deleteById($id);
+	            AlunoFactory::get()->deleteById($id);
+		        self::redirect("Removido com sucesso");
 
-	            $_SESSION['msgEquipe'] = "removido com sucesso";
-		        $newURL = '../equipe';
-	            header('Location: '.$newURL);
+        	} else {
+
+        		self::redirect("Formulário preenchido incorretamente", false);
+
         	}
-        	else{
-        		//echo "Formulário preenchido incorretamente";
-	            $_SESSION['msgEquipe'] = "";
-	            //$newURL = '/admin/?pagina=equipe';
-                //header('Location: '.$newURL);
-        	}
+
         }
+
     }
-?>
+
