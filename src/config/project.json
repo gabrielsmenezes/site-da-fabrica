@@ -18,6 +18,8 @@
         "static": "view/static/",
 
 
+        "presenter": "presenter/",
+
 
         "controller": "admin/controller/",
         "factory": "admin/factory/",

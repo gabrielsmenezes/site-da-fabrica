@@ -8,9 +8,8 @@ class TeamView extends AdminAbstractView {
 	}
 
 	public function view() { 
-
- 		$af = AlunoFactory::get();
-        $alunos = $af->listaOrd();
+ 		
+        $alunos = TeamPresenter::listAll();
 
         require_once __VIEW__.'team/view.php';
         require_once __STATIC__.'footer.php';
@@ -19,7 +18,7 @@ class TeamView extends AdminAbstractView {
 
 	public function insert() { 
 
-		EquipeController::inserirAluno();
+		TeamPresenter::insert();
 
 	}
 

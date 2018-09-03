@@ -4,11 +4,11 @@
         private $nome;
         private $imagem;
         private $descricao;
-        
-       	public function addAtributos($nome, $imagem, $descricao){
-       		$this->nome = $nome;
-       		$this->imagem = $imagem;
-       		$this->descricao = $descricao;
+
+        function __construct($nome, $imagem, $descricao){
+            $this->nome = $nome;
+            $this->imagem = $imagem;
+            $this->descricao = $descricao;
         }  
         
 
