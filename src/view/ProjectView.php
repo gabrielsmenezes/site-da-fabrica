@@ -9,12 +9,11 @@ class ProjectView extends AdminAbstractView {
 
 	public function view() {
 
-		$pf = ProjetoFactory::get();
-        $projetos = $pf->listaOrdId();
+        $projetos = ProjectPresenter::listAll();
         
 		if( $this->router() ) {
 
-			$this->element( ereg_replace("[^0-9]", " ", $_SERVER['REQUEST_URI']), $pf );
+			$this->element( ereg_replace("[^0-9]", " ", $_SERVER['REQUEST_URI']) );
 
 		} else {
 
@@ -25,10 +24,10 @@ class ProjectView extends AdminAbstractView {
 
 	}
 
-	public function element( $id, $pf ) {
+	public function element( $id ) {
 
 
-       	$projeto = $pf->getById( $id )[0];
+       	$projeto = ProjectPresenter::element( $id );
 
        	require_once __VIEW__.'project/element.php';
        	require_once __STATIC__.'footer.php';
@@ -37,28 +36,25 @@ class ProjectView extends AdminAbstractView {
 
 	public function insert() { 
 
-		ProjetosController::inserirProjeto();
+		ProjectPresenter::insert();
 
 	}
 
 	public function update() { 
 
-		ProjetosController::updateProjeto();
+		ProjectPresenter::update();
 
 	}
 
 	public function delete() { 
 
-		ProjetosController::removerProjeto();
+		ProjectPresenter::delete();
 
 	}
 
 	public function edit() { 
 
-		$pf = ProjetoFactory::get();
-
-    	$projeto = $pf->getById($_POST['projectId'])[0];
-	
+    	$projeto = ProjectPresenter::edit();
     	require_once __VIEW__.'project/edit.php'; 
 
 	}
@@ -66,11 +62,7 @@ class ProjectView extends AdminAbstractView {
 
 	public function project() {
 
-		ProjetosController::get();
-
-		$af = ProjetoFactory::get();
-
-        $this->index( $af->lista("3") );
+        $this->index( ProjectPresenter::listRandom( 3 ) );
 
 	}
 

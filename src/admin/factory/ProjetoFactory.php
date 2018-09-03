@@ -11,32 +11,59 @@
         private function __construct(){
 
         }  
-        public function listaOrd(){
+
+        public function listaOrd() {
+
             $sql = "SELECT * FROM ".$this->table." ORDER BY nome;"; 
+
             $t = DB::prepare($sql);
             $t->execute();
-            return $t->fetchAll(PDO::FETCH_CLASS, ucfirst($this->table));
+            return $t->fetchAll( PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, ucfirst($this->table), array('nome', "imagem", "descricao", "descricaoCurta") );
+
+        }
+
+        public function getById($id) {
+
+            $sql = "SELECT * FROM ".$this->table." WHERE id = ".$id.";";
+            
+            $t = DB::prepare($sql);
+            $t->execute();            
+            return $t->fetchAll( PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, ucfirst($this->table), array('nome', "imagem", "descricao", "descricaoCurta") );
+            
+        }
+
+        public function lista( $limit = null ) {
+
+            if( $limit != null ) {
+                
+                $sql = "SELECT * FROM " . $this->table . " ORDER BY rand() LIMIT " . $limit . ";";
+                
+            } else {
+
+                $sql = "SELECT * FROM ".$this->table.";"; 
+
+            }
+
+            $t = DB::prepare($sql);
+            $t->execute();
+
+            return $t->fetchAll( PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, ucfirst($this->table), array('nome', "imagem", "descricao", "descricaoCurta") );
+
         }
 
         public function inserir($projeto){
-            try{
-                if(!$projeto || !$projeto->getNome() || !$projeto->getImagem() || !$projeto->getDescricao() || !$projeto->getDescricaoCurta() ){
+            try {
+
+                if(!$projeto || !$projeto->getNome() || !$projeto->getImagem() || !$projeto->getDescricao() || !$projeto->getDescricaoCurta() ) {
+
                     return 'Usuário imagem e descrição são obrigatórios!!';
+
                 }
+
                 $sql = "INSERT INTO ".$this->table." (nome, imagem, descricao, descricaoCurta) "." VALUES(:nome, :imagem, :descricao, :descricaoCurta);";
 
 
                 echo "SQL : ". $sql ."\n\n";
-                //echo "imagem: \n\n" .$projeto->getImagem();
-                
-                /*
-                $img=base64_encode($projeto->getImagem());
-
-                
-                echo "<img src = \" data:image/JPG;charset=utf8;base64,";
-                echo $img;
-                echo "\" />";
-                */
 
                 $t = DB::prepare($sql);
                 $t->execute(array(
@@ -45,15 +72,13 @@
                     ':descricao'      => $projeto->getDescricao(),
                     ':descricaoCurta' => $projeto->getDescricaoCurta()
                 ));
-                /*
-                foreach ($t->errorinfo() as $value ) {             
-                    echo "T :" . $value ."<br>";
-                }
-                */
-                return null;
-            }
-            catch(\Exceptio $e){
-                echo $e->getMessage();
+
+                return true;
+
+            } catch(\Exceptio $e) {
+
+                return false;
+            
             }
             
         }

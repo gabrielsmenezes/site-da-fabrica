@@ -6,12 +6,15 @@
       private $descricao;
       private $descricaoCurta;
       
-      public function addAtributos($nome, $imagem, $descricao, $descricaoCurta){
+      public function __construct($nome, $imagem, $descricao, $descricaoCurta) {
+
         $this->nome = $nome;
         $this->imagem = $imagem;
         $this->descricao = $descricao;
         $this->descricaoCurta = $descricaoCurta;
+
       }
+      
       public function setNome($nome){
           $this->nome = $nome;
       }

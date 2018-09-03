@@ -2,22 +2,18 @@
 
 class MainView {
 	function __construct($page) {
+
 		$this->$page();
+                
 	}
 
 	public function index() { 
-                //require_once __STATIC__.'head.php';
-                //require_once __STATIC__.'home.php'; 
-                //require_once __STATIC__.'footer.php'; 
-
                 	   
                 $path = session_save_path() . '/sess_' . session_id();
                 chmod($path, 0640);    
 
 
-                $pf = ProjetoFactory::get();
-                $listProjetos = null;
-                $listProjetos = $pf->lista("3");
+                $listProjetos = ProjectPresenter::listRandom( 3 );
 
                 $sf = SobreFactory::get();
                 $content = $sf->lista()[0]->getDescricao();
