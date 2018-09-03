@@ -27,19 +27,46 @@
                 ));
 
                 
-                /*
-                foreach ($t->errorinfo() as $value ) {             
-                    echo "T :" . $value ."<br>";
-                }
-                */
-                
-                return null;
-            }
-            catch(\Exceptio $e){
-                echo $e->getMessage();
+                return true;
+
+            } catch(\Exceptio $e) {
+
+                return false;
+
             }
             
         }
+
+        public function listaOrdId( $limit = null ) {
+
+            if( $limit != null ) {
+
+                $sql = "SELECT * FROM ".$this->table." ORDER BY id desc LIMIT ".$limit.";";
+
+            } else {
+
+                $sql = "SELECT * FROM ".$this->table." ORDER BY id desc;"; 
+
+            }
+
+            $t = DB::prepare($sql);
+            $t->execute();
+            
+            return $t->fetchAll( PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, ucfirst($this->table), array('titulo', "imagem", "descricao") );
+
+        }
+
+        public function getById( $id ) {
+
+            $sql = "SELECT * FROM ".$this->table." WHERE id = ".$id.";";
+        
+            $t = DB::prepare($sql);
+            $t->execute();        
+
+            return $t->fetchAll( PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, ucfirst($this->table), array('titulo', "imagem", "descricao") );
+
+        }
+
         static public function get(){
             if(!isset(self::$instance)){
                 self::$instance = new NovidadeFactory();

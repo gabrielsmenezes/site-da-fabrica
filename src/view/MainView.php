@@ -26,9 +26,8 @@ class MainView {
                 $listAlunos = TeamPresenter::listRandom( 3 );
 
 
-                $nf = NovidadeFactory::get();
-                $listNovidades = null;
-                $listNovidades = $nf->listaOrdId("3");
+                $listNovidades = NoticePresenter::lista( 2 );
+
 
                 $ef = EditalFactory::get();
                 $listEditais = null;

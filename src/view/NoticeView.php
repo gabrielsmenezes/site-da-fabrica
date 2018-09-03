@@ -7,23 +7,43 @@ class NoticeView extends AdminAbstractView {
 
 	}
 
+	public function view() { 
+
+		$novidades = NoticePresenter::listAll();
+
+        require_once __VIEW__.'notice/view.php';
+        require_once __STATIC__.'footer.php';
+
+	}
+
+	public function insert() { 
+
+		NoticePresenter::insert();
+
+	}
+
+	public function update() { 
+
+		NoticePresenter::update();
+
+	}
+
+	public function delete() { 
+
+		NoticePresenter::delete();
+
+	}
+
 	public function edit() { 
 
-		$nf = NovidadeFactory::get();
-		
-    	$novidade = $nf->getById($_POST['novidadeId'])[0];
-
+    	$novidade = NoticePresenter::edit();
     	require_once __VIEW__.'notice/edit.php'; 
 
 	}
 
 	public function notice() {
 
-		NovidadesController::get();
-
-		$af = NovidadeFactory::get();
-        
-        $this->index( $af->lista("3") );
+        $this->index( $listNovidades = NoticePresenter::lista( 2 ) );
 
 	}
 	

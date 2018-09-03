@@ -48,6 +48,11 @@
             "page": "updateAbout"
         },
         {
+            "name": "novidades/index",
+            "presenter": "NoticeView",
+            "page": "view"
+        },
+        {
             "name": "novidades",
             "presenter": "NoticeView",
             "page": "notice"
@@ -56,6 +61,21 @@
             "name": "novidades/editar",
             "presenter": "NoticeView",
             "page": "edit"
+        },
+        {
+            "name": "novidades/cadastrar",
+            "presenter": "NoticeView",
+            "page": "insert"
+        }, 
+        {
+            "name": "novidades/atualizar",
+            "presenter": "NoticeView",
+            "page": "update"
+        },
+        {
+            "name": "novidades/remover",
+            "presenter": "NoticeView",
+            "page": "delete"
         },
         {
             "name": "projetos/index",

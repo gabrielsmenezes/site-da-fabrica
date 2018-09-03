@@ -111,7 +111,7 @@
 			        
 					echo "</div>";
 					echo "<div class\"testeDiv\">";
-			            echo "<form action='/admin/?pagina=novidadeRemove' method='post'>
+			            echo "<form action='novidades/remover' method='post'>
 			           				<input type=\"hidden\" name=\"novidadeId\" value=". $novidade->getId() .">
 			           				<button class='edit'   type='submit' name='editNovidade' formaction='novidades/editar' />Editar</button>
 			           				<button type='submit'>Deletar</button>";
@@ -137,7 +137,7 @@
 	            </script>
 				
 				<h2>Postar novidade</h2>
-				<form class = "justified" action="/admin/?pagina=inserirNovidade" method="POST" enctype="multipart/form-data">
+				<form class = "justified" action="novidades/cadastrar" method="POST" enctype="multipart/form-data">
 				    
 					<div align='center'>
 

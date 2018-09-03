@@ -139,7 +139,7 @@
 		</div>	
 			<br>
 			 
-			<button><a href="/?pagina=novidades">Ver Mais</a></button>
+			<button><a href="novidades/index">Ver Mais</a></button>
 	</div>
 
 

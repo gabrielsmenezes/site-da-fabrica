@@ -5,12 +5,14 @@
         private $imagem;
         private $descricao;            
        	
-        public function addAtributos($titulo, $imagem, $descricao){
-       		$this->titulo = $titulo;
-       		$this->descricao = $descricao;
-            $this->imagem = $imagem;
-        }  
         
+        function __construct($titulo, $imagem, $descricao) {
+
+            $this->titulo = $titulo;
+            $this->descricao = $descricao;
+            $this->imagem = $imagem;
+
+        }  
 
         public function setTitulo($titulo){
             $this->titulo = $titulo;
