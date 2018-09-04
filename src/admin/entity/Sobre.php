@@ -3,9 +3,12 @@
     	private $id;
         private $descricao;
         
-       	public function addAtributos($descricao){
+       	public function __construct($descricao) {
+
        		$this->descricao = $descricao;
+
         } 
+        
         public function setDescricao($descricao){
        		$this->descricao = $descricao;
         } 

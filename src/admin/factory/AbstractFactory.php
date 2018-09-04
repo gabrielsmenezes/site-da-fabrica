@@ -63,10 +63,7 @@
 
             }
 
-            $t = DB::prepare($sql);
-            $t->execute();
-
-             return $t->fetchAll( PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, ucfirst($this->table), $attributes );
+            return $this->run( $sql, $attributes );
 
         }
 
@@ -82,21 +79,15 @@
 
             }
 
-            $t = DB::prepare($sql);
-            $t->execute();
-
-            return $t->fetchAll( PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, ucfirst($this->table), $attributes );
+            return $this->run( $sql, $attributes );
 
         }
 
         public function getById( $id, $attributes = null) {
 
-            $sql = "SELECT * FROM ".$this->table." WHERE id = ".$id.";";
+            $sql = "SELECT * FROM " . $this->table . " WHERE id = " . $id . ";";
 
-            $t = DB::prepare($sql);
-            $t->execute();            
-
-            return $t->fetchAll( PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, ucfirst($this->table), $attributes );
+            return $this->run( $sql, $attributes );
 
         }
         
@@ -105,5 +96,16 @@
             $t = DB::prepare($sql);
             $t->execute();
         }
+
+        private function run( $sql, $attributes ) {
+
+            $data = DB::prepare($sql);
+            $data->execute();            
+
+            return $data->fetchAll( PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, ucfirst($this->table), $attributes );
+
+        }
+
+
     }
 ?>

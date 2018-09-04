@@ -9,9 +9,7 @@ class AdminView extends AdminAbstractView {
 
 	public function about() {
 
-		$sf = SobreFactory::get();
-        $args = $sf->lista()[0]->getDescricao();
-
+        $args = AboutPresenter::lista();
         require_once __VIEW__.'admin/about.php';
        
 
@@ -19,10 +17,9 @@ class AdminView extends AdminAbstractView {
 
 	public function updateAbout() {
 
-		SobreController::update();
+		AboutPresenter::update();
 
 	}
 
 	
 }
-?>
