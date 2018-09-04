@@ -22,7 +22,7 @@ class LoginView {
 	public function credential() {
 
 		// realiza a validação do login e senha
-		if( LoginController::login() ) {
+		if( LoginPresenter::login() ) {
 			// página inicial do admin
 			new AdminView('index');
 		
@@ -41,7 +41,7 @@ class LoginView {
      */
 	public function logout() {
 
-		LoginController::sair();
+		LoginPresenter::sair();
 
 		$this->index();
 		
