@@ -5,10 +5,12 @@
         private $arquivo;
         private $descricao;            
        	
-        public function addAtributos($titulo, $arquivo, $descricao){
+        public function __construct($titulo, $arquivo, $descricao) {
+
        		$this->titulo = $titulo;
        		$this->descricao = $descricao;
             $this->arquivo = $arquivo;
+        
         }  
         
 

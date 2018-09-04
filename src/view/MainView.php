@@ -24,10 +24,9 @@ class MainView {
 
                 $listNovidades = NoticePresenter::lista( 2 );
 
+                
+                $listEditais = EdictPresenter::lista( 2 );
 
-                $ef = EditalFactory::get();
-                $listEditais = null;
-                $listEditais = $ef->listaOrdId("3");
 
                 $args = array($content, $listProjetos, $listAlunos, $listNovidades, $listEditais);
 

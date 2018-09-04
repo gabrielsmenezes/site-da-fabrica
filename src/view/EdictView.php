@@ -9,10 +9,8 @@ class EdictView extends AdminAbstractView {
 
 	public function view() {
 
-		$ef = EditalFactory::get();
+        $editais = EdictPresenter::listAll();
 
-        $editais = $ef->listaOrdId();
-       
 		require_once __VIEW__.'edict/view.php';
 		require_once __STATIC__.'footer.php';
 
@@ -20,27 +18,25 @@ class EdictView extends AdminAbstractView {
 
 	public function insert() { 
 
-		EditaisController::inserirEdital();
+		EdictPresenter::insert();
 
 	}
 
 	public function update() { 
 
-		EditaisController::updateEdital();
+		EdictPresenter::update();
 
 	}
 
 	public function delete() { 
 
-		EditaisController::removerEdital();
+		EdictPresenter::delete();
 
 	}
 
 	public function edit() { 
 
-    	$ef = EditalFactory::get();
-
-	    $edital = $ef->getById($_POST['editalId'])[0];   
+	    $edital = EdictPresenter::element( $_POST['editalId'] );   
 
     	require_once __VIEW__.'edict/edit.php'; 
 
@@ -48,11 +44,7 @@ class EdictView extends AdminAbstractView {
 
 	public function edict() {
 
-		EditaisController::get();
-
-		$af = EditalFactory::get();
-
-        $this->index( $af->lista("3") );
+        $this->index( EdictPresenter::lista( 3 ) );
 
 	}
 

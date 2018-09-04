@@ -26,10 +26,10 @@
 
 
     	/**
-    	 * Buscas, devolve um array de Projetos, com todos os projetos
-    	 * @param Recebe um limite de Projetos que devem ser retornandos
-    	 * @return Array de Projetos
-    	 */
+         * Buscas, devolve um Projeto
+         * @param Numerico (inteiro), recebe um id do Projeto que devem ser retornando
+         * @return Projeto
+         */
     	static public function element( $id ) {
 
         	return ProjetoFactory::get()->getById( $id )[0];

@@ -51,42 +51,53 @@
 
         }
 
-        public function listaOrdId($limit=null){
-            if( $limit != null ){
-                //echo "limit:".$limit.":";
+        public function listaOrdId( $limit = null, $attributes = null ) {
+
+            if( $limit != null ) {
+
                 $sql = "SELECT * FROM ".$this->table." ORDER BY id desc LIMIT ".$limit.";";
-                //echo $sql;
-            }
-            else{
+
+            } else {
+
                 $sql = "SELECT * FROM ".$this->table." ORDER BY id desc;"; 
+
             }
+
             $t = DB::prepare($sql);
             $t->execute();
-            return $t->fetchAll(PDO::FETCH_CLASS, ucfirst($this->table));
+
+             return $t->fetchAll( PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, ucfirst($this->table), $attributes );
+
         }
 
-        public function lista($limit=null){
-            if( $limit != null ){
-                //echo "limit:".$limit.":";
+        public function lista( $limit = null, $attributes = null ) {
+
+            if( $limit != null ) {
+
                 $sql = "SELECT * FROM ".$this->table." ORDER BY rand() LIMIT ".$limit.";";
-                //echo $sql;
-            }
-            else{
+
+            } else {
+
                 $sql = "SELECT * FROM ".$this->table.";"; 
+
             }
+
             $t = DB::prepare($sql);
             $t->execute();
-            return $t->fetchAll(PDO::FETCH_CLASS, ucfirst($this->table));
+
+            return $t->fetchAll( PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, ucfirst($this->table), $attributes );
+
         }
 
-        public function getById($id){
+        public function getById( $id, $attributes = null) {
+
             $sql = "SELECT * FROM ".$this->table." WHERE id = ".$id.";";
-            //echo "sql:";
-            //echo $sql;
 
             $t = DB::prepare($sql);
             $t->execute();            
-            return $t->fetchAll(PDO::FETCH_CLASS, ucfirst($this->table));
+
+            return $t->fetchAll( PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, ucfirst($this->table), $attributes );
+
         }
         
         public function deleteById($id){

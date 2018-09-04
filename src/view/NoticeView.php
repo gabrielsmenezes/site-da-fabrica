@@ -43,7 +43,7 @@ class NoticeView extends AdminAbstractView {
 
 	public function notice() {
 
-        $this->index( $listNovidades = NoticePresenter::lista( 2 ) );
+        $this->index( NoticePresenter::lista( 2 ) );
 
 	}
 	
