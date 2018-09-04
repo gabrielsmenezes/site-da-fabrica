@@ -15,8 +15,8 @@
 	<meta charset="utf-8">
 	<title>Fábrica de Software - UFMS</title>
 	
-	<link rel="shortcut icon" href="Imagens/favicon.png">
-	<link rel="stylesheet" media="screen" href="views/style.css">
+	<link rel="shortcut icon" href="<?=  __IMAGE__ . "favicon.png" ?>">
+	<link rel="stylesheet" media="screen" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Jura|Orbitron" rel="stylesheet">
 

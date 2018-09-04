@@ -119,9 +119,9 @@ header {
 	padding:5px;
 	left:0;
 	top:0;
-	background: url('../Imagens/logo.png') center center no-repeat,
-	url('../Imagens/frameL.png') top left no-repeat,
-	url('../Imagens/frameR.png') top right no-repeat;
+	background: url('/Imagens/logo.png') center center no-repeat,
+	url('/Imagens/frameL.png') top left no-repeat,
+	url('/Imagens/frameR.png') top right no-repeat;
 	background-size:auto 215px;	
 }
 

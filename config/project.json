@@ -1,5 +1,5 @@
 {
-    "app": "/WebsiteFabrica/src/",
+    "app": "/WebsiteFabrica/",
     "database": {
         "server": "localhost",
         "name": "fabrica",
@@ -12,19 +12,20 @@
         "interface": "idie/Interface/",
         "util": "idie/util/",
         "core": "idie/core/functions/",
+        "adapter": "idie/adapter/",
 
-        "view": "view/",
-        "pages": "view/pages/",
-        "static": "view/static/",
-
-
-        "presenter": "presenter/",
+        "view": "src/view/",
+        "pages": "src/view/pages/",
+        "static": "src/view/static/",
 
 
-        "controller": "admin/controller/",
-        "factory": "admin/factory/",
-        "adminEntity": "admin/entity/",
-        "adapter": "idie/adapter/"
+        "presenter": "src/presenter/",
+
+        "factory": "src/model/factory/",
+        "entity": "src/model/entity/",
+
+        "image": "image/"
+        
     },   
     "routes": [
         {
