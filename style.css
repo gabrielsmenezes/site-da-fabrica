@@ -1,0 +1,483 @@
+/**
+	Autoria: Isabela Andrade, Jane Sandim Eleutério
+	Folha de Estilo
+	Cor base: #0089B7, #0089B7, #e8e8e8
+**/
+
+
+
+
+
+
+strong {
+	color:#0089B7;
+}
+
+body {
+	color:#696969;
+	font-family: 'Bookman', sans-serif;
+	background:#fff;
+}
+
+/*** SCROLLBAR ***/
+
+	::-webkit-scrollbar {width:5px; height:10px; overflow-x: hidden }
+    ::-webkit-scrollbar-thumb:vertical {height:10px; background-color:#0089B7; opacity:.5; } 
+    ::-webkit-scrollbar-thumb:horizontal {overflow-x: hidden }
+	
+/* LINKS EM GERAL */
+	
+a {
+color:#0089B7;	
+text-decoration:none;
+transition:0.5s ease-in; 
+-moz-transition:0.5s ease-in; 
+-webkit-transition:0.3s ease-in; 
+
+}	
+
+a:hover{opacity:0.5}
+
+/* HEADLINGS */
+
+h1 {
+	color:#0089B7;
+	font-family: 'Jura', sans-serif;
+	margin-top:25px;
+	text-align:center;
+}
+
+h2 {	
+	color:#696969;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size:20px;
+	}
+	
+h3 {
+	color:#0089B7;
+	font-family: 'Open Sans Condensed', sans-serif;
+}	
+
+/* BOTOES */
+
+button {
+	width:88px;
+	text-align:center;
+	background-color:#0089B7;
+	-moz-border-radius:42px;
+	-webkit-border-radius:42px;
+	border-radius:42px;
+	border:none;
+	border-top:1px #d5d5d5 solid;
+	border-bottom:2px #b5b5b5 solid;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	padding:5px;
+	text-decoration:none;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size:15px;	
+	color:white;
+	transition:0.5s ease-in; 
+	-moz-transition:0.5s ease-in; 
+	-webkit-transition:0.3s ease-in; 
+}
+
+
+
+button.edit{
+	background-color:#FF5722;
+}
+button.showButton{
+	background-color:#262626;
+
+}
+button.testButton{
+	background-color:#d760aa;
+}
+
+button.inicial{
+	width:140px;
+}
+	button:hover {
+		opacity:.5;
+	}
+
+	button a {
+		color:#fff;
+		font-family: 'Open Sans Condensed', sans-serif;
+			
+	}
+	
+	
+
+/* HEADER */
+header {
+	width:100%;
+	height:215px;
+	position:absolute;
+	padding:5px;
+	left:0;
+	top:0;
+	background: url('/Imagens/logo.png') center center no-repeat,
+	url('/Imagens/frameL.png') top left no-repeat,
+	url('/Imagens/frameR.png') top right no-repeat;
+	background-size:auto 215px;	
+}
+
+
+/* MENU */
+
+nav {
+	width:100%;
+	height:auto;
+	top:210px;
+	position:absolute;
+	padding:5px;
+	left:0;
+	z-index:5;
+	background:#e8e8e8;
+	text-align:center;
+	margin:auto;
+}
+
+.navbar-fixed {
+    top: 0;
+    z-index: 100;
+	position: fixed;
+    width: 100%;
+}
+
+
+	nav a {
+		color:#0089B7;
+		text-transform:uppercase;
+		text-align:center;
+		width:auto;	
+		margin: 0 30px 0 30px;
+		padding:5px;
+		font-weight:bold;
+		font-family: 'Open Sans Condensed', sans-serif;
+	}
+	
+	nav a:hover {
+		color:#696969;
+	}
+
+/* CAIXAS */
+
+.mainbox {
+	position:absolute;
+	top:238px;
+	left:0;
+	width:100%;
+}
+
+.box{	
+	width:100%;
+	position:relative;
+	padding:5px 5px 20px 5px;
+	margin:0px 0px 0px 0px;
+	left:0;
+	text-align:center;
+	background:#f1f1f1;
+}
+.boxwhite {	
+	width:100%;
+	position:relative;
+	padding:5px 5px 20px 5px;
+	margin:0px 0px 0px 0px;
+	left:0;
+	text-align:center;
+	background:#ffffff;
+
+}
+
+
+
+/** NOVIDADES **/
+
+
+.news {
+	width:70%;
+	position:relative;
+	padding:0px;
+	text-align:justify;
+	margin:auto;
+}
+
+.new {
+	width:100%;
+	height:auto;
+	position: relative;
+	display: inline-block;
+}
+
+.new h2{
+	margin-bottom:0px;
+	margin-top:30px;
+}
+.new img {
+    float:left;
+    max-height: 150px;
+	max-width: 200px;
+    margin:0px 10px 0px 0px;
+ }
+.new p {
+    text-align:justify;
+    margin:0px;
+  }
+.new div{
+	margin:0px;
+}
+  
+/** EDITAIS **/
+
+
+.notices {
+	width:70%;
+	position:relative;
+	padding:0px;
+	text-align:center;
+	margin:auto;
+}
+
+.notice {
+	width:100%;
+	height:auto;
+	text-align:justify;
+}
+
+
+/** SOBRE **/
+
+
+.about {
+	width:70%;
+	position:relative;
+	padding:0px;
+	margin:auto;
+	background:light-blue;	
+	text-align:justify;
+}
+
+.about input{
+	margin-bottom: 2px;
+}
+
+.about label{
+	width: 120px;
+	text-align: center;
+	display: inline-block;
+}
+
+
+.about form {
+	margin:auto;
+	width:50%}
+	
+.about img.i1 {
+	width:50px;
+	height:50px;
+	margin:5px;
+	float:left;
+}
+
+.about img.i2 {
+	width:50px;
+	height:50px;
+	margin:5px;
+	float:right;
+}
+
+
+/* PROJETOS */
+
+.projects {
+	width:70%;
+	position:relative;
+	padding:0px;
+	text-align:center;
+	margin:auto;
+}
+
+.project {
+	width: 250px;
+   margin: 30px 20px 0px 20px ;
+   display: inline-block;   
+   vertical-align: top;
+}
+
+
+.project  img {
+	height:200px;
+	max-width:200px;
+	margin:5px;
+	border-radius:10px;
+}
+.project p {
+	width:90%;
+	margin:auto;
+	text-align:justify;
+}
+
+.projectDetail img{
+	width:300px;
+	margin:auto;
+	margin-bottom:15px;
+	display:block;
+}
+.projectDetail h1, h2, h3, h4, p,ul, ol{
+	text-align:justify;
+}
+.projectDetail table {
+    border-collapse: collapse;
+	text-align: justify;
+	
+}
+
+.projectDetail table, th, td {
+    border: 1px solid black;
+}
+
+.projectDetail tr:nth-child(odd) {
+	background-color: #f1f1f1;
+}
+
+
+
+/* EQUIPE */
+
+.membros {
+	width:70%;
+	position:relative;
+	padding:0px;
+	text-align:center;
+	margin:auto;
+}
+.membro {
+   width: 250px;
+   margin: 30px 20px 0px 20px;
+   padding: 0px;
+   display: inline-block;
+   vertical-align: top;
+}
+.membro img {
+	height:200px;
+	margin:5px;
+	border-radius:10px;
+}
+
+
+
+/* FOOTER */
+
+footer {
+	width:100%;
+	height:auto;
+	position:absolute;
+	padding:5px;
+	left:0;
+	background:#fff;
+	color:#696969;
+	padding:5px;
+	text-align:center;
+	margin-top:10px;
+	padding-bottom:50px;
+}
+
+footer h2 {
+margin-left:50px;
+color:#696969 !important;
+}
+
+footer .bloco {
+	width:22%;
+	display:inline-block;
+	margin:auto; 
+	height:250px;
+	overflow:auto;
+	
+}	
+
+.bloco li {
+	margin:auto;
+	text-align:center;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight:bold;
+	list-style-type: none;
+	border-bottom: 1px #eee solid;
+	-webkit-transition: all 0.6s ease-in-out;
+    -moz-transition: all 0.6s ease-in-out;
+    -o-transition: all 0.6s ease-in-out;
+}
+
+
+.bloco li:hover {
+	text-indent:5%;
+}
+
+
+footer h2 {
+	color:#0089B7;
+	text-align:center;
+	
+}
+
+
+
+/** CREDITOS **/
+
+.disclaimer {
+	text-align:center;
+	width:100%;
+	height:auto;
+	background:#696969;
+	color:#ffffff;
+	position:absolute;
+	bottom:0;
+	left:0;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+
+
+/* SELECAO COLORIDA  */
+
+::selection {
+	color:#ffffff; 
+	background:#0089B7;
+}
+
+
+/**
+*
+*	Ed
+*
+*/
+
+
+
+.descricao{
+	height:90px;
+	overflow:auto;
+	padding:5px;
+	border-bottom: 20px solid transparent;
+	text-align:justify;
+	margin:auto;
+	margin-top:0px;
+} 
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+  
+

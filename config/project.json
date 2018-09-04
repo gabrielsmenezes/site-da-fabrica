@@ -1,0 +1,187 @@
+{
+    "app": "/WebsiteFabrica/",
+    "database": {
+        "server": "localhost",
+        "name": "fabrica",
+        "user": "root",
+        "password": ""
+    },
+    "source": {
+        "root": "idie/",
+        "router": "idie/router/",
+        "interface": "idie/Interface/",
+        "util": "idie/util/",
+        "core": "idie/core/functions/",
+        "adapter": "idie/adapter/",
+
+        "view": "src/view/",
+        "pages": "src/view/pages/",
+        "static": "src/view/static/",
+
+
+        "presenter": "src/presenter/",
+
+        "factory": "src/model/factory/",
+        "entity": "src/model/entity/",
+
+        "image": "image/"
+        
+    },   
+    "routes": [
+        {
+            "name": "index",
+            "presenter": "MainView",
+            "page": "index"
+        },
+        {
+            "name": "user-admin",
+            "presenter": "AdminView",
+            "page": "index"
+        },
+        {
+            "name": "sobre",
+            "presenter": "AdminView",
+            "page": "about"
+        },
+        {
+            "name": "sobre/atualizar",
+            "presenter": "AdminView",
+            "page": "updateAbout"
+        },
+        {
+            "name": "novidades/index",
+            "presenter": "NoticeView",
+            "page": "view"
+        },
+        {
+            "name": "novidades",
+            "presenter": "NoticeView",
+            "page": "notice"
+        },
+        {
+            "name": "novidades/editar",
+            "presenter": "NoticeView",
+            "page": "edit"
+        },
+        {
+            "name": "novidades/cadastrar",
+            "presenter": "NoticeView",
+            "page": "insert"
+        }, 
+        {
+            "name": "novidades/atualizar",
+            "presenter": "NoticeView",
+            "page": "update"
+        },
+        {
+            "name": "novidades/remover",
+            "presenter": "NoticeView",
+            "page": "delete"
+        },
+        {
+            "name": "projetos/index",
+            "presenter": "ProjectView",
+            "page": "view"
+        },
+        {
+            "name": "projetos/index/element",
+            "presenter": "ProjectView",
+            "page": "view"
+        },
+        {
+            "name": "projetos",
+            "presenter": "ProjectView",
+            "page": "project"
+        },
+        {
+            "name": "projetos/editar",
+            "presenter": "ProjectView",
+            "page": "edit"
+        },
+        {
+            "name": "projetos/cadastrar",
+            "presenter": "ProjectView",
+            "page": "insert"
+        },
+        {
+            "name": "projetos/atualizar",
+            "presenter": "ProjectView",
+            "page": "update"
+        },
+        {
+            "name": "projetos/remover",
+            "presenter": "ProjectView",
+            "page": "delete"
+        },
+        {
+            "name": "equipe/index",
+            "presenter": "TeamView",
+            "page": "view"
+        },
+        {
+            "name": "equipe",
+            "presenter": "TeamView",
+            "page": "team"
+        },
+        {
+            "name": "equipe/cadastrar",
+            "presenter": "TeamView",
+            "page": "insert"
+        },
+        {
+            "name": "equipe/editar",
+            "presenter": "TeamView",
+            "page": "edit"
+        },
+        {
+            "name": "equipe/atualizar",
+            "presenter": "TeamView",
+            "page": "update"
+        },
+        {
+            "name": "equipe/remover",
+            "presenter": "TeamView",
+            "page": "delete"
+        },
+        {
+            "name": "editais/index",
+            "presenter": "EdictView",
+            "page": "view"
+        },
+        {
+            "name": "editais",
+            "presenter": "EdictView",
+            "page": "edict"
+        },
+        {
+            "name": "editais/editar",
+            "presenter": "EdictView",
+            "page": "edit"
+        },
+        {
+            "name": "editais/cadastrar",
+            "presenter": "EdictView",
+            "page": "insert"
+        },
+        {
+            "name": "editais/atualizar",
+            "presenter": "EdictView",
+            "page": "update"
+        },
+        {
+            "name": "editais/remover",
+            "presenter": "EdictView",
+            "page": "delete"
+        },
+        {
+            "name": "logout",
+            "presenter": "LoginView",
+            "page": "logout"
+        },
+        {
+            "name": "login",
+            "presenter": "LoginView",
+            "page": "credential"
+        }
+    ]
+}
