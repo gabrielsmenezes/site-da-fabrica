@@ -1,0 +1,111 @@
+*{
+padding: 0; 
+margin: 0; 
+font-size:14px; 
+text-decoration: none; 
+color: #333;
+list-style: none;
+}
+
+/*-------------------------topo do site-------------------------------*/
+#topo{width: 100%; height: 200px; float: left; background-color: #FFFFFF}
+.logo{width: 180px; height: auto; float: left; margin: 15px;}
+.universidade{float: right; padding: 10px; margin: 15px;}
+/*-------------------------fim do topo--------------------------------*/
+
+
+/*-------------------------menu do Site--------------------------------*/
+#menu{width: 100%; height: 34px; float: left; background-color: #4682B4}
+.links_menu{list-style:none; float:left; }
+.links_menu li{position:relative; float:left; }
+.links_menu li a{text-align: center; color:#FFFFFF; text-decoration:none; padding:5px 10px; display:block; font-size: 18px; font-family: calibri, sans-serif;}
+.links_menu li a:hover{background:#27408B; color:#fff;}
+.links_menu li  ul{position:absolute; top:25px; left:0; background-color:#4682B4; display:none;}  
+.links_menu li:hover ul, .links_menu li.over ul{display:block; } 
+.links_menu li ul li{border:1px solid #c0c0c0; display:block; width:150px;}
+/*-------------------------fim do Menu--------------------------------*/
+
+
+/*-------------------------conteudo do site---------------------------*/
+#conteudo{width: 100%; min-height: 500px; float: left; background-color: #FFFFFF; padding-bottom: 40px;}
+
+/*-------------------------conteudo alunos---------------------------*/
+#conteudo_alunos_membros{width: 90%; min-height: 500px; float: left; border: 1px solid #CCC; margin: 20px 50px;}
+.posts_alunos{width: 100%; height: auto; overflow: hidden;float: left; margin: 10px 0 30px 0; border: 0px solid #F00}
+.tituloAluno{font-size: 30px; font-family:  calibri, sans-serif; float: left; margin-bottom: 10px;}
+.imagem{width: 20%; height: auto; float: left; margin: 5px 0;}
+.nome{font-size: 30px; font-family: calibri, sans-serif; margin-top: 20px;}
+.curso{font-size: 20px; font-family: calibri, sans-serif; margin-top: 20px;}
+/*-------------------------fim de conteudo alunos---------------------------*/
+
+
+/*-------------------------conteudo egressos---------------------------*/
+#conteudo_egressos_membros{width: 90%; min-height: 500px; float: left; border: 1px solid #CCC; margin: 20px 50px;}
+.posts_egressos{width: 100%; height: auto; overflow: hidden;float: left; margin: 10px 0 30px 0; border: 0px solid #F00}
+.tituloEgresso{font-size: 30px; font-family:  calibri, sans-serif; float: left; margin-bottom: 10px;}
+.imagem2{width: 20%; height: auto; float: left; margin: 5px 0;}
+.nome2{font-size: 30px; font-family: calibri, sans-serif; margin-top: 20px;}
+.curso2{font-size: 20px; font-family: calibri, sans-serif; margin-top: 20px;}
+/*-------------------------fim do conteudo egressos---------------------------*/
+
+
+/*-------------------------conteudo professores---------------------------*/
+#conteudo_professores_membros{width: 90%; min-height: 500px; float: left; border: 1px solid #CCC; margin: 20px 50px;}
+.posts_professores{width: 100%; height: auto; overflow: hidden;float: left; margin: 10px 0 30px 0; border: 0px solid #F00}
+.tituloProfessor{font-size: 30px; font-family:  calibri, sans-serif; float: left; margin-bottom: 10px;}
+.imagem3{width: 20%; height: auto; float: left; margin: 5px 0;}
+.nome3{font-size: 30px; font-family: calibri, sans-serif; margin-top: 20px;}
+.funcao{font-size: 20px; font-family: calibri, sans-serif; margin-top: 20px;}
+/*-------------------------fim do conteudo professores---------------------------*/
+
+
+/*-----------------------------página index-----------------------------*/
+.introducao{text-align: center; color: #000000; margin-top: 60px; font-size: 30px; margin-left: 20px; font-family: calibri, sans-serif;}
+.descricao{text-align: center; color: #000000; padding-top: 30px; font-size: 20px; margin-left: 20px; padding-right: 40px; font-family: calibri, sans-serif;}
+.objetivo{text-align: center; color: #000000; padding-top: 80px; font-size: 30px; margin-left: 20px; font-family: calibri, sans-serif;}
+.descricaoObj{text-align: center; color: #000000; padding-top: 30px; font-size: 20px; margin-left: 20px; padding-right: 40px; font-family: calibri, sans-serif;}
+/*-------------------------fim da página index---------------------------*/
+
+
+/*-------------------------página de contato---------------------------*/
+.campos{width: 80%; margin: 10px 10%; height: 30px; float: left; padding: 2px; font-size: 14px; font-family: calibri, sans-serif;}
+.campo2{width: 80%; margin: 10px 10%; min-height: 150px; float: left; padding: 2px; font-size: 14px; font-family: calibri, sans-serif;}
+.bt_enviar{float: left; margin-left:10%; padding: 5px; font-size: 16px; font-family: calibri, sans-serif;}
+.legenda{float: left; margin-left: 10%; font-size: 16px; font-family: calibri, sans-serif;}
+/*-------------------------fim da página de contato--------------------*/
+
+/*-------------------------formulário de cadastro--------------------*/
+#box_form{width: 80%; min-height: 300px; background-color: #FFFFFF; margin: 40px auto; overflow: hidden;}
+#botoes{width: 80%; margin: 10px 10%; height: 30px; float: left; padding: 2px; font-size: 14px; font-family: calibri, sans-serif;}
+.campos_cad{width: 80%; margin: 10px 10%; height: 30px; float: left; padding: 2px; font-size: 14px; font-family: calibri, sans-serif;}
+.bt_cad{float: left; font-size: 16px; padding: 5px; margin-right: 5px;}
+.tituloCadastro, .tituloLogin{font-size: 30px; font-family:  calibri, sans-serif;}
+.form_link{color:#59F; font-size: "16px"; float: left;}
+.botoes{width: 80%; margin: 10px 10%; min-height: 30px; float: left; padding: 2px; font-size: 14px; font-family: calibri, sans-serif;}
+.p_form{color: #333; font-size: 16px; float: left; width: 100%;}
+/*-------------------------fim do formulário de cadastro--------------------*/
+
+
+/*-------------------------página do administrador--------------------*/
+#box_adm{width: 90%; min-height: 500px; float: left; margin: 20px 50px; padding-bottom: 20px}
+.tituloADM{font-size: 30px; font-family:  calibri, sans-serif; padding-bottom: 40px;}
+.links_adm{padding-top: 80px;}
+.links_adm li a{font-size: 20px; font-family: calibri, sans-serif; color: #FFFFFF;}
+.links_adm li{padding-bottom: 10px ;padding-top: 5px ;margin-bottom: 5px ;border:1px solid #c0c0c0; background-color: #4682B4; text-align: center;}
+/*-----------------------fim da página do administrador --------------------*/
+
+/*-----------------------formulário de postagem de pessoas --------------------*/
+.tituloPostPessoa{font-size: 30px; font-family:  calibri, sans-serif;}
+.categoria_form{margin-left: 110px ;float: left ;font-size: 15px; font-family:  calibri, sans-serif;}
+/*-----------------------fim do formulário de postagem de pessoas --------------------*/
+
+
+/*-------------------------fim do conteudo--------------------------------*/
+
+
+/*-------------------------rodape do site--------------------------------*/
+#rodape{width: 100%; height: 50px; float: left; background-color: #1C1C1C; padding-top: 5px; padding-bottom: 20px;}
+.direitos{text-align: center; color: #FFFFFF; margin-top: 15px; font-size: 15px; font-family: calibri, sans-serif;}
+.endereco{text-align: center; color: #FFFFFF; margin-top: 5px;  font-size: 15px; font-family: calibri, sans-serif;}
+/*-------------------------fim do rodape--------------------------------*/
+
