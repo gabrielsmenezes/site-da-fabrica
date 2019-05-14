@@ -1,0 +1,42 @@
+<?php 
+$foto = str_replace(" ","_",$foto);
+$foto = str_replace("-","_",$foto);
+$foto = str_replace("%","_",$foto);
+$foto = str_replace("&","_",$foto);
+$foto = str_replace("#","_",$foto);
+$foto = str_replace("$","_",$foto);
+$foto = str_replace("á","a",$foto);
+$foto = str_replace("à","a",$foto);
+$foto = str_replace("ã","a",$foto);
+$foto = str_replace("â","a",$foto);
+$foto = str_replace("ä","a",$foto);
+$foto = str_replace("Á","a",$foto);
+$foto = str_replace("À","a",$foto);
+$foto = str_replace("Â","a",$foto);
+$foto = str_replace("Ä","a",$foto);
+$foto = str_replace("Ã","a",$foto);
+$foto = str_replace("é","e",$foto);
+$foto = str_replace("è","e",$foto);
+$foto = str_replace("É","e",$foto);
+$foto = str_replace("È","e",$foto);
+$foto = str_replace("í","i",$foto);
+$foto = str_replace("ì","i",$foto);
+$foto = str_replace("Í","i",$foto);
+$foto = str_replace("Ì","i",$foto);
+$foto = str_replace("ó","o",$foto);
+$foto = str_replace("ò","o",$foto);
+$foto = str_replace("õ","o",$foto);
+$foto = str_replace("ô","o",$foto);
+$foto = str_replace("Ó","o",$foto);
+$foto = str_replace("Ò","o",$foto);
+$foto = str_replace("Ô","o",$foto);
+$foto = str_replace("Õ","o",$foto);
+$foto = str_replace("ú","u",$foto);
+$foto = str_replace("ù","u",$foto);
+$foto = str_replace("Ú","u",$foto);
+$foto = str_replace("Ù","u",$foto);
+$foto = str_replace("ç","c",$foto);
+$foto = str_replace("Ç","c",$foto);
+//passando texto da variavel para minúscula
+$foto = strtolower($foto);
+?>
