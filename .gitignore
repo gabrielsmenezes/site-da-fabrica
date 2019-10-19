@@ -42,7 +42,7 @@
 # CMake
 cmake-build-*/
 
-fabrica/.idea/*
+fabrica/.idea/
 
 # Mongo Explorer plugin
 .idea/**/mongoSettings.xml
