@@ -1,4 +1,4 @@
-﻿<div id="conteudo_editais">
+﻿<div class="container">
 	<h1 class="tituloAluno">Editais</h1>
 
 	<?php

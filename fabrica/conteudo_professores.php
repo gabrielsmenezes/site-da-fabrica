@@ -40,7 +40,7 @@ $contar_pages = $contar/$qtd_registros;
 
 					<div class="col-md-4">
 						<div class="card mb-4 box-shadow p-3 m-3">
-							<img class="card-img-top" src="data:image/jpeg;base64, <?php echo base64_encode($imagem);?>" width=175 height=auto>
+							<img class="card-img-top" width=150px src="data:image/jpeg;base64, <?php echo base64_encode($imagem);?>" height=auto>
 							<div class="card-body">
 								<div class="card-text">
 									<p class="nome3"><?php echo $nome;?></p>

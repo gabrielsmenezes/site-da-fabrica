@@ -1,24 +1,27 @@
-<html>
+<!doctype html>
 	<head>
 		<title>Site Fábrica de Software</title>
-		<link rel="stylesheet" type="text/css" href="css/formato.css">
 	</head>
 	<body>
-		<div id="topo">
-			<?php include "topo.php";?>
+		
+		<div class="container">
+			<div>
+				<?php include "topo.php";?>
+			</div>
+
+			<div>
+				<?php include "menu.php";?>
+			</div>
+
+			<div>
+				<?php include "conteudo_professores.php";?>
+			</div>
+
+			<div>
+				<?php include "rodape.php";?>
+			</div>
 		</div>
 
-		<div id="menu">
-			<?php include "menu.php";?>
-		</div>
-
-		<div id="conteudo">
-			<?php include "conteudo_professores.php";?>
-		</div>
-
-		<div id="rodape">
-			<?php include "rodape.php";?>
-		</div>
 	</body>
 
 </html>

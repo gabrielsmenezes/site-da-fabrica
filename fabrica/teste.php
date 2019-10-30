@@ -4,8 +4,6 @@
     <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link rel="stylesheet" type="text/css" href="css/formato.css">
-
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -13,39 +11,38 @@
   
   
   <body>
-
-    <nav class="navbar navbar-expand-lg barra-navegacao mb-5">
+      <nav class="navbar navbar-dark navbar-expand-lg bg-info">
     <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link texto-branco" href="index.php">Inicio</a>
+        <a class="nav-link" href="index.php">Inicio</a>
       </li>
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle texto-branco" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Pessoas
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item texto-branco" href="professores.php">Professores</a>
-          <a class="dropdown-item texto-branco" href="alunos.php">Alunos</a>
-          <a class="dropdown-item texto-branco" href="egressos.php">Egressos</a>
+          <a class="dropdown-item" href="professores.php">Professores</a>
+          <a class="dropdown-item" href="alunos.php">Alunos</a>
+          <a class="dropdown-item" href="egressos.php">Egressos</a>
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle texto-branco" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Projetos
         </a>
-        <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-          <a class="dropdown-item texto-branco" href="emAndamento.php">Em andamento</a>
-          <a class="dropdown-item texto-branco" href="finalizados.php">Finalizados</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="emAndamento.php">Em andamento</a>
+          <a class="dropdown-item" href="finalizados.php">Finalizados</a>
 
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link texto-branco" href="editais.php">Editais</a>
+        <a class="nav-link" href="editais.php">Editais</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link texto-branco" href="contato.php">Contato</a>
+        <a class="nav-link" href="contato.php">Contato</a>
       </li>
     </ul>
   </div>

@@ -36,14 +36,15 @@
 			?>
 
 			<div class="row">
-				<div class="col">
-					<img src="data:image/jpeg;base64, <?php echo base64_encode($imagem);?> " width=150px>
+				<div class="container d-flex mb-3">
+					<div class="col">
+						<img src="data:image/jpeg;base64, <?php echo base64_encode($imagem);?> " width=150px>
+					</div>
+					<div class="col-10">
+						<p><?php echo $nome;?></p>
+						<p><?php echo $descricao;?></p>
+					</div>
 				</div>
-				<div class="col-10">
-					<p class="nome3"><?php echo $nome;?></p>
-					<p class="funcao"><?php echo $descricao;?></p>
-				</div>
-				
 			</div>
 
 			<?php
