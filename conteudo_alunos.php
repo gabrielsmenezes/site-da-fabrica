@@ -38,7 +38,7 @@ $contar_pages = $contar/$qtd_registros;
 					$id_post = $line['id_post'];
 				?>
 
-					<div class="col-md-4">
+					<div class="col-md-3">
 						<div class="card mb-4 box-shadow p-3 m-3">
 							<img class="card-img-top" src="data:image/jpeg;base64, <?php echo base64_encode($imagem);?>" width=175 height=auto>
 							<div class="card-body">
