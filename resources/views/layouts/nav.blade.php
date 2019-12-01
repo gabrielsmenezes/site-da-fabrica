@@ -12,8 +12,8 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item"  href="professores.php">Professores</a>
-              <a class="dropdown-item"  href="alunos.php">Alunos</a>
-              <a class="dropdown-item" href="egressos.php">Egressos</a>
+              <a class="dropdown-item"  href="{{route("aluno.nao-egressos")}}">Alunos</a>
+              <a class="dropdown-item" href="{{route("aluno.egressos")}}">Egressos</a>
             </div>
           </li>
           <li class="nav-item dropdown mx-3">

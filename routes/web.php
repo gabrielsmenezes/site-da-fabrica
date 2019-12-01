@@ -31,9 +31,11 @@ Route::get('/home', 'HomeController@index')->name('home');
  *  | Mostra formulario de alteracao  | GET|HEAD      | resource/{resource}/edit    | resource.edit     | App\Http\Controllers\resource\resourceController@edit      | web                                             |
  */
 Route::resource('projeto', 'ProjetoController');
+Route::resource('aluno', 'AlunoController');
 
 Route::get('/finalizados', 'ProjetoController@index_finalizados')->name('projeto.finalizados');
 Route::get('/nao-finalizados', 'ProjetoController@index_nao_finalizados')->name('projeto.nao-finalizados');
-
+Route::get('/egressos', 'AlunoController@index_egressos')->name('aluno.egressos');
+Route::get('/nao-egressos', 'AlunoController@index_nao_egressos')->name('aluno.nao-egressos');
 
 Route::get('/contato', 'ContatoController@index')->name('contato.index');
