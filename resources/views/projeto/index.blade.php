@@ -24,11 +24,11 @@
 							@endif
 						</div>
 						<div class="col-10">
-							<a href="{{ route('projeto.show', $projeto->id)}}"><h2>{{$projeto->nome}}</h2></a>							
+							<a href="{{ route('projetos.show', $projeto->id)}}"><h2>{{$projeto->nome}}</h2></a>							
 							
 							@if (strlen($projeto->descricao) > 300)
 							<p>{{substr($projeto->descricao,0,300)}} ... 
-								<a href="{{route('projeto.show', $projeto->id)}}">Continuar lendo</a>
+								<a href="{{route('projetos.show', $projeto->id)}}">Continuar lendo</a>
 							</p>								
 							@else
 							<p>{{$projeto->descricao}}</p>							

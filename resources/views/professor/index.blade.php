@@ -20,16 +20,16 @@
 
 				<div class="col-md-3">
 					<div class="card mb-4 box-shadow p-3 m-3">
-						<a href="{{route('professor.show', $professor->id)}}"></a>
+						<a href="{{route('professores.show', $professor->id)}}"></a>
 						<img class="card-img-top" src="/storage/{{$professor->imagem}}" width=175 height=auto>
 						<div class="card-body">
 							<div class="card-text">
-								<a href="{{route('professor.show', $professor->id)}}">
+								<a href="{{route('professores.show', $professor->id)}}">
 									<p>{{$professor->nome}}</p>
 								</a>
 								@if (strlen($professor->descricao) > 120)
 								<p>{{substr($professor->descricao,0,120)}} ...
-									<a href="{{route('professor.show', $professor->id)}}">Continuar lendo</a>
+									<a href="{{route('professores.show', $professor->id)}}">Continuar lendo</a>
 								</p>								
 								@else
 								<p>{{$professor->descricao}}</p>							

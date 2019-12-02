@@ -23,12 +23,12 @@
 						<img class="card-img-top" src="/storage/{{$aluno->imagem}}" width=175 height=auto>
 						<div class="card-body">
 							<div class="card-text">
-									<a href="{{route('aluno.show', $aluno->id)}}">
+									<a href="{{route('alunos.show', $aluno->id)}}">
 										<p>{{$aluno->nome}}</p>
 									</a>
 								@if (strlen($aluno->descricao) > 120)
 								<p>{{substr($aluno->descricao,0,120)}} ...
-									<a href="{{route('aluno.show', $aluno->id)}}">Continuar lendo</a>
+									<a href="{{route('alunos.show', $aluno->id)}}">Continuar lendo</a>
 								</p>								
 								@else
 								<p>{{$aluno->descricao}}</p>							

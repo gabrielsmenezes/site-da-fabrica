@@ -11,18 +11,18 @@
               Pessoas
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item"  href="professores.php">Professores</a>
-              <a class="dropdown-item"  href="{{route("aluno.nao-egressos")}}">Alunos</a>
-              <a class="dropdown-item" href="{{route("aluno.egressos")}}">Egressos</a>
+            <a class="dropdown-item"  href="{{route("professores.index")}}">Professores</a>
+              <a class="dropdown-item"  href="{{route("alunos.nao-egressos")}}">Alunos</a>
+              <a class="dropdown-item" href="{{route("alunos.egressos")}}">Egressos</a>
             </div>
           </li>
           <li class="nav-item dropdown mx-3">
-            <a class="nav-link dropdown-toggle" style="color: white;" href="{{route("projeto.index")}}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" style="color: white;" href="{{route("projetos.index")}}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Projetos
             </a>
             <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-              <a class="dropdown-item "  href="{{route("projeto.nao-finalizados")}}">Em andamento</a>
-              <a class="dropdown-item " href="{{route("projeto.finalizados")}}">Finalizados</a>
+              <a class="dropdown-item "  href="{{route("projetos.nao-finalizados")}}">Em andamento</a>
+              <a class="dropdown-item " href="{{route("projetos.finalizados")}}">Finalizados</a>
     
             </div>
           </li>

@@ -30,13 +30,13 @@ Route::get('/home', 'HomeController@index')->name('home');
  *  | Deleta resource                 | DELETE        | resource/{resource}         | resource.destroy  | App\Http\Controllers\resource\resourceController@destroy   | web                                             |
  *  | Mostra formulario de alteracao  | GET|HEAD      | resource/{resource}/edit    | resource.edit     | App\Http\Controllers\resource\resourceController@edit      | web                                             |
  */
-Route::resource('projeto', 'ProjetoController');
-Route::resource('aluno', 'AlunoController');
-Route::resource('professor', 'ProfessorController');
+Route::resource('projetos', 'ProjetoController');
+Route::resource('alunos', 'AlunoController');
+Route::resource('professores', 'ProfessorController');
 
-Route::get('/finalizados', 'ProjetoController@index_finalizados')->name('projeto.finalizados');
-Route::get('/nao-finalizados', 'ProjetoController@index_nao_finalizados')->name('projeto.nao-finalizados');
-Route::get('/egressos', 'AlunoController@index_egressos')->name('aluno.egressos');
-Route::get('/nao-egressos', 'AlunoController@index_nao_egressos')->name('aluno.nao-egressos');
+Route::get('/finalizados', 'ProjetoController@index_finalizados')->name('projetos.finalizados');
+Route::get('/nao-finalizados', 'ProjetoController@index_nao_finalizados')->name('projetos.nao-finalizados');
+Route::get('/egressos', 'AlunoController@index_egressos')->name('alunos.egressos');
+Route::get('/nao-egressos', 'AlunoController@index_nao_egressos')->name('alunos.nao-egressos');
 
 Route::get('/contato', 'ContatoController@index')->name('contato.index');
