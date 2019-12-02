@@ -32,6 +32,7 @@ Route::get('/home', 'HomeController@index')->name('home');
  */
 Route::resource('projeto', 'ProjetoController');
 Route::resource('aluno', 'AlunoController');
+Route::resource('professor', 'ProfessorController');
 
 Route::get('/finalizados', 'ProjetoController@index_finalizados')->name('projeto.finalizados');
 Route::get('/nao-finalizados', 'ProjetoController@index_nao_finalizados')->name('projeto.nao-finalizados');

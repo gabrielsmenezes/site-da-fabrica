@@ -14,12 +14,12 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Cadastrar Novo Projeto</div>
+                    <div class="card-header">Cadastrar Novo Professor</div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('projeto.store') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('professor.store') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
-                                <label for="nome" class="col-md-4 col-form-label text-md-right">Nome de Projeto</label>
+                                <label for="nome" class="col-md-4 col-form-label text-md-right">Nome do professor</label>
 
                                 <div class="col-md-6">
                                     <input id="nome" type="text"
@@ -51,34 +51,17 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="finalizado" class="col-md-4 col-form-label text-md-right">Finalizado?</label>
-
-                                <div class="col-md-6">
-                                    <select id="finalizado" 
-                                    class="form-control @error('finalizado') is-invalid @enderror" name="finalizado"
-                                    value="{{ old('finalizado') }}" rows="5" required autocomplete="finalizado">
-                                            <option value=1>Sim</option> 
-                                            <option value=0>Não</option> 
-                                    </select>
-                                    @error('descricao')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
                                     <label for="imagem" class="col-md-4 col-form-label text-md-right">Imagem</label>
                                     <div class="col-md-6">
-                                        <input type="file" class="form-control-file" name="imagem[]" multiple>
+                                        <input type="file" class="form-control-file" name="imagem">
                                         @error('imagem')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                         @enderror
                                     </div>
-                                   
+                                    
+
                             </div>
                             
                             <div class="form-group row mb-0">
