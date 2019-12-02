@@ -41,3 +41,8 @@
     </div>
 </div>
 @endsection('content')
+
+
+@section('footer')
+    @include('layouts.footer')
+@endsection
