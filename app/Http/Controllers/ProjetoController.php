@@ -44,6 +44,7 @@ class ProjetoController extends Controller
      */
     public function store(Request $request)
     {
+
         $dado_projeto = $request->validate([
             'nome' => ['required', 'string'],
             'descricao' => ['required', 'string'],
@@ -52,6 +53,7 @@ class ProjetoController extends Controller
 
 
         $projeto_salvo = Projeto::create($dado_projeto);
+
 
         foreach ($request['imagem'] as $key => $value) {
             $imagem_path = $value->store('uploads', 'public');

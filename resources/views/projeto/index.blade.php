@@ -19,7 +19,9 @@
 				
 					<div class="container d-flex mb-3 m-3">
 						<div class="col">
+							@if(count($projeto->imagens)>0)
 							<img src="/storage/{{$projeto->imagens[0]->imagem}}" width=150px>
+							@endif
 						</div>
 						<div class="col-10">
 							<a href="{{ route('projeto.show', $projeto->id)}}"><h2>{{$projeto->nome}}</h2></a>							
