@@ -29,6 +29,7 @@
         @yield('header')
         @yield('nav')
         @yield('content')
+        @yield('footer')
     </div>
 </body>
 </html>

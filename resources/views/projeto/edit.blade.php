@@ -16,7 +16,7 @@
                 <div class="card">
                     <div class="card-header">Editar Projeto</div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('projeto.update', $projeto->id) }}">
+                        <form method="POST" action="{{ route('projetos.update', $projeto->id) }}">
                             @csrf
                             @method('PATCH')
                             <div class="form-group row">

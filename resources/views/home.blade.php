@@ -16,3 +16,8 @@
     <p>Tem como objetivo proporcionar aos alunos ingressantes na fábrica a vivência e aplicação, na prática, dos conceitos da área de Engenharia de Software, obtidos durante o curso, em projetos de softwares reais.</p>
 </div>
 @endsection
+
+
+@section('footer')
+    @include('layouts.footer')
+@endsection
