@@ -27,7 +27,7 @@
             </div>
           </li>
           <li class="nav-item mx-3">
-            <a class="nav-link texto-branco" style="color: white;" href="editais.php">Editais</a>
+            <a class="nav-link texto-branco" style="color: white;" href="{{route('editais.index')}}">Editais</a>
           </li>
           <li class="nav-item mx-3">
           <a class="nav-link texto-branco"style="color: white;"  href="{{route("contato.index")}}">Contato</a>
