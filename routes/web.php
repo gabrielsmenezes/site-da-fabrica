@@ -33,6 +33,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('projetos', 'ProjetoController');
 Route::resource('alunos', 'AlunoController');
 Route::resource('professores', 'ProfessorController');
+Route::resource('editais', 'EditalController');
 
 Route::get('/finalizados', 'ProjetoController@index_finalizados')->name('projetos.finalizados');
 Route::get('/nao-finalizados', 'ProjetoController@index_nao_finalizados')->name('projetos.nao-finalizados');
