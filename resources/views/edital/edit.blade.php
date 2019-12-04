@@ -42,7 +42,7 @@
                                 <div class="col-md-6">
                                     <textarea id="descricao" 
                                            class="form-control @error('descricao') is-invalid @enderror" name="descricao"
-                                           value="{{ $edital->descricao}}" rows="5" required autocomplete="descricao"></textarea>
+                                           value="{{ $edital->descricao}}" rows="5" required autocomplete="descricao">{{$edital->descricao}}</textarea>
 
                                     @error('descricao')
                                     <span class="invalid-feedback" role="alert">
