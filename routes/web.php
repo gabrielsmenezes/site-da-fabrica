@@ -40,4 +40,11 @@ Route::get('/nao-finalizados', 'ProjetoController@index_nao_finalizados')->name(
 Route::get('/egressos', 'AlunoController@index_egressos')->name('alunos.egressos');
 Route::get('/nao-egressos', 'AlunoController@index_nao_egressos')->name('alunos.nao-egressos');
 
+Route::get('/administrador', 'AdministradorController@index')->name('administrador.index');
+Route::get('/administrador/professores', 'AdministradorController@professores')->name('administrador.professores');
+Route::get('/administrador/alunos', 'AdministradorController@alunos')->name('administrador.alunos');
+Route::get('/administrador/projetos', 'AdministradorController@projetos')->name('administrador.projetos');
+Route::get('/administrador/editais', 'AdministradorController@editais')->name('administrador.editais');
+
+
 Route::get('/contato', 'ContatoController@index')->name('contato.index');

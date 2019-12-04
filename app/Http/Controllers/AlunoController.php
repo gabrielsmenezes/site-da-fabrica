@@ -62,7 +62,8 @@ class AlunoController extends Controller
         ]);
 
 
-        return $this->index();
+        return redirect()->route("administrador.alunos");
+        ;
     }
 
     /**
@@ -118,7 +119,7 @@ class AlunoController extends Controller
 
         $aluno->save();
 
-        return $this->index();
+        return redirect()->route("administrador.alunos");
     }
 
     /**
@@ -130,7 +131,7 @@ class AlunoController extends Controller
     public function destroy($id)
     {
         Aluno::destroy($id);
-        return $this->index();
+        return redirect()->route("administrador.alunos");
     }
 
 

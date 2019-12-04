@@ -62,7 +62,8 @@ class EditalController extends Controller
             'data' => $dado['data'],
             'arquivo' => $arquivo
         ]);
-        return $this->index();
+        return redirect()->route("administrador.editais");
+
     }
 
     /**
@@ -118,9 +119,8 @@ class EditalController extends Controller
             $edital->arquivo = $arquivo;
         }
 
+        return redirect()->route("administrador.editais");
 
-    
-        return $this->index();
     }
 
     /**
@@ -132,6 +132,6 @@ class EditalController extends Controller
     public function destroy($id)
     {
         Edital::destroy($id);
-        return $this->index();
+        return redirect()->route("administrador.editais");
     }
 }

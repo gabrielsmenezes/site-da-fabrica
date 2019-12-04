@@ -58,7 +58,7 @@ class ProfessorController extends Controller
         ]);
 
 
-        return $this->index();
+        return redirect()->route("administrador.professores");
     }
 
     /**
@@ -112,7 +112,8 @@ class ProfessorController extends Controller
 
         $professor->save();
 
-        return $this->index();
+        return redirect()->route("administrador.professores");
+
     }
 
     /**
@@ -124,6 +125,6 @@ class ProfessorController extends Controller
     public function destroy($id)
     {
         Professor::destroy($id);
-        return $this->index();
+        return redirect()->route("administrador.professores");
     }
 }

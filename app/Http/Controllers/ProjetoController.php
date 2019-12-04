@@ -59,8 +59,8 @@ class ProjetoController extends Controller
             $imagem_path = $value->store('uploads', 'public');
             $projeto_salvo->imagens()->create(['imagem' => $imagem_path]);
         }
+        return redirect()->route("administrador.projetos");
 
-        return $this->index();
     }
 
     /**
@@ -111,7 +111,7 @@ class ProjetoController extends Controller
 
         $projeto->save();
 
-        return $this->index();
+        return redirect()->route("administrador.projetos");
 
     }
 
@@ -124,7 +124,8 @@ class ProjetoController extends Controller
     public function destroy($id)
     {
         Projeto::destroy($id);
-        return $this->index();
+        return redirect()->route("administrador.projetos");
+
     }
 
 

@@ -29,9 +29,24 @@
           <li class="nav-item mx-3">
             <a class="nav-link texto-branco" style="color: white;" href="{{route('editais.index')}}">Editais</a>
           </li>
+
           <li class="nav-item mx-3">
-          <a class="nav-link texto-branco"style="color: white;"  href="{{route("contato.index")}}">Contato</a>
+            <a class="nav-link texto-branco"style="color: white;"  href="{{route("contato.index")}}">Contato</a>
           </li>
+
+          {{-- @if (auth()->user() != null)
+          <li class="nav-item mx-3">
+            <a class="nav-link texto-branco" style="color: white;" href="{{route('editais.index')}}">Área do Administrador</a>
+          </li>              
+          @endif --}}
+
+          @auth
+            <li class="nav-item mx-3">
+              <a class="nav-link texto-branco" style="color: white;" href="{{route('administrador.index')}}">Área do Administrador</a>
+            </li>    
+          @endauth
+          
+
         </ul>
       </div>
         </nav>
