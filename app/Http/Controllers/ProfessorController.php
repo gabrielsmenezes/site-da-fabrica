@@ -42,6 +42,9 @@ class ProfessorController extends Controller
      */
     public function store(Request $request)
     {
+
+        dd($request);
+
         $dado = $request->validate([
             'nome' => ['required', 'string'],
             'descricao' => ['required', 'string'],
@@ -102,12 +105,13 @@ class ProfessorController extends Controller
 
         $professor = Professor::findOrFail($id);
 
+        if ($request["imagem"] != null) {
+            $imagem = $request['imagem']->store('uploads', 'public');
+            $professor->imagem = $imagem;
+        }
 
-        $imagem = $request['imagem']->store('uploads', 'public');
-
-        $professor->nome = $dado['nome'];
-        $professor->descricao = $dado['descricao'];
-        $professor->imagem = $dado['imagem'];
+        $professor->nome = $request['nome'];
+        $professor->descricao = $request['descricao'];
 
 
         $professor->save();

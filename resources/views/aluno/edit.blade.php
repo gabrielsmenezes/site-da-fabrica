@@ -16,7 +16,7 @@
                 <div class="card">
                     <div class="card-header">Editar Aluno</div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('alunos.update', $aluno->id) }}">
+                        <form method="POST" action="{{ route('alunos.update', $aluno->id) }}" enctype="multipart/form-data">
                             @csrf
                             @method('PATCH')
                             <div class="form-group row">

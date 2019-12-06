@@ -100,6 +100,8 @@ class EditalController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request);
+
         $dado = $request->validate([
             'titulo' => ['required', 'string'],
             'descricao' => ['required', 'string'],
@@ -118,6 +120,8 @@ class EditalController extends Controller
             $arquivo = $request['arquivo']->store('uploads', 'public');
             $edital->arquivo = $arquivo;
         }
+
+        $edital->save();
 
         return redirect()->route("administrador.editais");
 

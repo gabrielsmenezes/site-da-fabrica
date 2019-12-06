@@ -113,7 +113,7 @@ class AlunoController extends Controller
         $aluno->egresso = $data['egresso'];
        
         if ($request["imagem"] != null) {
-            $imagem = $data['imagem']->store('uploads', 'public');
+            $imagem = $request['imagem']->store('uploads', 'public');
             $aluno->imagem = $imagem;
         }
 
