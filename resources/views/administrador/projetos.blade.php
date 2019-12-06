@@ -11,8 +11,11 @@
 
 @section('content')
     <div class="container">
-        <div class="mb-4">
+        <div class="mb-4 d-flex justify-content-between">
             <h1>Gerenciar projetos</h1>
+            <a href="{{ route('projetos.create') }}"
+        class="btn btn-primary btn-lg active"
+        role="button" aria-pressed="true">Adicionar</a>
         </div>
         <table class="table table-striped table-bordered w-100">
             <thead>
@@ -29,29 +32,29 @@
                     <td>{{ $projeto->nome }}</td>
                     
                     <td>
-                        <a href="{{ route('projetos.show', $projeto->id) }}" class="btn btn-primary btn-sm active"
-                        role="button" aria-pressed="true">Detalhes</i></a>
 
-                        <a href="{{ route('projetos.edit', $projeto->id) }}" class="btn btn-primary btn-sm active my-1"
-                        role="button" aria-pressed="true">Editar</a>
+                        <div class="d-flex">
 
+                                <a href="{{ route('projetos.show', $projeto->id) }}" class="btn btn-primary btn-sm active mr-2"
+                                    role="button" aria-pressed="true">Detalhes</i></a>
+        
+                                <a href="{{ route('projetos.edit', $projeto->id) }}" class="btn btn-primary btn-sm active mr-2"
+                                role="button" aria-pressed="true">Editar</a>
+        
+        
+                                <form action="{{ route('projetos.destroy', $projeto->id) }}" method="POST">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button class="btn btn-primary btn-sm active" >Remover</button>
+                                </form>
 
-                        <form action="{{ route('projetos.destroy', $projeto->id) }}" method="POST">
-                            @method('DELETE')
-                            @csrf
-                            <button class="btn btn-primary btn-sm active" >Remover</button>
-                        </form>
-
+                        </div>
 
                     </td>
                 </tr>
             @endforeach
             </tbody>
         </table>
-
-        <a href="{{ route('projetos.create') }}"
-        class="btn btn-primary btn-lg active my-5"
-        role="button" aria-pressed="true">Adicionar</a>
     </div>
 @endsection
 
