@@ -12,60 +12,28 @@
 @section('content')
 <div class="container">
 	<div class="text-center">
-		<h1 class="">Área do Administrador</h1>
+		<h1 class="mb-5">Área do Administrador</h1>
 	</div>
 	<div class="row">
-		<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 Services-tab  item">
-			<a href={{ route('administrador.professores') }}>
-				<div class="folded-corner service_tab_1">
-					<div class="text">
-						<i class="fas fa-users-cog fa-5x fa-icon-image"></i>
-						<h3>Gerenciar Professores</h3>
-						<p>
-							Adicionar, Editar e Remover Professores
-						</p>
-					</div>
-				</div>
+		<div class="col-3 text-center mb-5">
+			<a href={{ route('administrador.professores') }} class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
+				<p>Gerenciar Professores</p>
 			</a>
 		</div>
-		<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 Services-tab item">
-			<a href="{{ route('administrador.alunos') }}">
-				<div class="folded-corner service_tab_1">
-					<div class="text">
-						<i class="fas fa-tasks fa-5x fa-icon-image"></i>
-						<h3>Gerenciar Alunos</h3>
-						<p>
-							Adicionar, Editar e Remover Alunos
-						</p>
-					</div>
-				</div>
+		<div class="col-3 text-center">
+			<a href="{{ route('administrador.alunos') }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
+						<p>Gerenciar Alunos</p>
 			</a>
 		</div>
-		<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 Services-tab item">
-			<a href="{{ route('administrador.projetos') }}">
-				<div class="folded-corner service_tab_1">
-					<div class="text">
-						<i class="fas fa-newspaper fa-5x fa-icon-image"></i>
-						<h3>Gerenciar Projetos</h3>
-						<p>
-							Adicionar, Editar e Remover Projetos
-						</p>
-					</div>
-				</div>
+		<div class="col-3 text-center">
+			<a href="{{ route('administrador.projetos') }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
+				<p>Gerenciar Projetos</p>
 			</a>
 			
 		</div>
-		<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 Services-tab item">
-			<a href="{{ route('administrador.editais') }}">
-			<div class="folded-corner service_tab_1">
-				<div class="text">
-					<i class="fas fa-info-circle fa-5x fa-icon-image"></i>
-					<h3>Gerenciar Editais</h3>
-					<p>
-						Adicionar, Editar e Remover Editais
-					</p>
-				</div>
-			</div>
+		<div class="col-3 text-center">
+			<a href="{{ route('administrador.editais') }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
+				<p>Gerenciar Editais</p>
 			</a>
 		</div>
 	</div>

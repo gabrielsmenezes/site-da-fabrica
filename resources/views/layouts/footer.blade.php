@@ -1,6 +1,6 @@
 @section('footer')
 <!-- Footer -->
-<footer class="page-footer font-small blue">
+<footer class="footer font-small blue ">
 
         <!-- Copyright -->
         <div class="container text-center bg-dark text-white">

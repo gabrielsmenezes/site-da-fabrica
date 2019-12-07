@@ -25,7 +25,7 @@
                                 <div class="col-md-6">
                                     <input id="nome" type="text"
                                            class="form-control @error('nome') is-invalid @enderror" name="nome"
-                                           value="{{$professor->nome}}" required autocomplete="nome" autofocus>
+                                           value="{{$professor->nome}}" required autocomplete="nome" autofocus required>
 
                                     @error('nome')
                                     <span class="invalid-feedback" role="alert">
@@ -41,7 +41,7 @@
                                 <div class="col-md-6">
                                     <textarea id="descricao" 
                                            class="form-control @error('descricao') is-invalid @enderror" name="descricao"
-                                value="{{$professor->descricao}}" rows="5" required autocomplete="descricao">{{$professor->descricao}}</textarea>
+                                value="{{$professor->descricao}}" rows="5" required autocomplete="descricao" required>{{$professor->descricao}}</textarea>
 
                                     @error('descricao')
                                     <span class="invalid-feedback" role="alert">
