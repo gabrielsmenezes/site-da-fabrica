@@ -43,9 +43,7 @@ class ProfessorController extends Controller
     public function store(Request $request)
     {
 
-        dd($request);
-
-        $dado = $request->validate([
+         $dado = $request->validate([
             'nome' => ['required', 'string'],
             'descricao' => ['required', 'string'],
             'imagem' => ['image'],

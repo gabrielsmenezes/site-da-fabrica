@@ -9,7 +9,7 @@ use Carbon\Carbon;
 class EditalController extends Controller
 {
 
-
+     
     public function __construct()
     {
         $this->middleware('auth')->only(['create', 'update', 'store', 'edit', 'destroy']);
@@ -51,10 +51,10 @@ class EditalController extends Controller
             'titulo' => ['required', 'string'],
             'descricao' => ['required', 'string'],
             'data' => ['required', 'date'],
-            'arquivo' => ['mimetypes:application/pdf'],
-        ]);
+    ]);
 
-        $arquivo = $request['arquivo']->store('uploads', 'public');
+        $uploadedFile = $request['arquivo'];
+        $arquivo = $uploadedFile->storeAs('uploads', $uploadedFile->getClientOriginalName(), 'public');
 
         Edital::create([
             'titulo' => $dado['titulo'],
@@ -106,7 +106,7 @@ class EditalController extends Controller
             'titulo' => ['required', 'string'],
             'descricao' => ['required', 'string'],
             'data' => ['required', 'date'],
-            'arquivo' => ['mimetypes:application/pdf'],
+             
         ]);
 
         $edital = Edital::findOrFail($id);
@@ -117,7 +117,8 @@ class EditalController extends Controller
 
 
         if ($request["arquivo"] != null) {
-            $arquivo = $request['arquivo']->store('uploads', 'public');
+		$uploadedFile = $request['arquivo'];
+		$arquivo = $uploadedFile->storeAs('uploads', $uploadedFile->getClientOriginalName(), 'public');
             $edital->arquivo = $arquivo;
         }
 
