@@ -1,7 +1,7 @@
 Instalação
-  Baixar o projeto:
-    git clone https://github.com/gabrielsmenezes/site-da-fabrica.git
-    acesse a pasta do projeto para os proximos passos
+  - Baixar o projeto:
+    - git clone https://github.com/gabrielsmenezes/site-da-fabrica.git
+    - acesse a pasta do projeto para os proximos passos
   
   Instalar o PHP <= 7.1.3
     apt-get install php7.1
