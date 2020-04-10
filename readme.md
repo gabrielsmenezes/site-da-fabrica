@@ -18,6 +18,7 @@ Instalação
     - php composer.phar global require laravel/installer
     - apt-get install php7.2-mbstring
     - apt-get install php7.2-xml
+    - apt-get install php7.2-mysql
     
  - Baixando as dependencias
     - comentar o arquivo config/database.php o codigo <code>options' => array_filter([
@@ -29,4 +30,5 @@ Instalação
     - as infos do banco ficam no .env, voce devera criar um banco com as mesmas credenciais ou muda-las nesse arquivo, lembrando que esses dados sao os dados do banco de produção
 
   - Rodando o servidor
+    - php artisan migrate
     - php artisan serve
